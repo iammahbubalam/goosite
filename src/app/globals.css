@@ -1,26 +1,128 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ============================================================
+   GOOWALI — Design tokens
+   Cream & milk palette. Calm, premium, organic.
+   ============================================================ */
+
+@theme {
+  /* Brand */
+  --color-ink: #153b7a; /* primary blue */
+  --color-ink-soft: #2a4f8f;
+  --color-cream: #fff9f2;
+  --color-milk: #fafaf7;
+  --color-green: #6b9d38;
+  --color-green-soft: #8bb85f;
+  --color-gold: #d4af37;
+  --color-bg: #fdfbf8;
+
+  /* Neutral text built on the blue ink, never pure black */
+  --color-night: #11203a;
+  --color-stone: #5b6472;
+  --color-haze: #eee7dc;
+
+  /* Fonts (wired from next/font in layout) */
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Editorial rhythm */
+  --shadow-soft: 0 1px 2px rgba(17, 32, 58, 0.04),
+    0 12px 40px -16px rgba(17, 32, 58, 0.18);
+  --shadow-lift: 0 30px 60px -24px rgba(17, 32, 58, 0.28);
+
+  --radius-xl2: 2rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-night);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv01";
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-green) 22%, transparent);
+    color: var(--color-night);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: var(--color-night);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  /* Editorial display sizes */
+  .text-display {
+    font-size: clamp(2.75rem, 7vw, 6.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+  }
+  .text-headline {
+    font-size: clamp(2rem, 4.5vw, 3.75rem);
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+  }
+  .text-eyebrow {
+    font-size: 0.74rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .container-x {
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .container-x {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  /* Cream gradient washes */
+  .bg-morning {
+    background: radial-gradient(
+      120% 90% at 50% -10%,
+      var(--color-cream) 0%,
+      var(--color-bg) 55%
+    );
+  }
+  .bg-dawn {
+    background: linear-gradient(
+      180deg,
+      var(--color-cream) 0%,
+      var(--color-bg) 100%
+    );
+  }
+
+  /* Hairline */
+  .hairline {
+    border-color: color-mix(in srgb, var(--color-ink) 12%, transparent);
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
