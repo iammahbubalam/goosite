@@ -24,6 +24,7 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact"
+        mediaLabel="From our family to yours."
         title={
           <>
             Let&rsquo;s bring milk

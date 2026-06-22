@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { ShaderField } from "@/components/shader/shader-field";
 
 type Tone = "cream" | "milk" | "ink" | "green" | "field";
 
@@ -13,6 +14,14 @@ const tones: Record<Tone, string> = {
     "from-[#e8f0d8] via-[#cfe2b2] to-[#8bb85f] text-ink",
 };
 
+const shaderColors: Record<Tone, string[]> = {
+  cream: ["#fffaf3", "#fff2e1", "#f6ead8", "#efe2cd"],
+  milk: ["#ffffff", "#fafaf7", "#eee7dc", "#e7ddcb"],
+  ink: ["#21539c", "#153b7a", "#0f2c5c", "#1d4a8f"],
+  green: ["#e8f0d8", "#cfe2b2", "#a9c97f", "#8bb85f"],
+  field: ["#eaf2da", "#cfe2b2", "#9cc26d", "#6b9d38"],
+};
+
 /**
  * Editorial image stand-in: a soft, organic gradient panel with grain and a
  * gentle vignette. Used where commissioned farm photography will later sit.
@@ -22,11 +31,14 @@ export function ArtPanel({
   className,
   children,
   rounded = "rounded-[2rem]",
+  shader = false,
 }: {
   tone?: Tone;
   className?: string;
   children?: ReactNode;
   rounded?: string;
+  /** Layer a live WebGL flow behind the gradient for hero-tier panels. */
+  shader?: boolean;
 }) {
   return (
     <div
@@ -37,6 +49,15 @@ export function ArtPanel({
         className,
       )}
     >
+      {shader && (
+        <ShaderField
+          colors={shaderColors[tone]}
+          speed={0.25}
+          distortion={0.85}
+          swirl={0.7}
+          className="opacity-90"
+        />
+      )}
       {/* soft light blooms */}
       <div className="pointer-events-none absolute -left-1/4 -top-1/4 h-2/3 w-2/3 rounded-full bg-white/40 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-1/3 -right-1/4 h-2/3 w-2/3 rounded-full bg-white/20 blur-3xl" />

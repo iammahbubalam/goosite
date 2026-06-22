@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { PageHero } from "@/components/sections/page-hero";
-import { ArtPanel } from "@/components/ui/art-panel";
+import { Photo } from "@/components/ui/photo";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
 
 export const metadata: Metadata = {
@@ -57,6 +57,8 @@ export default function BlogPage() {
   return (
     <>
       <PageHero
+        fieldSeed={5}
+        mediaTone="cream"
         eyebrow="The journal"
         title={
           <>
@@ -76,8 +78,9 @@ export default function BlogPage() {
               href="/blog"
               className="group grid overflow-hidden rounded-[2.5rem] border hairline bg-bg md:grid-cols-2"
             >
-              <ArtPanel
+              <Photo
                 tone={featured.tone}
+                alt={featured.title}
                 rounded="rounded-none"
                 className="aspect-[16/10] md:aspect-auto"
               />
@@ -106,8 +109,9 @@ export default function BlogPage() {
                   href="/blog"
                   className="group flex h-full flex-col overflow-hidden rounded-[2rem] border hairline bg-bg transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
                 >
-                  <ArtPanel
+                  <Photo
                     tone={post.tone}
+                    alt={post.title}
                     rounded="rounded-none"
                     className="aspect-[4/3]"
                   />

@@ -2,6 +2,8 @@ import { Sunrise, CalendarCheck, RefreshCw } from "lucide-react";
 import { Eyebrow } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/reveal";
+import { SplitReveal } from "@/components/motion/split-reveal";
+import { ShaderField } from "@/components/shader/shader-field";
 
 const POINTS = [
   { Icon: Sunrise, title: "Before breakfast", text: "Delivered to your door every morning, rain or shine." },
@@ -11,7 +13,18 @@ const POINTS = [
 
 export function SubscriptionTeaser() {
   return (
-    <section className="relative overflow-hidden bg-ink py-24 text-cream md:py-32">
+    <section className="relative isolate overflow-hidden bg-ink py-24 text-cream md:py-32">
+      <ShaderField
+        colors={["#21539c", "#153b7a", "#0f2c5c", "#1d4a8f"]}
+        speed={0.2}
+        distortion={0.9}
+        swirl={0.8}
+        className="opacity-70"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10 bg-ink/45"
+      />
       <div className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-cream/5 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-40 -left-24 h-96 w-96 rounded-full bg-green/10 blur-3xl" />
       <div className="container-x relative grid items-center gap-14 lg:grid-cols-2">
@@ -19,11 +32,11 @@ export function SubscriptionTeaser() {
           <Reveal>
             <Eyebrow className="text-green-soft">Milk subscription</Eyebrow>
           </Reveal>
-          <Reveal delay={0.05}>
-            <h2 className="text-headline mt-6 text-cream">
-              Wake up to fresh milk. Every single day.
-            </h2>
-          </Reveal>
+          <SplitReveal
+            as="h2"
+            className="text-headline mt-6 text-cream"
+            text="Wake up to fresh milk. Every single day."
+          />
           <Reveal delay={0.1}>
             <p className="mt-6 max-w-md text-lg leading-relaxed text-cream/75">
               Join the GOOWALI family and let mornings take care of themselves.

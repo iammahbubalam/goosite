@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/page-hero";
 import { Eyebrow } from "@/components/ui/section";
-import { ArtPanel } from "@/components/ui/art-panel";
+import { Photo } from "@/components/ui/photo";
 import { CtaBand } from "@/components/sections/cta-band";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
+import { MaskReveal } from "@/components/motion/mask-reveal";
 
 export const metadata: Metadata = {
   title: "About",
@@ -22,6 +23,8 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
+        fieldSeed={23}
+        mediaLabel="Pure food, honest source."
         eyebrow="About GOOWALI"
         title={
           <>
@@ -88,16 +91,19 @@ export default function AboutPage() {
       {/* Founder */}
       <section className="bg-cream py-24 md:py-28">
         <div className="container-x grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
-          <Reveal>
-            <ArtPanel tone="milk" className="aspect-[4/5]">
-              <div className="absolute inset-0 flex items-end p-8">
-                <div>
-                  <p className="font-serif text-2xl text-ink">The founder</p>
-                  <p className="text-ink/60">Portrait coming soon</p>
-                </div>
+          {/* PHOTO SLOT: add src="/brand/photos/founder.jpg" when ready */}
+          <MaskReveal className="aspect-[4/5]">
+            <Photo
+              tone="milk"
+              alt="GOOWALI founder"
+              rounded="rounded-none"
+              className="h-full w-full"
+            >
+              <div className="absolute inset-x-0 bottom-0 p-8">
+                <p className="font-serif text-2xl text-ink">The founder</p>
               </div>
-            </ArtPanel>
-          </Reveal>
+            </Photo>
+          </MaskReveal>
           <div>
             <Reveal>
               <Eyebrow>Founder&rsquo;s note</Eyebrow>

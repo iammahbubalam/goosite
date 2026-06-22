@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { MapPin, HeartHandshake, Microscope, Leaf } from "lucide-react";
 import { PageHero } from "@/components/sections/page-hero";
-import { ArtPanel } from "@/components/ui/art-panel";
+import { Photo } from "@/components/ui/photo";
 import { Eyebrow } from "@/components/ui/section";
 import { CtaBand } from "@/components/sections/cta-band";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
+import { MaskReveal } from "@/components/motion/mask-reveal";
 
 export const metadata: Metadata = {
   title: "Our Farms",
@@ -41,6 +42,8 @@ export default function FarmsPage() {
     <>
       <PageHero
         eyebrow="Our farms"
+        mediaTone="field"
+        mediaLabel="Green fields. Morning light."
         title={
           <>
             Where your
@@ -54,18 +57,22 @@ export default function FarmsPage() {
       {/* Immersive panel */}
       <section className="bg-cream pt-4 pb-24 md:pb-28">
         <div className="container-x">
-          <Reveal>
-            <ArtPanel tone="field" className="aspect-[16/9] md:aspect-[21/9]">
+          {/* PHOTO SLOT: add src="/brand/photos/farm-hero.jpg" when ready */}
+          <MaskReveal className="aspect-[16/9] md:aspect-[21/9]">
+            <Photo
+              tone="field"
+              shader
+              alt="GOOWALI farm at morning"
+              rounded="rounded-none"
+              className="h-full w-full"
+            >
               <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
                 <p className="font-serif text-3xl text-ink/80 md:text-5xl">
                   Green fields. Morning light.
                 </p>
-                <p className="mt-3 max-w-md text-ink/60">
-                  Commissioned farm photography & drone film coming soon.
-                </p>
               </div>
-            </ArtPanel>
-          </Reveal>
+            </Photo>
+          </MaskReveal>
         </div>
       </section>
 

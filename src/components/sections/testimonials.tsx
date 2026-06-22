@@ -1,6 +1,7 @@
 import { Quote } from "lucide-react";
 import { Eyebrow } from "@/components/ui/section";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
+import { SplitReveal } from "@/components/motion/split-reveal";
 
 const ITEMS = [
   {
@@ -31,11 +32,11 @@ export function Testimonials() {
           <Reveal>
             <Eyebrow>From our family</Eyebrow>
           </Reveal>
-          <Reveal delay={0.05}>
-            <h2 className="text-headline mt-6">
-              Trust, one morning at a time.
-            </h2>
-          </Reveal>
+          <SplitReveal
+            as="h2"
+            className="text-headline mt-6"
+            text="Trust, one morning at a time."
+          />
         </div>
 
         <Stagger className="mt-14 grid gap-6 md:grid-cols-3">

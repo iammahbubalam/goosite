@@ -1,4 +1,6 @@
 import { Reveal } from "@/components/motion/reveal";
+import { Parallax } from "@/components/motion/parallax";
+import { SplitReveal } from "@/components/motion/split-reveal";
 import { Eyebrow } from "@/components/ui/section";
 import { ArtPanel } from "@/components/ui/art-panel";
 import { Button } from "@/components/ui/button";
@@ -9,8 +11,9 @@ export function Story() {
     <section className="bg-cream py-24 md:py-32">
       <div className="container-x grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <Reveal className="order-2 lg:order-1">
+          <Parallax amount={36}>
           <div className="grid grid-cols-5 grid-rows-5 gap-4 h-[30rem]">
-            <ArtPanel tone="field" className="col-span-3 row-span-3" />
+            <ArtPanel tone="field" shader className="col-span-3 row-span-3" />
             <ArtPanel tone="milk" className="col-span-2 row-span-2" />
             <ArtPanel tone="cream" className="col-span-2 row-span-3" />
             <ArtPanel tone="ink" className="col-span-3 row-span-2">
@@ -20,17 +23,18 @@ export function Story() {
               </div>
             </ArtPanel>
           </div>
+          </Parallax>
         </Reveal>
 
         <div className="order-1 lg:order-2">
           <Reveal>
             <Eyebrow>Our story</Eyebrow>
           </Reveal>
-          <Reveal delay={0.05}>
-            <h2 className="text-headline mt-6">
-              Healthy families begin with pure food.
-            </h2>
-          </Reveal>
+          <SplitReveal
+            as="h2"
+            className="text-headline mt-6"
+            text="Healthy families begin with pure food."
+          />
           <Reveal delay={0.1}>
             <div className="mt-7 space-y-5 text-lg leading-relaxed text-stone">
               <p>

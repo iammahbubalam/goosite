@@ -5,12 +5,15 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Menu, X } from "lucide-react";
+import { Bag } from "@phosphor-icons/react";
 import { NAV_LINKS, SITE } from "@/lib/site";
+import { useCart } from "@/lib/cart";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { count, setOpen: setCartOpen } = useCart();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -63,12 +66,19 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          <Link
-            href="/contact"
-            className="hidden rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-cream transition-all duration-500 hover:bg-ink-soft hover:-translate-y-0.5 sm:inline-flex"
+          <button
+            type="button"
+            aria-label={`Open basket, ${count} items`}
+            onClick={() => setCartOpen(true)}
+            className="relative inline-flex h-11 w-11 items-center justify-center rounded-full border hairline text-ink transition-colors hover:bg-cream"
           >
-            Order now
-          </Link>
+            <Bag size={19} />
+            {count > 0 && (
+              <span className="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-green px-1 text-[11px] font-semibold text-cream">
+                {count}
+              </span>
+            )}
+          </button>
           <button
             type="button"
             aria-label="Toggle menu"

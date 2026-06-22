@@ -1,47 +1,89 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
+import { useEffect, useRef } from "react";
 import {
   Sun,
   Tractor,
-  Milk,
-  FlaskConical,
+  Drop,
+  TestTube,
   Snowflake,
   Truck,
-  Home,
-} from "lucide-react";
+  House,
+} from "@phosphor-icons/react";
 import { Eyebrow } from "@/components/ui/section";
 import { Reveal } from "@/components/motion/reveal";
+import { SplitReveal } from "@/components/motion/split-reveal";
+import { FlowField } from "@/components/generative/flow-field";
+import { gsap } from "@/lib/gsap";
 
 const STEPS = [
   { Icon: Sun, title: "Dawn", text: "Cows wake and are milked by hand at first light." },
   { Icon: Tractor, title: "Farm", text: "Single-source from herds we know and trust." },
-  { Icon: Milk, title: "Collection", text: "Filtered and gathered within the hour." },
-  { Icon: FlaskConical, title: "Testing", text: "Every batch lab-checked for purity." },
+  { Icon: Drop, title: "Collection", text: "Filtered and gathered within the hour." },
+  { Icon: TestTube, title: "Testing", text: "Every batch lab-checked for purity." },
   { Icon: Snowflake, title: "Cooling", text: "Flash-chilled to lock in freshness." },
   { Icon: Truck, title: "Delivery", text: "Carried cold across the city overnight." },
-  { Icon: Home, title: "Family", text: "On your table, before breakfast." },
+  { Icon: House, title: "Family", text: "On your table, before breakfast." },
 ];
 
 export function MilkJourney() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start 0.8", "end 0.4"],
-  });
-  const lineScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const root = useRef<HTMLDivElement>(null);
+  const track = useRef<HTMLDivElement>(null);
+  const fill = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const trackEl = track.current;
+    const fillEl = fill.current;
+    if (!trackEl || !root.current) return;
+
+    const mm = gsap.matchMedia();
+
+    // Desktop: pin the section and scrub the track sideways.
+    mm.add("(min-width: 1024px) and (prefers-reduced-motion: no-preference)", () => {
+      const distance = () => trackEl.scrollWidth - window.innerWidth;
+
+      const tween = gsap.to(trackEl, {
+        x: () => -distance(),
+        ease: "none",
+        scrollTrigger: {
+          trigger: root.current,
+          start: "top top",
+          end: () => `+=${distance()}`,
+          pin: true,
+          scrub: 0.8,
+          invalidateOnRefresh: true,
+          onUpdate: (self) => {
+            if (fillEl) fillEl.style.transform = `scaleX(${self.progress})`;
+          },
+        },
+      });
+
+      return () => tween.kill();
+    });
+
+    return () => mm.revert();
+  }, []);
 
   return (
-    <section className="bg-dawn py-24 md:py-32">
-      <div className="container-x">
+    <section ref={root} className="relative isolate overflow-hidden bg-dawn">
+      <FlowField
+        seed={42}
+        palette={["#153b7a", "#6b9d38", "#d4af37"]}
+        fade="#fdfbf8"
+        density={0.9}
+        className="opacity-[0.55]"
+      />
+      {/* Heading */}
+      <div className="container-x pt-24 lg:pt-28">
         <div className="max-w-2xl">
           <Reveal>
             <Eyebrow>Farm to family</Eyebrow>
           </Reveal>
-          <Reveal delay={0.05}>
-            <h2 className="text-headline mt-6">Every drop tells a story.</h2>
-          </Reveal>
+          <SplitReveal
+            as="h2"
+            className="text-headline mt-6"
+            text="Every drop tells a story."
+          />
           <Reveal delay={0.1}>
             <p className="mt-6 text-lg leading-relaxed text-stone">
               Seven careful steps stand between our farms and your morning. Not
@@ -49,45 +91,39 @@ export function MilkJourney() {
             </p>
           </Reveal>
         </div>
+      </div>
 
-        <div ref={ref} className="relative mt-16">
-          {/* progress rail */}
-          <div className="absolute left-[27px] top-2 hidden h-[calc(100%-1rem)] w-px bg-ink/10 md:block">
-            <motion.div
-              style={{ scaleY: lineScale }}
-              className="h-full w-full origin-top bg-green"
+      {/* Track: horizontal on desktop, stacked on mobile */}
+      <div
+        ref={track}
+        className="mt-14 flex flex-col gap-6 px-6 pb-24 lg:mt-20 lg:h-[58vh] lg:flex-row lg:gap-0 lg:px-0 lg:pb-0"
+      >
+        {STEPS.map(({ Icon, title, text }, i) => (
+          <article
+            key={title}
+            className="group flex shrink-0 flex-col justify-end rounded-[2rem] border hairline bg-bg/70 p-8 backdrop-blur-sm transition-colors hover:bg-bg lg:mx-4 lg:h-full lg:w-[26rem] lg:rounded-[2.5rem] lg:p-12 lg:first:ml-[max(1.5rem,calc((100vw-80rem)/2+2.5rem))]"
+          >
+            <span className="font-serif text-6xl text-ink/15 lg:text-7xl">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <span className="mt-8 inline-flex h-14 w-14 items-center justify-center rounded-full bg-green/12 text-green">
+              <Icon size={26} weight="light" />
+            </span>
+            <h3 className="mt-6 font-serif text-3xl text-night">{title}</h3>
+            <p className="mt-2 max-w-xs text-stone">{text}</p>
+          </article>
+        ))}
+      </div>
+
+      {/* Progress rail (desktop scrub) */}
+      <div className="hidden lg:block">
+        <div className="container-x pb-16">
+          <div className="h-px w-full bg-ink/10">
+            <div
+              ref={fill}
+              className="h-px w-full origin-left scale-x-0 bg-green"
             />
           </div>
-
-          <ol className="space-y-10 md:space-y-14">
-            {STEPS.map(({ Icon, title, text }, i) => (
-              <motion.li
-                key={title}
-                initial={{ opacity: 0, x: -16 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{
-                  duration: 0.8,
-                  ease: [0.16, 1, 0.3, 1],
-                  delay: i * 0.04,
-                }}
-                className="relative flex items-start gap-6 md:gap-8"
-              >
-                <span className="relative z-10 inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full border hairline bg-bg text-ink shadow-[var(--shadow-soft)]">
-                  <Icon size={22} strokeWidth={1.6} />
-                </span>
-                <div className="pt-1.5">
-                  <p className="text-eyebrow text-green/80">
-                    Step {String(i + 1).padStart(2, "0")}
-                  </p>
-                  <h3 className="mt-1.5 font-serif text-2xl text-night md:text-3xl">
-                    {title}
-                  </h3>
-                  <p className="mt-2 max-w-md text-stone">{text}</p>
-                </div>
-              </motion.li>
-            ))}
-          </ol>
         </div>
       </div>
     </section>

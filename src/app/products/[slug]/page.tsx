@@ -12,8 +12,10 @@ import { Button } from "@/components/ui/button";
 import { Eyebrow } from "@/components/ui/section";
 import { MilkWave } from "@/components/ui/milk-wave";
 import { ProductCard } from "@/components/product/product-card";
+import { AddToCart } from "@/components/cart/add-to-cart";
 import { Faq } from "@/components/sections/faq";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
+import { MaskReveal } from "@/components/motion/mask-reveal";
 
 export function generateStaticParams() {
   return PRODUCTS.map((p) => ({ slug: p.slug }));
@@ -62,10 +64,12 @@ export default async function ProductPage({
           </Link>
 
           <div className="mt-8 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-            <Reveal>
+            <MaskReveal className="aspect-square">
               <ArtPanel
                 tone={toneFor(product.category)}
-                className="aspect-square"
+                shader
+                rounded="rounded-none"
+                className="h-full w-full"
               >
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="px-6 text-center font-serif text-5xl text-ink/20 md:text-6xl">
@@ -73,7 +77,7 @@ export default async function ProductPage({
                   </span>
                 </div>
               </ArtPanel>
-            </Reveal>
+            </MaskReveal>
 
             <div>
               <Reveal>
@@ -102,9 +106,12 @@ export default async function ProductPage({
               </Reveal>
               <Reveal delay={0.25}>
                 <div className="mt-8 flex flex-wrap gap-4">
-                  <Button href="/contact" size="lg">
-                    Order now
-                  </Button>
+                  <AddToCart
+                    slug={product.slug}
+                    name={product.name}
+                    price={product.price}
+                    unit={product.unit}
+                  />
                   <Button href="/subscription" variant="outline" size="lg">
                     Subscribe &amp; save
                   </Button>

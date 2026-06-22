@@ -3,6 +3,7 @@ import { PRODUCTS } from "@/lib/products";
 import { Eyebrow } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { ProductCard } from "@/components/product/product-card";
+import { SplitReveal } from "@/components/motion/split-reveal";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
 
 export function ProductShowcase() {
@@ -16,11 +17,11 @@ export function ProductShowcase() {
             <Reveal>
               <Eyebrow>The range</Eyebrow>
             </Reveal>
-            <Reveal delay={0.05}>
-              <h2 className="text-headline mt-6">
-                Milk is the hero. Everything else supports it.
-              </h2>
-            </Reveal>
+            <SplitReveal
+              as="h2"
+              className="text-headline mt-6"
+              text="Milk is the hero. Everything else supports it."
+            />
           </div>
           <Reveal delay={0.1}>
             <Button href="/products" variant="outline">

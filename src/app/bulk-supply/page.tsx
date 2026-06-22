@@ -68,6 +68,8 @@ export default function BulkSupplyPage() {
     <>
       <PageHero
         eyebrow="For business"
+        mediaTone="ink"
+        mediaLabel="From our farms to your kitchen."
         title={
           <>
             Purity,

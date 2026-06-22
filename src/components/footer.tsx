@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Camera, AtSign, Play } from "lucide-react";
+import { InstagramLogo, FacebookLogo, YoutubeLogo } from "@phosphor-icons/react/dist/ssr";
 import { NAV_LINKS, SITE } from "@/lib/site";
 import { MilkWave } from "@/components/ui/milk-wave";
 
@@ -56,9 +56,9 @@ export function Footer() {
           </ul>
           <div className="mt-6 flex gap-3">
             {[
-              { Icon: Camera, href: SITE.social.instagram, label: "Instagram" },
-              { Icon: AtSign, href: SITE.social.facebook, label: "Facebook" },
-              { Icon: Play, href: SITE.social.youtube, label: "YouTube" },
+              { Icon: InstagramLogo, href: SITE.social.instagram, label: "Instagram" },
+              { Icon: FacebookLogo, href: SITE.social.facebook, label: "Facebook" },
+              { Icon: YoutubeLogo, href: SITE.social.youtube, label: "YouTube" },
             ].map(({ Icon, href, label }) => (
               <a
                 key={label}
@@ -73,6 +73,16 @@ export function Footer() {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* grand wordmark */}
+      <div
+        aria-hidden
+        className="select-none overflow-hidden px-4 pt-10"
+      >
+        <p className="text-center font-serif text-[20vw] font-light leading-[0.8] tracking-tight text-cream/10">
+          GOOWALI
+        </p>
       </div>
 
       <div className="container-x flex flex-col gap-3 border-t border-cream/15 py-7 text-sm text-cream/50 sm:flex-row sm:items-center sm:justify-between">

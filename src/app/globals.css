@@ -116,6 +116,62 @@
   }
 }
 
+/* Editorial marquee */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 38s linear infinite;
+}
+
+/* Milk surface drift */
+@keyframes milk-surface {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-milk-surface {
+  animation: milk-surface 14s linear infinite;
+}
+@keyframes milk-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1.2%);
+  }
+}
+.animate-milk-bob {
+  animation: milk-bob 7s ease-in-out infinite;
+}
+
+/* Masked line reveal (SplitType) */
+.reveal-line {
+  overflow: hidden;
+  padding-bottom: 0.06em;
+}
+
+/* Lenis smooth scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,

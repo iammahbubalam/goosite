@@ -3,6 +3,11 @@ import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { SmoothScroll } from "@/components/providers/smooth-scroll";
+import { CartProvider } from "@/lib/cart";
+import { CartDrawer } from "@/components/cart/cart-drawer";
+import { Grain } from "@/components/ui/grain";
+import { Toaster } from "sonner";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -51,9 +56,26 @@ export default function RootLayout({
       className={`${fraunces.variable} ${inter.variable} h-full`}
     >
       <body className="min-h-full flex flex-col bg-bg text-night antialiased">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <CartProvider>
+          <SmoothScroll>
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </SmoothScroll>
+          <CartDrawer />
+        </CartProvider>
+        <Grain />
+        <Toaster
+          position="bottom-right"
+          toastOptions={{
+            style: {
+              background: "var(--color-cream)",
+              color: "var(--color-night)",
+              border: "1px solid color-mix(in srgb, var(--color-ink) 12%, transparent)",
+              borderRadius: "1rem",
+            },
+          }}
+        />
       </body>
     </html>
   );

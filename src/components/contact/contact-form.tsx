@@ -1,18 +1,55 @@
 "use client";
 
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import { motion, AnimatePresence } from "motion/react";
-import { Check } from "lucide-react";
+import { Check } from "@phosphor-icons/react";
+import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 
 const inputClass =
   "w-full rounded-2xl border border-ink/15 bg-bg px-5 py-3.5 text-night placeholder:text-stone/60 transition-colors focus:border-ink/40 focus:outline-none focus:ring-2 focus:ring-ink/10";
 
-const TOPICS = ["Order milk", "Subscription", "Bulk supply", "Something else"];
+const TOPICS = ["Order milk", "Subscription", "Bulk supply", "Something else"] as const;
+
+const schema = z.object({
+  topic: z.string(),
+  name: z.string().min(2, "Please tell us your name"),
+  phone: z.string().min(6, "A valid phone number, please"),
+  email: z.union([z.string().email("Check this email"), z.literal("")]),
+  area: z.string().optional(),
+  message: z.string().min(5, "A little more detail helps us help you"),
+});
+
+type FormValues = z.infer<typeof schema>;
 
 export function ContactForm() {
   const [sent, setSent] = useState(false);
-  const [topic, setTopic] = useState(TOPICS[0]);
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    setValue,
+    formState: { errors, isSubmitting },
+  } = useForm<FormValues>({
+    resolver: zodResolver(schema),
+    defaultValues: { topic: TOPICS[0], email: "" },
+  });
+
+  const topic = watch("topic");
+
+  const onSubmit = async (data: FormValues) => {
+    // Simulate a network round-trip; wire to a real endpoint later.
+    await new Promise((r) => setTimeout(r, 700));
+    console.info("contact submission", data);
+    setSent(true);
+    toast.success("Message sent", {
+      description: "We'll be in touch within one business day.",
+    });
+  };
 
   return (
     <div className="rounded-[2.5rem] border hairline bg-cream p-8 md:p-10">
@@ -27,9 +64,7 @@ export function ContactForm() {
             <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-green/15 text-green">
               <Check size={28} />
             </span>
-            <h3 className="mt-6 font-serif text-3xl text-night">
-              Thank you.
-            </h3>
+            <h3 className="mt-6 font-serif text-3xl text-night">Thank you.</h3>
             <p className="mt-3 max-w-xs text-stone">
               We&rsquo;ve received your message and will be in touch within one
               business day.
@@ -40,22 +75,20 @@ export function ContactForm() {
             key="form"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            onSubmit={(e) => {
-              e.preventDefault();
-              setSent(true);
-            }}
+            onSubmit={handleSubmit(onSubmit)}
             className="space-y-6"
+            noValidate
           >
             <div>
-              <label className="text-eyebrow text-stone/70">
+              <span className="text-eyebrow text-stone/70">
                 What can we help with?
-              </label>
+              </span>
               <div className="mt-3 flex flex-wrap gap-2.5">
                 {TOPICS.map((t) => (
                   <button
                     key={t}
                     type="button"
-                    onClick={() => setTopic(t)}
+                    onClick={() => setValue("topic", t)}
                     className={cn(
                       "rounded-full px-4 py-2 text-sm transition-colors",
                       topic === t
@@ -70,39 +103,56 @@ export function ContactForm() {
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
-              <input
-                required
-                placeholder="Your name"
-                className={inputClass}
-                autoComplete="name"
-              />
-              <input
-                required
-                type="tel"
-                placeholder="Phone number"
-                className={inputClass}
-                autoComplete="tel"
-              />
+              <Field error={errors.name?.message}>
+                <input
+                  placeholder="Your name"
+                  className={inputClass}
+                  autoComplete="name"
+                  {...register("name")}
+                />
+              </Field>
+              <Field error={errors.phone?.message}>
+                <input
+                  type="tel"
+                  placeholder="Phone number"
+                  className={inputClass}
+                  autoComplete="tel"
+                  {...register("phone")}
+                />
+              </Field>
             </div>
+
+            <Field error={errors.email?.message}>
+              <input
+                type="email"
+                placeholder="Email (optional)"
+                className={inputClass}
+                autoComplete="email"
+                {...register("email")}
+              />
+            </Field>
+
             <input
-              type="email"
-              placeholder="Email (optional)"
+              placeholder="Your area in Dhaka"
               className={inputClass}
-              autoComplete="email"
+              {...register("area")}
             />
-            <input placeholder="Your area in Dhaka" className={inputClass} />
-            <textarea
-              required
-              rows={4}
-              placeholder="Tell us a little about what you need…"
-              className={cn(inputClass, "resize-none")}
-            />
+
+            <Field error={errors.message?.message}>
+              <textarea
+                rows={4}
+                placeholder="Tell us a little about what you need…"
+                className={cn(inputClass, "resize-none")}
+                {...register("message")}
+              />
+            </Field>
 
             <button
               type="submit"
-              className="w-full rounded-full bg-ink py-4 font-medium text-cream transition-all duration-500 hover:bg-ink-soft hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)]"
+              disabled={isSubmitting}
+              className="w-full rounded-full bg-ink py-4 font-medium text-cream transition-all duration-500 hover:bg-ink-soft hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)] disabled:opacity-60"
             >
-              Send message
+              {isSubmitting ? "Sending…" : "Send message"}
             </button>
             <p className="text-center text-sm text-stone">
               We reply within one business day.
@@ -110,6 +160,21 @@ export function ContactForm() {
           </motion.form>
         )}
       </AnimatePresence>
+    </div>
+  );
+}
+
+function Field({
+  children,
+  error,
+}: {
+  children: React.ReactNode;
+  error?: string;
+}) {
+  return (
+    <div>
+      {children}
+      {error && <p className="mt-1.5 px-1 text-sm text-[#b15c3a]">{error}</p>}
     </div>
   );
 }

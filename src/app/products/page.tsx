@@ -17,6 +17,7 @@ export default function ProductsPage() {
     <>
       <PageHero
         eyebrow="The range"
+        mediaLabel="Milk is the hero."
         title={
           <>
             Honest food,
