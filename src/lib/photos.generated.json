@@ -1,0 +1,30 @@
+{
+  "farm-hero": {
+    "src": "/brand/photos/farm-hero.webp",
+    "alt": "GOOWALI dairy farm in Bangladesh at dawn",
+    "width": 1408,
+    "height": 768,
+    "lqip": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAABwAwCdASoYAA0ALrV2u12jqampiYC0SgCdAEO/YyZzF9EjJwAA/vcFNHq7IFICfU2mCfU19XZ4XizfsE4PuO0S7r1KaBOKTzgSUxm2d5/PHmgplGS5A3jfbCoXUgUC9LNDAAAA"
+  },
+  "story-cows": {
+    "src": "/brand/photos/story-cows.webp",
+    "alt": "Healthy cows grazing in a green field at morning",
+    "width": 1280,
+    "height": 896,
+    "lqip": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAABQBQCdASoYABEAPu1srFEppaQiqAqpMB2JYwCsAYxYcLqRHaTXy7DVdYFUGj1Jo217ysAA/u++pS7bFuJAIvWynXrZmnPCoy+fxeDsfqi8WuEXVWTdIbdni1/RL7jAQvb0a4i5exWXWT6lGuD4tZraOyXKiTlGKQq5Z51zCIhkvNjVERsYOOGzs7SvcEr6ST6xgNfLC5oB3Ki5uwRczvNKRi3T89koX6kqnDAA"
+  },
+  "blog-farm-morning": {
+    "src": "/brand/photos/blog-farm-morning.webp",
+    "alt": "Early morning at the dairy farm",
+    "width": 1280,
+    "height": 896,
+    "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAADwBACdASoYABEAPu1ur1KppiQiqAgBMB2JYwCo9BBX52vIX1OGTszNxaUp7FGjfAAA/vHgohBIOrBHEpr3KzmBnWAbKeOe/ZikCbb07cJgi2F2+hEahVMNQIcJboMSIhYxFjlBYVjo6sS87m09b6+PQq+x/ETahtvhMHTtGgA="
+  },
+  "blog-mustard-oil": {
+    "src": "/brand/photos/blog-mustard-oil.webp",
+    "alt": "Cold-pressed mustard oil and cooking",
+    "width": 1280,
+    "height": 896,
+    "lqip": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAADQBACdASoYABEAPu1ur1IppiQiqAgBMB2JaACxHyS8qCYdHgtH21JrJidyGlV+5AD+xdBbEaebFYy5he1JZYl3Y7uq5ba7HDuXzNwZlnwWHAn/tPvVbLWu4TjVGJGFb9gRDLT341QuE+/mPzSSJBV9H9cBnvepnGSV6DSvRVMkMWK7IaqL8pX8QUdyN241tdUkdBfjv0RTm21G/NMLj2p+BiKF+hhfh32h33y3iwsLDXFbrG9axJHWOxJHVt4M/3pJaUAA"
+  }
+}

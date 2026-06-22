@@ -1,0 +1,104 @@
+{
+  "style": "Photoreal editorial photography for a premium Bangladeshi dairy brand. Soft natural morning light, warm cream and ivory tones, gentle shallow depth of field, calm and honest mood, fine film grain, muted palette leaning to cream (#FFF9F2), deep blue (#153B7A) accents and natural green (#6B9D38). No text, no logos, no watermarks, no harsh studio flash, no garish saturation, not stock-photo lighting.",
+  "negative": "text, watermark, logo, distorted hands, extra fingers, plastic look, oversaturated, lowres, cartoon, 3d render, busy background",
+  "slots": [
+    {
+      "id": "farm-hero",
+      "aspectRatio": "16:9",
+      "maxWidth": 1920,
+      "alt": "GOOWALI dairy farm in Bangladesh at dawn",
+      "prompt": "A serene Bangladeshi dairy farm at dawn, lush green pasture with soft morning mist, a few healthy cows grazing in the distance, gentle golden light, a simple farmhouse, calm and pure atmosphere, editorial wide shot."
+    },
+    {
+      "id": "story-cows",
+      "aspectRatio": "4:3",
+      "maxWidth": 1280,
+      "alt": "Healthy cows grazing in a green field at morning",
+      "prompt": "Healthy brown and white cows grazing peacefully in a lush green Bangladeshi field, soft morning light and dew, shallow depth of field, warm and natural, editorial farm photography."
+    },
+    {
+      "id": "story-milking",
+      "aspectRatio": "4:3",
+      "maxWidth": 1280,
+      "alt": "Fresh milk being collected at the farm",
+      "prompt": "Close up of fresh creamy milk being poured into a clean steel pail at a farm in soft morning light, hands of a farmer, authentic and hygienic, warm cream tones, shallow depth of field."
+    },
+    {
+      "id": "family-breakfast",
+      "aspectRatio": "4:3",
+      "maxWidth": 1280,
+      "alt": "A warm family breakfast with fresh milk",
+      "prompt": "A bright warm breakfast table set with glasses of fresh milk, fresh bread and fruit, two adults sharing a calm morning moment, soft natural window light, cream and white tones, genuine candid editorial lifestyle photography."
+    },
+    {
+      "id": "glass-pour",
+      "aspectRatio": "3:4",
+      "maxWidth": 1080,
+      "alt": "Pure milk poured into a glass",
+      "prompt": "A clear glass being filled with pure white milk, a gentle splash and droplets, clean cream background, soft directional morning light, premium product photography, fresh and pure."
+    },
+    {
+      "id": "bottle-product",
+      "aspectRatio": "3:4",
+      "maxWidth": 1080,
+      "alt": "Glass bottle of fresh milk",
+      "prompt": "A clear glass milk bottle with a gold foil cap full of fresh white milk, beside a glass of milk, on a cream surface with a few green leaves, soft morning light, premium minimal product photography, condensation on the glass."
+    },
+    {
+      "id": "founder",
+      "aspectRatio": "3:4",
+      "maxWidth": 1080,
+      "alt": "Portrait of the GOOWALI founder",
+      "prompt": "A warm, dignified portrait of a middle aged Bangladeshi dairy farmer and entrepreneur standing in a green field at morning, gentle confident smile, soft natural light, honest and trustworthy, editorial portrait, shallow depth of field."
+    },
+    {
+      "id": "testimonial-mother",
+      "aspectRatio": "1:1",
+      "maxWidth": 640,
+      "alt": "Portrait of a happy mother",
+      "prompt": "A soft natural portrait of a happy young Bangladeshi mother in a bright kitchen, warm candid smile, gentle window light, cream tones, editorial lifestyle, shallow depth of field."
+    },
+    {
+      "id": "testimonial-subscriber",
+      "aspectRatio": "1:1",
+      "maxWidth": 640,
+      "alt": "Portrait of a satisfied customer",
+      "prompt": "A relaxed natural portrait of a Bangladeshi man in his thirties at home in the morning holding a glass of milk, warm gentle smile, soft light, cream tones, editorial lifestyle."
+    },
+    {
+      "id": "testimonial-chef",
+      "aspectRatio": "1:1",
+      "maxWidth": 640,
+      "alt": "Portrait of a pastry chef",
+      "prompt": "A natural portrait of a Bangladeshi female pastry chef in a clean bright kitchen, warm professional smile, soft daylight, cream and white tones, editorial lifestyle, shallow depth of field."
+    },
+    {
+      "id": "blog-children",
+      "aspectRatio": "16:9",
+      "maxWidth": 1600,
+      "alt": "A glass of fresh milk in warm morning light",
+      "prompt": "A tall glass of fresh milk on a bright breakfast table with soft morning light, a hand reaching for it, warm cream tones, candid and pure, editorial lifestyle photography."
+    },
+    {
+      "id": "blog-raw-vs-past",
+      "aspectRatio": "4:3",
+      "maxWidth": 1280,
+      "alt": "Two glasses of milk side by side",
+      "prompt": "Two clear glasses of milk side by side on a cream surface in soft morning light, minimal and clean, premium editorial still life, gentle shadows."
+    },
+    {
+      "id": "blog-farm-morning",
+      "aspectRatio": "4:3",
+      "maxWidth": 1280,
+      "alt": "Early morning at the dairy farm",
+      "prompt": "Early misty morning at a Bangladeshi dairy farm, golden light through trees, a cow and a farmer silhouette, peaceful and atmospheric, editorial documentary photography."
+    },
+    {
+      "id": "blog-mustard-oil",
+      "aspectRatio": "4:3",
+      "maxWidth": 1280,
+      "alt": "Cold-pressed mustard oil and cooking",
+      "prompt": "A bottle of golden cold-pressed mustard oil beside fresh ingredients on a warm wooden kitchen surface, soft natural light, rich golden and cream tones, premium editorial food photography."
+    }
+  ]
+}

@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
+import { scrollState } from "@/lib/scroll";
 
 /**
  * Lenis smooth scroll synced to the GSAP ticker so ScrollTrigger and Lenis
@@ -22,7 +23,15 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
       touchMultiplier: 1.6,
     });
 
-    lenis.on("scroll", ScrollTrigger.update);
+    lenis.on(
+      "scroll",
+      (e: { progress: number; velocity: number; scroll: number }) => {
+        scrollState.progress = e.progress;
+        scrollState.velocity = e.velocity;
+        scrollState.y = e.scroll;
+        ScrollTrigger.update();
+      },
+    );
 
     const raf = (time: number) => lenis.raf(time * 1000);
     gsap.ticker.add(raf);
