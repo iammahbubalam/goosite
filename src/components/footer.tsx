@@ -51,6 +51,18 @@ export function Footer() {
             From our farms to your family. Fresh, pure, honest — every morning.
           </p>
           <p className="mt-4 text-sm text-cream/60">{SITE.taglineBn}</p>
+          <p className="mt-6 text-sm text-cream/55">
+            A sister concern of{" "}
+            <a
+              href="https://agnosgroup.com"
+              target="_blank"
+              rel="noreferrer"
+              className="group/agnos relative font-medium text-cream/80 transition-colors duration-500 hover:text-cream"
+            >
+              Agnos Dairy &amp; Livestock
+              <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-sage transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/agnos:w-full" />
+            </a>
+          </p>
         </div>
 
         <div className="md:col-span-3 md:col-start-7">

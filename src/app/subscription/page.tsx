@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Sunrise, SlidersHorizontal, HandHeart } from "lucide-react";
 import { PageHero } from "@/components/sections/page-hero";
 import { PlanSelector } from "@/components/subscription/plan-selector";
+import { CustomPlanBuilder } from "@/components/subscription/custom-plan-builder";
 import { Eyebrow } from "@/components/ui/section";
 import { Faq } from "@/components/sections/faq";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
@@ -141,6 +142,31 @@ export default function SubscriptionPage() {
             </Reveal>
           </div>
           <PlanSelector />
+        </div>
+      </section>
+
+      {/* Build your own */}
+      <section className="bg-bg py-24 md:py-28">
+        <div className="container-x">
+          <div className="mb-12 max-w-2xl">
+            <Reveal>
+              <Eyebrow>Build your own</Eyebrow>
+            </Reveal>
+            <Reveal delay={0.05}>
+              <h2 className="text-headline mt-5">
+                Or design a plan that&rsquo;s entirely yours.
+              </h2>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-stone">
+                Pick your milk, your quantity and the days that suit you. We&rsquo;ll
+                price it as you go — no surprises.
+              </p>
+            </Reveal>
+          </div>
+          <Reveal delay={0.1}>
+            <CustomPlanBuilder />
+          </Reveal>
         </div>
       </section>
 
