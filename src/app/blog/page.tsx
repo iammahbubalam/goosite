@@ -64,8 +64,9 @@ export default function BlogPage() {
     <>
       <PageHero
         milk="cream"
-        mediaTone="cream"
         eyebrow="The journal"
+        mediaPhoto="story-milking"
+        mediaLabel="Slow mornings, honest stories."
         title={
           <>
             Stories worth

@@ -6,6 +6,8 @@ import { MaskReveal } from "@/components/motion/mask-reveal";
 import { ArtPanel } from "@/components/ui/art-panel";
 import { MilkVessel } from "@/components/shader/milk-vessel";
 import { ShaderField } from "@/components/shader/shader-field";
+import { Photo } from "@/components/ui/photo";
+import { getPhoto } from "@/lib/photo";
 
 type Tone = "cream" | "milk" | "ink" | "green" | "field";
 
@@ -67,6 +69,7 @@ export function PageHero({
   media,
   mediaTone = "milk",
   mediaLabel,
+  mediaPhoto,
   milk = "cream",
 }: {
   eyebrow: string;
@@ -77,10 +80,14 @@ export function PageHero({
   media?: ReactNode;
   mediaTone?: Tone;
   mediaLabel?: string;
+  /** Real photo id (from photos.generated.json) for the right column. */
+  mediaPhoto?: string;
   /** Which flowing-milk mood paints behind this hero. */
   milk?: MilkVariant;
 }) {
   const m = MILK[milk];
+  const photo = mediaPhoto ? getPhoto(mediaPhoto) : undefined;
+  const onPhoto = Boolean(photo) || mediaTone === "ink";
   return (
     <section className="relative isolate overflow-hidden bg-morning pt-36 pb-0 md:pt-44">
       {/* flowing milk backdrop — a different mood per page */}
@@ -128,7 +135,16 @@ export function PageHero({
             className="relative aspect-[4/5] shadow-[var(--shadow-lift)] ring-1 ring-inset ring-ink/5"
           >
             {media ??
-              (mediaTone === "milk" ? (
+              (photo ? (
+                <Photo
+                  src={photo.src}
+                  blurDataURL={photo.lqip}
+                  alt={mediaLabel ?? eyebrow}
+                  rounded="rounded-none"
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  className="h-full w-full"
+                />
+              ) : mediaTone === "milk" ? (
                 <MilkVessel />
               ) : (
                 <ArtPanel
@@ -138,11 +154,17 @@ export function PageHero({
                   className="h-full w-full"
                 />
               ))}
+            {photo && (
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-night/55 via-transparent to-transparent"
+              />
+            )}
             {mediaLabel && (
               <div className="absolute inset-x-0 bottom-0 z-10 p-8">
                 <p
                   className={`font-serif text-2xl ${
-                    mediaTone === "ink" ? "text-cream/85" : "text-ink/80"
+                    onPhoto ? "text-cream" : "text-ink/80"
                   }`}
                 >
                   {mediaLabel}

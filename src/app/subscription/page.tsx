@@ -38,6 +38,7 @@ export default function SubscriptionPage() {
       <PageHero
         milk="cream"
         eyebrow="Milk subscription"
+        mediaPhoto="family-breakfast"
         mediaLabel="Fresh at your door, every dawn."
         title={
           <>

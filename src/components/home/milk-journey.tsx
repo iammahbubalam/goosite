@@ -68,10 +68,10 @@ export function MilkJourney() {
     <section ref={root} className="relative isolate overflow-hidden bg-dawn">
       <FlowField
         seed={42}
-        palette={["#153b7a", "#6b9d38", "#d4af37"]}
+        palette={["#153b7a", "#6e8c57", "#d4af37"]}
         fade="#fdfbf8"
-        density={0.9}
-        className="opacity-[0.55]"
+        density={0.6}
+        className="opacity-[0.3]"
       />
       {/* Heading */}
       <div className="container-x pt-24 lg:pt-28">
@@ -106,7 +106,7 @@ export function MilkJourney() {
             <span className="font-serif text-6xl text-ink/15 lg:text-7xl">
               {String(i + 1).padStart(2, "0")}
             </span>
-            <span className="mt-8 inline-flex h-14 w-14 items-center justify-center rounded-full bg-green/12 text-green">
+            <span className="mt-8 inline-flex h-14 w-14 items-center justify-center rounded-full bg-sage/12 text-sage">
               <Icon size={26} weight="light" />
             </span>
             <h3 className="mt-6 font-serif text-3xl text-night">{title}</h3>
@@ -121,7 +121,7 @@ export function MilkJourney() {
           <div className="h-px w-full bg-ink/10">
             <div
               ref={fill}
-              className="h-px w-full origin-left scale-x-0 bg-green"
+              className="h-px w-full origin-left scale-x-0 bg-sage"
             />
           </div>
         </div>

@@ -26,6 +26,7 @@ export default function AboutPage() {
     <>
       <PageHero
         milk="gold"
+        mediaPhoto="glass-pour"
         mediaLabel="Pure food, honest source."
         eyebrow="About GOOWALI"
         title={

@@ -26,7 +26,6 @@ export function SubscriptionTeaser() {
         className="pointer-events-none absolute inset-0 -z-10 bg-ink/45"
       />
       <div className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-cream/5 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-40 -left-24 h-96 w-96 rounded-full bg-green/10 blur-3xl" />
       <div className="container-x relative grid items-center gap-14 lg:grid-cols-2">
         <div>
           <Reveal>

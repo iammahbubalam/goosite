@@ -69,7 +69,7 @@ export default function BulkSupplyPage() {
       <PageHero
         milk="ink"
         eyebrow="For business"
-        mediaTone="ink"
+        mediaPhoto="farm-hero"
         mediaLabel="From our farms to your kitchen."
         title={
           <>

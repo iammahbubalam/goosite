@@ -1,8 +1,10 @@
 import { Reveal } from "@/components/motion/reveal";
 import { Parallax } from "@/components/motion/parallax";
 import { SplitReveal } from "@/components/motion/split-reveal";
+import { MaskReveal } from "@/components/motion/mask-reveal";
 import { Eyebrow } from "@/components/ui/section";
-import { ArtPanel } from "@/components/ui/art-panel";
+import { Photo } from "@/components/ui/photo";
+import { getPhoto } from "@/lib/photo";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
@@ -12,17 +14,26 @@ export function Story() {
       <div className="container-x grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <Reveal className="order-2 lg:order-1">
           <Parallax amount={36}>
-          <div className="grid grid-cols-5 grid-rows-5 gap-4 h-[30rem]">
-            <ArtPanel tone="field" shader className="col-span-3 row-span-3" />
-            <ArtPanel tone="milk" className="col-span-2 row-span-2" />
-            <ArtPanel tone="cream" className="col-span-2 row-span-3" />
-            <ArtPanel tone="ink" className="col-span-3 row-span-2">
-              <div className="flex h-full flex-col justify-end p-6">
-                <p className="font-serif text-3xl text-cream">4am</p>
-                <p className="text-sm text-cream/70">the day begins</p>
-              </div>
-            </ArtPanel>
-          </div>
+            <MaskReveal
+              rounded="rounded-[2.5rem]"
+              className="relative aspect-[4/5] shadow-[var(--shadow-lift)] ring-1 ring-inset ring-ink/5"
+            >
+              <Photo
+                src={getPhoto("story-milking")?.src}
+                blurDataURL={getPhoto("story-milking")?.lqip}
+                alt="Hand-milking at first light"
+                tone="field"
+                shader
+                rounded="rounded-none"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="h-full w-full"
+              >
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-night/55 to-transparent p-8">
+                  <p className="font-serif text-3xl text-cream">4am</p>
+                  <p className="text-sm text-cream/75">the day begins</p>
+                </div>
+              </Photo>
+            </MaskReveal>
           </Parallax>
         </Reveal>
 

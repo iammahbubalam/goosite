@@ -1,7 +1,8 @@
 import { ArrowRight } from "lucide-react";
 import { Eyebrow } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
-import { ArtPanel } from "@/components/ui/art-panel";
+import { Photo } from "@/components/ui/photo";
+import { getPhoto } from "@/lib/photo";
 import { Reveal } from "@/components/motion/reveal";
 
 const CLIENTS = ["Restaurants", "Cafés", "Tea shops", "Hotels", "Bakeries"];
@@ -51,19 +52,31 @@ export function B2BTeaser() {
         </div>
 
         <Reveal delay={0.1}>
-          <ArtPanel tone="ink" className="aspect-[5/4] p-10">
-            <div className="flex h-full flex-col justify-between">
+          <Photo
+            src={getPhoto("family-breakfast")?.src}
+            blurDataURL={getPhoto("family-breakfast")?.lqip}
+            alt="A table served with GOOWALI"
+            tone="ink"
+            rounded="rounded-[2rem]"
+            sizes="(max-width: 1024px) 100vw, 45vw"
+            className="aspect-[5/4]"
+          >
+            <div
+              aria-hidden
+              className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/55 to-ink/25"
+            />
+            <div className="relative flex h-full flex-col justify-between p-10">
               <p className="font-serif text-3xl leading-snug text-cream">
                 &ldquo;Our chai never tasted this consistent before GOOWALI.&rdquo;
               </p>
               <div>
                 <p className="font-medium text-cream">Tareq Hossain</p>
-                <p className="text-sm text-cream/60">
+                <p className="text-sm text-cream/70">
                   Owner, Porota House · Banani
                 </p>
               </div>
             </div>
-          </ArtPanel>
+          </Photo>
         </Reveal>
       </div>
     </section>
