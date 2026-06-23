@@ -1,104 +1,167 @@
 {
-  "style": "Photoreal editorial photography for a premium Bangladeshi dairy brand. Soft natural morning light, warm cream and ivory tones, gentle shallow depth of field, calm and honest mood, fine film grain, muted palette leaning to cream (#FFF9F2), deep blue (#153B7A) accents and natural green (#6B9D38). No text, no logos, no watermarks, no harsh studio flash, no garish saturation, not stock-photo lighting.",
-  "negative": "text, watermark, logo, distorted hands, extra fingers, plastic look, oversaturated, lowres, cartoon, 3d render, busy background",
+  "references": {
+    "logo": "assets/logo/goowali_logo_with_bg.png",
+    "pkg": "assets/pkging/ChatGPT Image Jun 7, 2026, 12_01_03 AM.png",
+    "banner": "assets/banner/Milk_brand_banner_design_idea_202606060218.jpeg"
+  },
+  "brandMark": "Reproduce the GOOWALI brand mark EXACTLY as in the first reference image — do NOT redesign, recolour, or invent a different logo. The emblem is a circular badge: a cream-and-tan cow's head with curved horns facing forward, resting in a swirl of pouring white milk with small green leaves, ringed by a deep-blue milk splash. The wordmark 'GOOWALI' is a bold deep-blue rounded serif where one letter is a glossy milk-drop, with the small Bengali tagline 'গরুর ১০০% খাঁটি দুধ' beneath. The product packaging label must carry this exact emblem and wordmark, undistorted, centred and legible — same cow, same blue, same shapes. Match the label style of the round-label reference too. No other logos, no garbled or invented text.",
+  "style": "ART DIRECTION — premium editorial photography for GOOWALI (Bangladesh), shot like a national flagship campaign: 50mm prime look, shallow depth of field, soft directional dawn light, creamy bokeh, gentle condensation/steam, a whisper of film grain, restrained natural colour grade. Palette anchored to cream/ivory (#FFF9F2), deep brand blue (#153B7A) and natural green (#6B9D38). Mood: calm, honest, nourishing, unmistakably fresh — Aesop-meets-Oatly restraint, never an advert, never busy. Hard nos: no harsh studio flash, no plastic CGI sheen, no oversaturation, no watermark, no extra fingers, no invented text beyond the GOOWALI label.",
   "slots": [
     {
-      "id": "farm-hero",
-      "aspectRatio": "16:9",
-      "maxWidth": 1920,
-      "alt": "GOOWALI dairy farm in Bangladesh at dawn",
-      "prompt": "A serene Bangladeshi dairy farm at dawn, lush green pasture with soft morning mist, a few healthy cows grazing in the distance, gentle golden light, a simple farmhouse, calm and pure atmosphere, editorial wide shot."
+      "id": "hero-glass", "aspectRatio": "4:5", "imageSize": "2K", "maxWidth": 1200,
+      "refs": ["logo", "pkg", "banner"],
+      "alt": "GOOWALI glass milk bottle and a glass of fresh milk",
+      "prompt": "Hero still life: a chilled clear GOOWALI glass milk bottle (white cap, GOOWALI label facing camera, crisp) brimming with fresh milk, condensation beading; to its right a tall glass of milk with one elegant splash frozen mid-air; on pale oak with two fresh green leaves; behind, a dreamy blurred green pasture in golden dawn light from the left. Quiet, luxurious, breakfast-fresh. Generous negative space at top."
     },
     {
-      "id": "story-cows",
-      "aspectRatio": "4:3",
-      "maxWidth": 1280,
-      "alt": "Healthy cows grazing in a green field at morning",
-      "prompt": "Healthy brown and white cows grazing peacefully in a lush green Bangladeshi field, soft morning light and dew, shallow depth of field, warm and natural, editorial farm photography."
+      "id": "raw-milk", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
+      "refs": ["logo", "pkg", "banner"],
+      "alt": "GOOWALI raw milk in a clear glass bottle",
+      "prompt": "A clear GOOWALI glass milk bottle of rich raw milk with a visible creamy top layer, white cap, GOOWALI label facing camera, beside a small pour into a glass, on a rustic cream surface with morning light and a few green leaves, blurred farm background. Wholesome and pure."
     },
     {
-      "id": "story-milking",
-      "aspectRatio": "4:3",
-      "maxWidth": 1280,
-      "alt": "Fresh milk being collected at the farm",
-      "prompt": "Close up of fresh creamy milk being poured into a clean steel pail at a farm in soft morning light, hands of a farmer, authentic and hygienic, warm cream tones, shallow depth of field."
+      "id": "pasteurized-milk", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
+      "refs": ["logo", "pkg", "banner"],
+      "alt": "GOOWALI pasteurized milk pouch",
+      "prompt": "A soft white GOOWALI milk pouch (sealed poly sachet) with the GOOWALI label printed on it, resting beside a full glass of milk on a clean cream kitchen counter in soft morning light, fresh and family-friendly, shallow depth of field."
     },
     {
-      "id": "family-breakfast",
-      "aspectRatio": "4:3",
-      "maxWidth": 1280,
-      "alt": "A warm family breakfast with fresh milk",
-      "prompt": "A bright warm breakfast table set with glasses of fresh milk, fresh bread and fruit, two adults sharing a calm morning moment, soft natural window light, cream and white tones, genuine candid editorial lifestyle photography."
+      "id": "uht-milk", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
+      "refs": ["logo", "pkg", "banner"],
+      "alt": "GOOWALI UHT long-life milk carton",
+      "prompt": "A GOOWALI UHT milk carton (tetra-style pack) with the GOOWALI label and cow emblem facing camera, standing on a cream surface with soft directional light and a glass of milk beside it, clean premium packaging shot, blurred warm background."
     },
     {
-      "id": "glass-pour",
-      "aspectRatio": "3:4",
-      "maxWidth": 1080,
-      "alt": "Pure milk poured into a glass",
-      "prompt": "A clear glass being filled with pure white milk, a gentle splash and droplets, clean cream background, soft directional morning light, premium product photography, fresh and pure."
+      "id": "doi", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
+      "refs": ["logo", "pkg", "banner"],
+      "alt": "GOOWALI doi (set yogurt) in a branded clay pot",
+      "prompt": "Traditional Bengali doi (set sweet yogurt) in a terracotta clay pot with a GOOWALI-branded paper lid/label showing the cow emblem, creamy thick yogurt surface with a mint leaf, on a warm wooden surface in soft morning light, authentic and appetising, shallow depth of field."
     },
     {
-      "id": "bottle-product",
-      "aspectRatio": "3:4",
-      "maxWidth": 1080,
-      "alt": "Glass bottle of fresh milk",
-      "prompt": "A clear glass milk bottle with a gold foil cap full of fresh white milk, beside a glass of milk, on a cream surface with a few green leaves, soft morning light, premium minimal product photography, condensation on the glass."
+      "id": "matha", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
+      "refs": ["logo", "pkg", "banner"],
+      "alt": "GOOWALI matha (spiced buttermilk) bottle and glass",
+      "prompt": "A GOOWALI bottle of matha (spiced buttermilk) with the GOOWALI label, beside a tall glass of frothy buttermilk garnished with a hint of herbs, cool and refreshing, cream surface, soft morning light, droplets of condensation, shallow depth of field."
     },
     {
-      "id": "founder",
-      "aspectRatio": "3:4",
-      "maxWidth": 1080,
+      "id": "cheese", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
+      "refs": ["logo", "pkg", "banner"],
+      "alt": "GOOWALI cheese block and wedge",
+      "prompt": "A GOOWALI-branded cheese block in a paper wrapper bearing the GOOWALI label, with a freshly cut wedge of pale cheese on a wooden board, a knife, a few green leaves, warm soft light, artisan and premium, shallow depth of field."
+    },
+    {
+      "id": "ghee", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
+      "refs": ["logo", "pkg", "banner"],
+      "alt": "GOOWALI pure cow ghee in a glass jar",
+      "prompt": "A clear glass jar of golden GOOWALI pure cow ghee with a GOOWALI label and cow emblem facing camera, lid off, a spoon of glistening ghee beside it, warm honeyed light, rich golden and cream tones, premium and aromatic, shallow depth of field."
+    },
+    {
+      "id": "mustard-oil", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
+      "refs": ["logo", "pkg", "banner"],
+      "alt": "GOOWALI cold-pressed mustard oil bottle",
+      "prompt": "A glass bottle of golden GOOWALI cold-pressed mustard oil with the GOOWALI label facing camera, a small heap of mustard seeds beside it, on a warm wooden kitchen surface, soft natural light, rich golden tones, premium organic, shallow depth of field."
+    },
+    {
+      "id": "chia-seeds", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
+      "refs": ["logo", "pkg", "banner"],
+      "alt": "GOOWALI organic chia seeds pouch",
+      "prompt": "A GOOWALI stand-up kraft pouch of organic chia seeds with the GOOWALI label, open at the top, a small ceramic bowl of chia seeds and a wooden spoon beside it, clean cream surface, soft morning light, healthy and natural, shallow depth of field."
+    },
+    {
+      "id": "turmeric-powder", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
+      "refs": ["logo", "pkg", "banner"],
+      "alt": "GOOWALI turmeric powder pack with roots",
+      "prompt": "A GOOWALI pack/jar of vivid golden turmeric powder with the GOOWALI label, a small mound of turmeric powder and a few fresh turmeric roots beside it, on a warm wooden surface, soft natural light, earthy and pure, shallow depth of field."
+    },
+    {
+      "id": "chili-powder", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
+      "refs": ["logo", "pkg", "banner"],
+      "alt": "GOOWALI red chili powder pack with chilies",
+      "prompt": "A GOOWALI pack/jar of vivid red chili powder with the GOOWALI label, a small mound of fine red chili powder and a few dried red chilies beside it, on a warm wooden surface, soft natural light, rich red and cream tones, shallow depth of field."
+    },
+    {
+      "id": "organic-spices", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
+      "refs": ["logo", "pkg", "banner"],
+      "alt": "GOOWALI organic spice set",
+      "prompt": "A small set of GOOWALI-branded spice packets/jars with the GOOWALI label, arranged with little bowls of whole and ground spices (cumin, coriander, garam masala) on a warm wooden surface, soft natural light, curated pantry feel, shallow depth of field."
+    },
+    {
+      "id": "farm-hero", "aspectRatio": "16:9", "imageSize": "2K", "maxWidth": 1920,
+      "refs": ["banner"],
+      "alt": "GOOWALI dairy farm at dawn",
+      "prompt": "A serene Bangladeshi dairy farm at dawn: lush green pasture with soft morning mist, a few healthy cows grazing, gentle golden light, a simple farmhouse in the distance, calm and pure. Wide editorial landscape, no products, no text."
+    },
+    {
+      "id": "story-cows", "aspectRatio": "4:5", "imageSize": "2K", "maxWidth": 1200,
+      "refs": ["banner"],
+      "alt": "Healthy cows grazing at morning",
+      "prompt": "Healthy brown-and-white cows grazing peacefully in a lush green Bangladeshi field at soft morning light with dew, shallow depth of field, warm natural editorial farm photography. Vertical portrait, no products, no text."
+    },
+    {
+      "id": "story-milking", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
+      "refs": ["banner"],
+      "alt": "Fresh milk collected at the farm",
+      "prompt": "Close-up of fresh creamy milk being poured into a clean steel pail at a farm in soft morning light, a farmer's hands, authentic and hygienic, warm cream tones, shallow depth of field. No text."
+    },
+    {
+      "id": "family-breakfast", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
+      "refs": ["logo", "banner"],
+      "alt": "A warm family breakfast with GOOWALI milk",
+      "prompt": "A bright warm Bangladeshi breakfast table seen slightly from above: a GOOWALI glass milk bottle (label facing camera, legible) and two filled glasses of milk among warm bread, fruit and simple ceramic plates; two adults' hands sharing the moment, warmth implied; morning light across cream linen. Honest, lived-in, gently joyful."
+    },
+    {
+      "id": "glass-pour", "aspectRatio": "3:4", "imageSize": "2K", "maxWidth": 1080,
+      "refs": ["banner"],
+      "alt": "Fresh milk poured into a glass",
+      "prompt": "Pure white milk being poured into a clear glass with a gentle natural splash and droplets, clean warm cream background, soft directional morning light, premium fresh dairy product photography. No text."
+    },
+    {
+      "id": "founder", "aspectRatio": "4:5", "imageSize": "2K", "maxWidth": 1080,
+      "refs": ["banner"],
       "alt": "Portrait of the GOOWALI founder",
-      "prompt": "A warm, dignified portrait of a middle aged Bangladeshi dairy farmer and entrepreneur standing in a green field at morning, gentle confident smile, soft natural light, honest and trustworthy, editorial portrait, shallow depth of field."
+      "prompt": "A warm dignified portrait of a middle-aged Bangladeshi dairy farmer-entrepreneur standing in a green field at morning, gentle confident smile, soft natural light, honest and trustworthy, editorial portrait, shallow depth of field. No text."
     },
     {
-      "id": "testimonial-mother",
-      "aspectRatio": "1:1",
-      "maxWidth": 640,
+      "id": "testimonial-mother", "aspectRatio": "1:1", "imageSize": "1K", "maxWidth": 640,
+      "refs": ["banner"],
       "alt": "Portrait of a happy mother",
-      "prompt": "A soft natural portrait of a happy young Bangladeshi mother in a bright kitchen, warm candid smile, gentle window light, cream tones, editorial lifestyle, shallow depth of field."
+      "prompt": "A soft natural portrait of a happy young Bangladeshi mother in a bright kitchen, warm candid smile, gentle window light, cream tones, editorial lifestyle, shallow depth of field. No text."
     },
     {
-      "id": "testimonial-subscriber",
-      "aspectRatio": "1:1",
-      "maxWidth": 640,
+      "id": "testimonial-subscriber", "aspectRatio": "1:1", "imageSize": "1K", "maxWidth": 640,
+      "refs": ["banner"],
       "alt": "Portrait of a satisfied customer",
-      "prompt": "A relaxed natural portrait of a Bangladeshi man in his thirties at home in the morning holding a glass of milk, warm gentle smile, soft light, cream tones, editorial lifestyle."
+      "prompt": "A relaxed natural portrait of a Bangladeshi man in his thirties at home in the morning holding a glass of milk, warm gentle smile, soft light, cream tones, editorial lifestyle. No text."
     },
     {
-      "id": "testimonial-chef",
-      "aspectRatio": "1:1",
-      "maxWidth": 640,
+      "id": "testimonial-chef", "aspectRatio": "1:1", "imageSize": "1K", "maxWidth": 640,
+      "refs": ["banner"],
       "alt": "Portrait of a pastry chef",
-      "prompt": "A natural portrait of a Bangladeshi female pastry chef in a clean bright kitchen, warm professional smile, soft daylight, cream and white tones, editorial lifestyle, shallow depth of field."
+      "prompt": "A natural portrait of a Bangladeshi female pastry chef in a clean bright kitchen, warm professional smile, soft daylight, cream and white tones, editorial lifestyle, shallow depth of field. No text."
     },
     {
-      "id": "blog-children",
-      "aspectRatio": "16:9",
-      "maxWidth": 1600,
-      "alt": "A glass of fresh milk in warm morning light",
-      "prompt": "A tall glass of fresh milk on a bright breakfast table with soft morning light, a hand reaching for it, warm cream tones, candid and pure, editorial lifestyle photography."
+      "id": "blog-children", "aspectRatio": "16:9", "imageSize": "2K", "maxWidth": 1600,
+      "refs": ["logo", "banner"],
+      "alt": "A glass of fresh GOOWALI milk in morning light",
+      "prompt": "An intimate wide editorial frame: a tall glass of fresh milk and a GOOWALI bottle (label facing camera, legible) on a bright breakfast table, a hand reaching gently for the glass, soft morning light and creamy bokeh, warm cream tones, pure and inviting. Airy negative space for a headline."
     },
     {
-      "id": "blog-raw-vs-past",
-      "aspectRatio": "4:3",
-      "maxWidth": 1280,
+      "id": "blog-raw-vs-past", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
+      "refs": ["banner"],
       "alt": "Two glasses of milk side by side",
-      "prompt": "Two clear glasses of milk side by side on a cream surface in soft morning light, minimal and clean, premium editorial still life, gentle shadows."
+      "prompt": "Two clear glasses of milk side by side on a cream surface in soft morning light, minimal clean premium editorial still life, gentle shadows, a few green leaves. No text."
     },
     {
-      "id": "blog-farm-morning",
-      "aspectRatio": "4:3",
-      "maxWidth": 1280,
+      "id": "blog-farm-morning", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
+      "refs": ["banner"],
       "alt": "Early morning at the dairy farm",
-      "prompt": "Early misty morning at a Bangladeshi dairy farm, golden light through trees, a cow and a farmer silhouette, peaceful and atmospheric, editorial documentary photography."
+      "prompt": "Early misty morning at a Bangladeshi dairy farm, golden light through trees, a cow and a farmer in the distance, peaceful atmospheric editorial documentary photography. No text."
     },
     {
-      "id": "blog-mustard-oil",
-      "aspectRatio": "4:3",
-      "maxWidth": 1280,
-      "alt": "Cold-pressed mustard oil and cooking",
-      "prompt": "A bottle of golden cold-pressed mustard oil beside fresh ingredients on a warm wooden kitchen surface, soft natural light, rich golden and cream tones, premium editorial food photography."
+      "id": "blog-living", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
+      "refs": ["banner"],
+      "alt": "A calm morning ritual with milk",
+      "prompt": "A serene flat-lay-ish morning moment: a glass of milk, a linen napkin, a sprig of greenery and soft light on a cream table, calm and meditative editorial lifestyle, warm tones. No text."
     }
   ]
 }

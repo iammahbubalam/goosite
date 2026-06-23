@@ -8,6 +8,8 @@ import {
   productsByCategory,
 } from "@/lib/products";
 import { ArtPanel } from "@/components/ui/art-panel";
+import { Photo } from "@/components/ui/photo";
+import { getPhoto } from "@/lib/photo";
 import { Button } from "@/components/ui/button";
 import { Eyebrow } from "@/components/ui/section";
 import { MilkWave } from "@/components/ui/milk-wave";
@@ -47,6 +49,7 @@ export default async function ProductPage({
   const product = getProduct(slug);
   if (!product) notFound();
 
+  const photo = getPhoto(product.slug);
   const related = productsByCategory(product.category)
     .filter((p) => p.slug !== product.slug)
     .slice(0, 3);
@@ -65,18 +68,30 @@ export default async function ProductPage({
 
           <div className="mt-8 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <MaskReveal className="aspect-square">
-              <ArtPanel
-                tone={toneFor(product.category)}
-                shader
-                rounded="rounded-none"
-                className="h-full w-full"
-              >
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="px-6 text-center font-serif text-5xl text-ink/20 md:text-6xl">
-                    {product.name}
-                  </span>
-                </div>
-              </ArtPanel>
+              {photo ? (
+                <Photo
+                  src={photo.src}
+                  alt={photo.alt}
+                  blurDataURL={photo.lqip}
+                  rounded="rounded-none"
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="h-full w-full"
+                />
+              ) : (
+                <ArtPanel
+                  tone={toneFor(product.category)}
+                  shader
+                  rounded="rounded-none"
+                  className="h-full w-full"
+                >
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="px-6 text-center font-serif text-5xl text-ink/20 md:text-6xl">
+                      {product.name}
+                    </span>
+                  </div>
+                </ArtPanel>
+              )}
             </MaskReveal>
 
             <div>

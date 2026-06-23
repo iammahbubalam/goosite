@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { MapPin, HeartHandshake, Microscope, Leaf } from "lucide-react";
 import { PageHero } from "@/components/sections/page-hero";
 import { Photo } from "@/components/ui/photo";
+import { getPhoto } from "@/lib/photo";
 import { Eyebrow } from "@/components/ui/section";
 import { CtaBand } from "@/components/sections/cta-band";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
@@ -57,20 +58,24 @@ export default function FarmsPage() {
       {/* Immersive panel */}
       <section className="bg-cream pt-4 pb-24 md:pb-28">
         <div className="container-x">
-          {/* PHOTO SLOT: add src="/brand/photos/farm-hero.jpg" when ready */}
           <MaskReveal className="aspect-[16/9] md:aspect-[21/9]">
             <Photo
+              src={getPhoto("farm-hero")?.src}
+              blurDataURL={getPhoto("farm-hero")?.lqip}
               tone="field"
               shader
               alt="GOOWALI farm at morning"
               rounded="rounded-none"
+              sizes="100vw"
               className="h-full w-full"
             >
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
-                <p className="font-serif text-3xl text-ink/80 md:text-5xl">
-                  Green fields. Morning light.
-                </p>
-              </div>
+              {!getPhoto("farm-hero") && (
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
+                  <p className="font-serif text-3xl text-ink/80 md:text-5xl">
+                    Green fields. Morning light.
+                  </p>
+                </div>
+              )}
             </Photo>
           </MaskReveal>
         </div>

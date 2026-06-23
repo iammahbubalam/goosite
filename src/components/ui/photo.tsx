@@ -20,6 +20,7 @@ export function Photo({
   className,
   sizes = "(max-width: 768px) 100vw, 50vw",
   priority = false,
+  blurDataURL,
   children,
 }: {
   src?: string;
@@ -30,6 +31,7 @@ export function Photo({
   className?: string;
   sizes?: string;
   priority?: boolean;
+  blurDataURL?: string;
   children?: ReactNode;
 }) {
   if (src) {
@@ -43,6 +45,8 @@ export function Photo({
           fill
           sizes={sizes}
           priority={priority}
+          placeholder={blurDataURL ? "blur" : undefined}
+          blurDataURL={blurDataURL}
           className="object-cover"
         />
         {children}

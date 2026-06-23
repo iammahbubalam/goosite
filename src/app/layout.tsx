@@ -13,7 +13,8 @@ const fraunces = Fraunces({
   variable: "--font-fraunces",
   subsets: ["latin"],
   display: "swap",
-  axes: ["opsz", "SOFT"],
+  // default wght variable axis only — dropping opsz/SOFT shrinks the woff2,
+  // which gates the hero headline's LCP.
 });
 
 const inter = Inter({

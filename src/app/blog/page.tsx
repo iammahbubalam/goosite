@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { PageHero } from "@/components/sections/page-hero";
 import { Photo } from "@/components/ui/photo";
+import { getPhoto } from "@/lib/photo";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ const POSTS = [
     category: "Health",
     read: "5 min",
     tone: "milk" as const,
+    cover: "blog-children",
     featured: true,
   },
   {
@@ -27,6 +29,7 @@ const POSTS = [
     category: "Guide",
     read: "6 min",
     tone: "cream" as const,
+    cover: "blog-raw-vs-past",
   },
   {
     title: "A morning at our Sirajganj farm",
@@ -34,6 +37,7 @@ const POSTS = [
     category: "Farm",
     read: "4 min",
     tone: "field" as const,
+    cover: "blog-farm-morning",
   },
   {
     title: "The quiet power of a morning ritual",
@@ -41,6 +45,7 @@ const POSTS = [
     category: "Living",
     read: "3 min",
     tone: "cream" as const,
+    cover: "blog-living",
   },
   {
     title: "Cooking with cold-pressed mustard oil",
@@ -48,6 +53,7 @@ const POSTS = [
     category: "Recipes",
     read: "7 min",
     tone: "field" as const,
+    cover: "mustard-oil",
   },
 ];
 
@@ -79,9 +85,12 @@ export default function BlogPage() {
               className="group grid overflow-hidden rounded-[2.5rem] border hairline bg-bg md:grid-cols-2"
             >
               <Photo
+                src={getPhoto(featured.cover)?.src}
+                blurDataURL={getPhoto(featured.cover)?.lqip}
                 tone={featured.tone}
                 alt={featured.title}
                 rounded="rounded-none"
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="aspect-[16/10] md:aspect-auto"
               />
               <div className="flex flex-col justify-center p-10 md:p-14">
@@ -110,9 +119,12 @@ export default function BlogPage() {
                   className="group flex h-full flex-col overflow-hidden rounded-[2rem] border hairline bg-bg transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
                 >
                   <Photo
+                    src={getPhoto(post.cover)?.src}
+                    blurDataURL={getPhoto(post.cover)?.lqip}
                     tone={post.tone}
                     alt={post.title}
                     rounded="rounded-none"
+                    sizes="(max-width: 768px) 100vw, 25vw"
                     className="aspect-[4/3]"
                   />
                   <div className="flex flex-1 flex-col p-7">

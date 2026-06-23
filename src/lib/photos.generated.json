@@ -1,24 +1,24 @@
 {
   "farm-hero": {
     "src": "/brand/photos/farm-hero.webp",
-    "alt": "GOOWALI dairy farm in Bangladesh at dawn",
-    "width": 1408,
-    "height": 768,
-    "lqip": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAABwAwCdASoYAA0ALrV2u12jqampiYC0SgCdAEO/YyZzF9EjJwAA/vcFNHq7IFICfU2mCfU19XZ4XizfsE4PuO0S7r1KaBOKTzgSUxm2d5/PHmgplGS5A3jfbCoXUgUC9LNDAAAA"
+    "alt": "GOOWALI dairy farm at dawn",
+    "width": 2752,
+    "height": 1536,
+    "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAADQAwCdASoYAA0APu1iqU2ppaQiMAgBMB2JZACdACKUIQ6UxbE7R0AA/u2tC+gLIrb9pNmGVEIFUxNMsSg52fH01XJ+AlHfFNcqgZo2p3YdkCfBJ89CnIg+Ecl+G0eU3+ajmo5TAPpRp5xvhOvFxbeDi0hWk3dGLN2in4GfpZIAAA=="
   },
   "story-cows": {
     "src": "/brand/photos/story-cows.webp",
-    "alt": "Healthy cows grazing in a green field at morning",
-    "width": 1280,
-    "height": 896,
-    "lqip": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAABQBQCdASoYABEAPu1srFEppaQiqAqpMB2JYwCsAYxYcLqRHaTXy7DVdYFUGj1Jo217ysAA/u++pS7bFuJAIvWynXrZmnPCoy+fxeDsfqi8WuEXVWTdIbdni1/RL7jAQvb0a4i5exWXWT6lGuD4tZraOyXKiTlGKQq5Z51zCIhkvNjVERsYOOGzs7SvcEr6ST6xgNfLC5oB3Ki5uwRczvNKRi3T89koX6kqnDAA"
+    "alt": "Healthy cows grazing at morning",
+    "width": 1856,
+    "height": 2304,
+    "lqip": "data:image/webp;base64,UklGRvAAAABXRUJQVlA4IOQAAADwBQCdASoYAB4APu1kqU2ppaOiMAgBMB2JYgCsL69Z2gyQD+VFm6GJ82+ui6OO8cO0HzXuj1WwAAD44uPyG/+aDriaoWMHAFINgcSRl9mR+OIFc4XuruJ1WiPRkhbgEBTEpGJclrY0YgVS3ONKCPljWu+lkY+3nRMFbSBU+DMYXU9+uysCTiT04JF+GlAAvvCI7FYLrjykMVOfWV+AYw7m82ebv6kdNEMgP9J2DtDAqetpOYhWiszZa7QDFMhvnpc3wEbhdAO1fvoCDSLiRa/JIWpMHjrTZ89cvM9HXyhUJ8W4AAA="
   },
   "blog-farm-morning": {
     "src": "/brand/photos/blog-farm-morning.webp",
     "alt": "Early morning at the dairy farm",
-    "width": 1280,
-    "height": 896,
-    "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAADwBACdASoYABEAPu1ur1KppiQiqAgBMB2JYwCo9BBX52vIX1OGTszNxaUp7FGjfAAA/vHgohBIOrBHEpr3KzmBnWAbKeOe/ZikCbb07cJgi2F2+hEahVMNQIcJboMSIhYxFjlBYVjo6sS87m09b6+PQq+x/ETahtvhMHTtGgA="
+    "width": 2400,
+    "height": 1792,
+    "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAACQBACdASoYABIAPu1or1AppaSiqAqpMB2JQAAC8hKpnV/BK8nj2b+liuMYacAA/pqNg09V1qXgwIjSEbFBi9Ope8FX0sXfuqYxpF6Kv23ykqwdX+xgbni1K7NuE0//eTWQ3gkPsw1cf+UT7EDIUvfUHinjaLJRu8zNW0e0tnMFGVydhFyccl8ILQeb1/qGAAA="
   },
   "blog-mustard-oil": {
     "src": "/brand/photos/blog-mustard-oil.webp",
@@ -26,5 +26,166 @@
     "width": 1280,
     "height": 896,
     "lqip": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAADQBACdASoYABEAPu1ur1IppiQiqAgBMB2JaACxHyS8qCYdHgtH21JrJidyGlV+5AD+xdBbEaebFYy5he1JZYl3Y7uq5ba7HDuXzNwZlnwWHAn/tPvVbLWu4TjVGJGFb9gRDLT341QuE+/mPzSSJBV9H9cBnvepnGSV6DSvRVMkMWK7IaqL8pX8QUdyN241tdUkdBfjv0RTm21G/NMLj2p+BiKF+hhfh32h33y3iwsLDXFbrG9axJHWOxJHVt4M/3pJaUAA"
+  },
+  "hero-glass": {
+    "src": "/brand/photos/hero-glass.webp",
+    "alt": "A GOOWALI glass milk bottle and a glass of fresh milk in morning light",
+    "width": 1856,
+    "height": 2304,
+    "lqip": "data:image/webp;base64,UklGRvYAAABXRUJQVlA4IOoAAACQBQCdASoYAB4APuVeok2pJSMiMAwBIByJQBOggQAoHMEhJ/Y2XP1fJCTEt1kNPn+qzcuLAAD+8dwTjBDo9Yx3qWl6TwFz54gh+7iHgY2xhJUOIsMSd0e9NyACWOyhs8sejIFMv/uaw7IyaLxOJeQnTgcnTzLhFLHTbHx1GHyqnRSZonWhR138V9PZBrHS5Be8Q4DKkDfS8b+exTnlqM1UO48MAHg32rJpekp/pB4egyi9MLc56myPUJ1kQbSZ2US1ZWBT+EPCgLf3XoGgbyLxD8jKtENqjw+dp4u/fJ91FUt6BExjKedNAAA="
+  },
+  "raw-milk": {
+    "src": "/brand/photos/raw-milk.webp",
+    "alt": "GOOWALI raw milk in a clear glass bottle",
+    "width": 2400,
+    "height": 1792,
+    "lqip": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAABwBQCdASoYABIAPu1qq1EppaOiqAqpMB2JYwCsMwnBspfxDc08O4DL6fb2N3aBe1TgvGQAAP7tWX1MEw0JtOJHePsbjYn0lV0q9q3Kp2rDyZ5Qf77RRc4FLmE3OSLKPAwfeIZC/FBxFlYqc6G1ANcGH37BFcfYeW1i8U7Ip1yI+M1dFckOg2N49zQDjzyLP6G6ZGbBce5RyWuIgwx9wk9tnotz987c8059IXSqBcBlKUNbDKKOKmw2SxnBiqZjDzh48AAA"
+  },
+  "pasteurized-milk": {
+    "src": "/brand/photos/pasteurized-milk.webp",
+    "alt": "GOOWALI pasteurized milk pouch",
+    "width": 2400,
+    "height": 1792,
+    "lqip": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAAAwBQCdASoYABIAPu1sq1EppaOiqAqpMB2JQBOgTYErQFoPJLnuUnFt5tyK76oA/DGaAADKLQglW0LkM8Vk5MwC2drrvtXquUSYaGdJwZyN0z5qxkbTGqH6/xOpzsSRfYtwuAHtyDQ7Z/5yAKH7T1sXCW0qzkIrEBRl0eZikETjnBWd48xcNm6dVSM4U5EG1gub0nWaqsqfx9FUR5sdjB1wbMw6nPRFDrr9PoEf+AAwAAlZOU3xrvUxXrX5XiZDqZ+AAA=="
+  },
+  "uht-milk": {
+    "src": "/brand/photos/uht-milk.webp",
+    "alt": "GOOWALI UHT long-life milk carton",
+    "width": 2400,
+    "height": 1792,
+    "lqip": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAABQBQCdASoYABIAPu1ur1KppiQiqAgBMB2JZQCdM0MOAA+gj8ZboGzy6snNLptr8+Mor4AA/vHgo0zxN1kpwd971Vl3GszRp+SyIiq4LZ+hwwdOOo2gjnyib8UKBXu8lS4Q4yvcg3KsBRmkvRgV0h10ldNnkpoAVdxTrfSwbkxXYHSBSY+jL8bBTbKANUCOYwnNhqBy/U+AJvbxic4AQ5yu6ZQMGpUHMkVQAA=="
+  },
+  "doi": {
+    "src": "/brand/photos/doi.webp",
+    "alt": "GOOWALI doi (set yogurt) in a branded clay pot",
+    "width": 2400,
+    "height": 1792,
+    "lqip": "data:image/webp;base64,UklGRuAAAABXRUJQVlA4INQAAACQBQCdASoYABIAPu1qrFCppaQiqAqpMB2JQBWAZhN0QL8OvHRa0IdlyuEIWlnECogYh9EVEAD+fJ58ee0pf3RhbIgzZR+eTx7JdFDWGCqaZ8bCDfEMgIzGxCVBPYBlWkltqhqJgN2s3LPlZ8Oz6pqZKGj9J8/eiFvCd6/1QPGILj9JdB6QeF7CZdvtDi92myGu7F93/hpOsqRCQp8Ey00U11ORrN34NtaSqhiljsti1frUPGbMdbpkx3mXMJHgmCQB1Ekdu9UrCyie8QPv/Af+XQwAAA=="
+  },
+  "matha": {
+    "src": "/brand/photos/matha.webp",
+    "alt": "GOOWALI matha (spiced buttermilk) bottle and glass",
+    "width": 2400,
+    "height": 1792,
+    "lqip": "data:image/webp;base64,UklGRtwAAABXRUJQVlA4INAAAABwBQCdASoYABIAPu1sq1EppaOiqAqpMB2JQBOmasHAAacPzFCItKWDOwNaNge5PbSgo48AAP7t24CCpUcuQea+06AsXb6DagPN+zfXr1BBzAziL8tdqAgJzzCBct9w8ui3kWtTJ7DPF7viW+w33wLEiA+CIkDzXIPEgLyUsh6ydy7TCZMGhCw041Lj43ziNtkTIfrOFCeI1uKxW1re4pmwcWQm+04vc5MpS5dLEWHtay79L0R587e/4V3oi/ZcmBLXRQCHiaocm5gdd/1aAAAA"
+  },
+  "cheese": {
+    "src": "/brand/photos/cheese.webp",
+    "alt": "GOOWALI cheese block and wedge",
+    "width": 2400,
+    "height": 1792,
+    "lqip": "data:image/webp;base64,UklGRswAAABXRUJQVlA4IMAAAAAQBQCdASoYABIAPu1sq1EppaOiqAqpMB2JYwC/OA8rL7eRRRqybR9SCb0zndDAJsaAAP7swSj6X8sPxd+eg4Mh9SBI9PyovbhzPoT04pp9g8o/WfLGCfpzoq0hreF1eKgOVpVr0wFjQuY6RQfGVyoerPZpx0Nc6ZMfUEenSCW9qS6krmxDVAp8KK0f8LILE8AdezOORsa5I/z8lLowGNGcYEACF70XlyhKld+aHADL3E2Y7W/6NtPnh1qbWA1gAAA="
+  },
+  "ghee": {
+    "src": "/brand/photos/ghee.webp",
+    "alt": "GOOWALI pure cow ghee in a glass jar",
+    "width": 2400,
+    "height": 1792,
+    "lqip": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAADwBACdASoYABIAPu1qrVEppaQiqAqpMB2JZACxH2QA45MMC/rPpGcVv0GwId3237AA+TR8Nl//PLMh4bFiTp35MrKyCDPe7BNqV/pTmGyEs9h8FaVh1MUd0K5nFQPlR73H3pPHECxoiGoMCEAGuaQzdPhSG7ReAu9z5J2K/Y0RXj5s6o/St4kgsBaRXiESfpa199KLxi4B577d+5zq7t0zy6+xx8AgCsKEAAAA"
+  },
+  "mustard-oil": {
+    "src": "/brand/photos/mustard-oil.webp",
+    "alt": "GOOWALI cold-pressed mustard oil bottle",
+    "width": 2400,
+    "height": 1792,
+    "lqip": "data:image/webp;base64,UklGRuoAAABXRUJQVlA4IN4AAACQBQCdASoYABIAPu1srFEppaQiqAqpMB2JbACdMoR5akl8igLF26ZkeUMcc8kzHI/pn12OSAD+14f4DXrIYRBJ4Gp1LRGW1yfLEdltZPtl/B8B6LGqvQ2/Rl5uB15D003INYOdEUGnDHTML95nkUndPYTqoZhqJZLeJtf9gFNJWuiiudDKIk/gVqTMIo7hM0eOGf0BYGaprGOHfpkIOFFaZ7vbagQiF+iwADkxzQgpgVhfy8scY/WiuGipETdY6opqna7MiYky5o4rN50/kjieJW/E9txekuOdENdgAAA="
+  },
+  "chia-seeds": {
+    "src": "/brand/photos/chia-seeds.webp",
+    "alt": "GOOWALI organic chia seeds pouch",
+    "width": 2400,
+    "height": 1792,
+    "lqip": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAADQBACdASoYABIAPu1ur1IppiQiqAgBMB2JYwCw7A3FXv4uixrVRa/KdD8QvqXdWAD8dLmcjxZ7ePD9/+rcq01fMwDcEcdiBdehx8KDr9kMxFo77iqJhoinQ4moJkwgwRwhRRhGaWniAzEwVLZZJxrFcUSkuac+OyYPJop5ioCIFuYPkLFDSkcXqzq9rW56h26qrnVfnwruyeaHaDqwfyShqNjF+TiCpoOzmwIdAAA="
+  },
+  "turmeric-powder": {
+    "src": "/brand/photos/turmeric-powder.webp",
+    "alt": "GOOWALI turmeric powder pack with roots",
+    "width": 2400,
+    "height": 1792,
+    "lqip": "data:image/webp;base64,UklGRtIAAABXRUJQVlA4IMYAAAAQBQCdASoYABIAPu1sqlEppiOiqAqpMB2JZACdMuN00A3XzzrfsBpIHINBruvA++kAAP55JARssbOR+Dr4eCkde9mlgID5tiyt6NnP9oXMZLltHjAb30euR3u14+19I90v+8H7KR94e7WoMvt2RiG9bFYi/a0dfjzq3CjduB2mPOfoakNYCgzzdN1cSxQ8BH1EmvE9WnPp1tM2IRnuGMpaFLZo17EhdeWcwpwRENceraYIM7ZxvJYJXHFlux62Ub/mXSeAAAA="
+  },
+  "chili-powder": {
+    "src": "/brand/photos/chili-powder.webp",
+    "alt": "GOOWALI red chili powder pack with chilies",
+    "width": 2400,
+    "height": 1792,
+    "lqip": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAABwBQCdASoYABIAPu1sqlEppaOiqAqpMB2JQBYj3G/qAiH+QdHeh8hNIlQZtlaOLlDQjgTAAP623RhNELV/uN235x5BwSzHVuoQqkutZurJbnbhxj8X3RG+tLFejOdl9K8SukT0UOAl/2DL0cLbtEPvDudc8xwmXkqYPTkTkgNKQM1NwUZNPJoqhoeQVv/jsSQmsNlRM4PE4okxmYwJ4icRfgAAAA=="
+  },
+  "organic-spices": {
+    "src": "/brand/photos/organic-spices.webp",
+    "alt": "GOOWALI organic spice set",
+    "width": 2400,
+    "height": 1792,
+    "lqip": "data:image/webp;base64,UklGRswAAABXRUJQVlA4IMAAAACQBACdASoYABIAPu1ur1IppiQiqAgBMB2JQBWAAck5WsrYT51+TFVA9FGZbgAA/uBz+mzL1s6W+I4NlFqKSpo2FqupU985MyLo8uAEZ3oKPvFFPrXmL8eBiZwmLBnw6+LWagAqlj5vkud/bQWN3145cqeV6Uim93+exFo+P+dd6yudgk+b1At6BRwhlS9RlccpG941UV+JhJwBxHjw9+XPooG+2UCnW0s/U8EUILmI/X0Bgsbhpse4oVTfGGuZgAA="
+  },
+  "story-milking": {
+    "src": "/brand/photos/story-milking.webp",
+    "alt": "Fresh milk collected at the farm",
+    "width": 2400,
+    "height": 1792,
+    "lqip": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAAAwBQCdASoYABIAPu1sq1EppaOiqAqpMB2JQBWGcHdAfQAl1U2j+WaRi7zeEeh5xxMUAAD+YW8zcIV8du5zYvMa5o1rNvGz48gZ08+PlsXZ3rU8COF16ftbtAOJFYNrW/dKfNIKStN1smuEnRcJS1N3v0A+3Vn7kbOmonGQkBZ4pSttm8LtqQGuHHiMJC++QH2Lkp1MUd11ikstvIRIRDHJythbR/bTEc/+e9uJBHHiQANEo2bJ5tn9NgAAAA=="
+  },
+  "family-breakfast": {
+    "src": "/brand/photos/family-breakfast.webp",
+    "alt": "A warm family breakfast with GOOWALI milk",
+    "width": 2400,
+    "height": 1792,
+    "lqip": "data:image/webp;base64,UklGRuoAAABXRUJQVlA4IN4AAABwBQCdASoYABIAPu1ur1IppiQiqAgBMB2JQBUesY7NDY9uZInGKWivdifrDSv/EspoV64AAP5AGs1NPJVmLCNura2tiSa6sPnGt/uXlrHRlf/oE5KIkAj0YTlqM9uh4ZXQHPwCVehi/bqmvGlaAvGE0wYRBltqk9rui+uyL5SclwxgQYvNwXgl1QiwKvjVyRFgRlywsk1VGdPsJPTNZRG2za72R+oYbIIqMvkSkyGcokDwg/l+3bhq+yXXNhWLYsAlWGNaWXgNNGKmin201J4HUWUSGgSRY8+y4rYAAAA="
+  },
+  "glass-pour": {
+    "src": "/brand/photos/glass-pour.webp",
+    "alt": "Fresh milk poured into a glass",
+    "width": 1792,
+    "height": 2400,
+    "lqip": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAACQBACdASoYACAAPu1mrU2ppaSiMBgMATAdiWMAygBX76RCcE9JvVA4CCpY24AA/vHO1FZJmHV/F6i5ZIx/da5P0rcUPziwwwaJ7OkduVqd5M1Q9lTADoXlaXV7kpgOgBCR0fiqyasMsWgAAAA="
+  },
+  "founder": {
+    "src": "/brand/photos/founder.webp",
+    "alt": "Portrait of the GOOWALI founder",
+    "width": 1856,
+    "height": 2304,
+    "lqip": "data:image/webp;base64,UklGRhIBAABXRUJQVlA4IAYBAADQBQCdASoYAB4APu1kp02ppaOiMBgMATAdiWgAuwWs1s8Clhj4G8Nfu9sVqTpqO8kZ3ulPHoKyAP2alaaC4w6OZPI4VQwONY43Atit53gNYoSwXh9fl5Gq1HV2twP2YCDCnOCNnXP7VOV/5KnT8RluJJHkQghYqq59w7BAnUuZ35QWbXuSnOepoQ8uS6Q1fMeicj17Rr1W/tvIg1okGshFhN1fOTcIhQIqH3/+lQpb9vPTDSTbGC7tIYYizs/vIUrOBg0hZLJ4PPIpEB2FN9+qG3sj6aPL71ow/47qQUYPPAB/bryPZQmGZFHnjUIbCpiNKv0U7R5JuqQBVZATJiYaE8V5vUAA"
+  },
+  "testimonial-mother": {
+    "src": "/brand/photos/testimonial-mother.webp",
+    "alt": "Portrait of a happy mother",
+    "width": 1024,
+    "height": 1024,
+    "lqip": "data:image/webp;base64,UklGRgoBAABXRUJQVlA4IP4AAADwBQCdASoYABgAPu1wsFIppiSiqAgBMB2JaACCeJCdtjGABtMKJF/pnrX8lR1aGKYr4xXuFWqogAD+4nRYhuAKrXWnbmubZCfi6LgVOPSsCDU0v+KoXQEJE9Q81SSuhN2PbdWV/oUH7Z9xdxM3+4Cjw78ubs4wYIfs8n4JGVomRyEaSREKM9sAJjteMpzOAksIQQlYKKFvft8GNBm51sg64PF4re2ReNExwbFbEJPtPxPd1gEC17mdjQkKV/xhnkB9TdM37qWROuvrtO23GmOPs1GilhpCdmhtwVZRGLJKYuuYJJuSx1PaO6uNdhM8boxYJuaippvZhgi13RtwAA=="
+  },
+  "testimonial-subscriber": {
+    "src": "/brand/photos/testimonial-subscriber.webp",
+    "alt": "Portrait of a satisfied customer",
+    "width": 1024,
+    "height": 1024,
+    "lqip": "data:image/webp;base64,UklGRgYBAABXRUJQVlA4IPoAAACwBQCdASoYABgAPu1ur1IppiQiqAgBMB2JQBUesYxO9wvfnyU8V0D3E9xczRHI6IxOsvBuxGAA/Nfu+INYc+rQ5l56oVs1tgwNQYGShedVeg9/UsXVhSvzQe22Y3+G5Qquwp/Kjl/Ubt6AROb/URQlLfU7iCy+6OH2IUOZgVOqsLbCiUVSkfc9XBGu90uQSGsqwfkFgeEUUajSDofSWaaHCXtYafdxRP0zAp7Y3vIPzRTM49frsuoLr42hsz9x2mbjitmh74uk9IE9LKWG49EGDFepvIsiItnti6h6Dl1AqTmwrKIsM5MDxd+3O57KIsMH5fHnHbhxLUAA"
+  },
+  "testimonial-chef": {
+    "src": "/brand/photos/testimonial-chef.webp",
+    "alt": "Portrait of a pastry chef",
+    "width": 1024,
+    "height": 1024,
+    "lqip": "data:image/webp;base64,UklGRuwAAABXRUJQVlA4IOAAAABQBgCdASoYABgAPu1qqlEppaOiqAqpMB2JQBhnNkyj2SfWzkRxI5HIk/jjH9Ig5ulRiYKy0Kjmm57QAAD+1RPOKNHnoRIprf20eEGUbGvYXNkY2Q2iC0B4YOFMBdFH15Ykzcf0ZwvO5P0or8Zc4KvVnsAL3crfekid/i0JwCe1ijFXMcRGosx1787mY/4MPNnLyEEVGy83LaTz2bJvtQGIHkvuPE/n5g8xaYkc7GaVlScPb1wBaJ7VnpT0N26dRNDWuApGaCpd9Zc8Bs20A6jJ/C5C9PQcLHsfLhPChAAAAA=="
+  },
+  "blog-children": {
+    "src": "/brand/photos/blog-children.webp",
+    "alt": "A glass of fresh GOOWALI milk in morning light",
+    "width": 2752,
+    "height": 1536,
+    "lqip": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAAAwBACdASoYAA0APu1kqk4ppaQiMAgBMB2JYgCdIDZDAz/Ii8XC6+ledgAA/vHMAry3brdm891zuii4zB7ku82fXf3vDxwJuf9BqoFyKvPbryxTZwpN/LmqxRswoyP1bhD4OzkjMySkZTfloA/1cJwTqNGNrocCBG21zIBwS2OIPxB5torw+PsXwAA="
+  },
+  "blog-raw-vs-past": {
+    "src": "/brand/photos/blog-raw-vs-past.webp",
+    "alt": "Two glasses of milk side by side",
+    "width": 2400,
+    "height": 1792,
+    "lqip": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAACwBACdASoYABIAPu1qrlCppaQiqAqpMB2JYwCsAAuJ/cXzW5nnMjLHMlRvp1QAAM2OVeE6T5gEPweGTcPUAlVoIE8HxSCmOnf8SlaNr2qzJWqT0W/oiFJ6oTUdVvdN2t2uHTVRx5nNgPT8xAeaVg2SabcLdChb67GvDSH2eJkCc0sqCCeEVhjxi1yQjb0EdmjnRSdnOMZaUv+3ZxaZ7zXS4cBoAA=="
+  },
+  "blog-living": {
+    "src": "/brand/photos/blog-living.webp",
+    "alt": "A calm morning ritual with milk",
+    "width": 2400,
+    "height": 1792,
+    "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAADwBACdASoYABIAPu1ur1IppiQiqAgBMB2JQAAFVHM5gUJ0tAzoEMQf6L51T8lGeMAA/ufW3V4dwYiP6smO5xNeK0n49O3h16ax23wkqfVUJuqgBukRf3J+sgF5tQaf2d27L4Gx08B3asEYTe2QDX27kYnBmdeV8AN7aYgsCuJceZrPtA94DxFvy/gJz2CqtQAAAA=="
   }
 }
