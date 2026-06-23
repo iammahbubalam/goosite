@@ -58,16 +58,16 @@ export function Hero() {
     >
       {/* the whole hero floats on flowing milk — bold, visible swirl */}
       <ShaderField
-        colors={["#ffffff", "#fdf6ea", "#f7eede", "#efe4cf", "#e4ecdb"]}
-        speed={0.42}
-        distortion={1.3}
-        swirl={1.05}
-        fallback="linear-gradient(180deg, #fffdf9 0%, #fbf3e6 45%, #eef3e4 100%)"
+        colors={["#ffffff", "#fbf4e8", "#ece1cc", "#fffdf9", "#eef1ea"]}
+        speed={0.5}
+        distortion={1.5}
+        swirl={1.2}
+        fallback="linear-gradient(180deg, #ffffff 0%, #fbf4e8 45%, #eef3e4 100%)"
       />
       {/* whisper-thin scrim — just under the headline, milk stays the star */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-r from-bg/28 via-transparent to-transparent"
+        className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-r from-bg/16 via-transparent to-transparent"
       />
       {/* bottom fade into the green wave — guarantees a soft light-green seam,
           never a dark shader edge, where the hero meets the next section */}
