@@ -60,7 +60,7 @@ export function Navbar() {
               className="group relative text-sm font-medium text-night/80 transition-colors hover:text-ink"
             >
               {link.label}
-              <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-green transition-all duration-500 group-hover:w-full" />
+              <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-sage transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:w-full" />
             </Link>
           ))}
         </div>
@@ -70,14 +70,26 @@ export function Navbar() {
             type="button"
             aria-label={`Open basket, ${count} items`}
             onClick={() => setCartOpen(true)}
-            className="relative inline-flex h-11 w-11 items-center justify-center rounded-full border hairline text-ink transition-colors hover:bg-cream"
+            className="group relative inline-flex h-11 w-11 items-center justify-center rounded-full border hairline text-ink transition-colors hover:bg-cream"
           >
-            <Bag size={19} />
-            {count > 0 && (
-              <span className="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-green px-1 text-[11px] font-semibold text-cream">
-                {count}
-              </span>
-            )}
+            <Bag
+              size={19}
+              className="transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-rotate-6"
+            />
+            <AnimatePresence>
+              {count > 0 && (
+                <motion.span
+                  key={count}
+                  initial={{ scale: 0.4, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.4, opacity: 0 }}
+                  transition={{ type: "spring", stiffness: 600, damping: 18 }}
+                  className="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-sage px-1 text-[11px] font-semibold text-cream"
+                >
+                  {count}
+                </motion.span>
+              )}
+            </AnimatePresence>
           </button>
           <button
             type="button"

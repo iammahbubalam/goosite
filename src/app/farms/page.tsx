@@ -42,6 +42,7 @@ export default function FarmsPage() {
   return (
     <>
       <PageHero
+        milk="sage"
         eyebrow="Our farms"
         mediaTone="field"
         mediaLabel="Green fields. Morning light."

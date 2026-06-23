@@ -23,6 +23,7 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
+        milk="blue"
         eyebrow="Contact"
         mediaLabel="From our family to yours."
         title={

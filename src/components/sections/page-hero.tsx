@@ -3,11 +3,61 @@ import { Eyebrow } from "@/components/ui/section";
 import { MilkWave } from "@/components/ui/milk-wave";
 import { Reveal } from "@/components/motion/reveal";
 import { MaskReveal } from "@/components/motion/mask-reveal";
-import { FlowField } from "@/components/generative/flow-field";
 import { ArtPanel } from "@/components/ui/art-panel";
 import { MilkVessel } from "@/components/shader/milk-vessel";
+import { ShaderField } from "@/components/shader/shader-field";
 
 type Tone = "cream" | "milk" | "ink" | "green" | "field";
+
+/** Distinct flowing-milk backdrops — one mood per page hero. */
+type MilkVariant = "cream" | "blue" | "sage" | "gold" | "ink";
+
+const MILK: Record<
+  MilkVariant,
+  {
+    colors: string[];
+    speed: number;
+    distortion: number;
+    swirl: number;
+    fallback: string;
+  }
+> = {
+  cream: {
+    colors: ["#ffffff", "#fbf0dc", "#efe0c6", "#e7dcc6", "#dfe9f4"],
+    speed: 0.3,
+    distortion: 1,
+    swirl: 0.9,
+    fallback: "linear-gradient(180deg,#fffdf9 0%,#f6ead2 60%,#ece0cb 100%)",
+  },
+  blue: {
+    colors: ["#ffffff", "#f1e8d6", "#cdd9ec", "#a9bfe4", "#8fb0e0"],
+    speed: 0.34,
+    distortion: 1.1,
+    swirl: 1,
+    fallback: "linear-gradient(180deg,#fffdf9 0%,#e7eef8 55%,#cdd9ec 100%)",
+  },
+  sage: {
+    colors: ["#ffffff", "#eef3e4", "#dde8cd", "#c2d6ac", "#a3c186"],
+    speed: 0.3,
+    distortion: 1.05,
+    swirl: 0.95,
+    fallback: "linear-gradient(180deg,#fffdf9 0%,#eef3e4 55%,#d6e4c4 100%)",
+  },
+  gold: {
+    colors: ["#ffffff", "#fbeed0", "#f1dca6", "#e8ca87", "#dab86c"],
+    speed: 0.3,
+    distortion: 1,
+    swirl: 0.9,
+    fallback: "linear-gradient(180deg,#fffdf9 0%,#fbeed1 55%,#eed7a8 100%)",
+  },
+  ink: {
+    colors: ["#eef3fb", "#cdd9ec", "#9fb6df", "#5d7cbb", "#2a4f8f"],
+    speed: 0.26,
+    distortion: 1,
+    swirl: 0.85,
+    fallback: "linear-gradient(180deg,#f3f6fc 0%,#cdd9ec 60%,#9fb6df 100%)",
+  },
+};
 
 export function PageHero({
   eyebrow,
@@ -17,8 +67,7 @@ export function PageHero({
   media,
   mediaTone = "milk",
   mediaLabel,
-  field = true,
-  fieldSeed = 11,
+  milk = "cream",
 }: {
   eyebrow: string;
   title: ReactNode;
@@ -28,20 +77,26 @@ export function PageHero({
   media?: ReactNode;
   mediaTone?: Tone;
   mediaLabel?: string;
-  field?: boolean;
-  fieldSeed?: number;
+  /** Which flowing-milk mood paints behind this hero. */
+  milk?: MilkVariant;
 }) {
+  const m = MILK[milk];
   return (
     <section className="relative isolate overflow-hidden bg-morning pt-36 pb-0 md:pt-44">
-      {field && (
-        <FlowField
-          seed={fieldSeed}
-          palette={["#153b7a", "#6b9d38", "#d4af37"]}
-          fade="#fdfbf8"
-          density={0.7}
-          className="opacity-40"
-        />
-      )}
+      {/* flowing milk backdrop — a different mood per page */}
+      <ShaderField
+        colors={m.colors}
+        speed={m.speed}
+        distortion={m.distortion}
+        swirl={m.swirl}
+        fallback={m.fallback}
+        className="opacity-[0.55]"
+      />
+      {/* legibility wash — keeps the milk present but the copy crisp */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-r from-bg/75 via-bg/35 to-bg/10"
+      />
 
       <div className="container-x grid items-center gap-12 pb-20 lg:grid-cols-12 lg:gap-10 lg:pb-28">
         {/* text */}

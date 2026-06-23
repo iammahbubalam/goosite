@@ -7,6 +7,7 @@ import { SmoothScroll } from "@/components/providers/smooth-scroll";
 import { CartProvider } from "@/lib/cart";
 import { CartDrawer } from "@/components/cart/cart-drawer";
 import { Grain } from "@/components/ui/grain";
+import { ScrollProgress } from "@/components/motion/scroll-progress";
 import { Toaster } from "sonner";
 
 const fraunces = Fraunces({
@@ -57,6 +58,9 @@ export default function RootLayout({
       className={`${fraunces.variable} ${inter.variable} h-full`}
     >
       <body className="min-h-full flex flex-col bg-bg text-night antialiased">
+        {/* the whole site rests on a faint, fixed pool of milk */}
+        <div aria-hidden className="milk-underlay" />
+        <ScrollProgress />
         <CartProvider>
           <SmoothScroll>
             <Navbar />

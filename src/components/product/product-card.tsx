@@ -21,7 +21,7 @@ export function ProductCard({
     <Link
       href={`/products/${product.slug}`}
       className={cn(
-        "group relative flex flex-col overflow-hidden rounded-[2rem] border hairline bg-bg transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]",
+        "group relative flex flex-col overflow-hidden rounded-[2rem] border hairline bg-bg transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-sage/30 hover:shadow-[var(--shadow-lift)]",
         className,
       )}
     >
@@ -56,7 +56,7 @@ export function ProductCard({
       <div className="flex flex-1 flex-col p-7">
         <h3 className="font-serif text-2xl text-night">{product.name}</h3>
         <p className="mt-2 flex-1 text-stone">{product.tagline}</p>
-        <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-ink">
+        <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-ink transition-colors duration-500 group-hover:text-sage-deep">
           Discover
           <ArrowUpRight
             size={16}

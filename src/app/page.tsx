@@ -6,7 +6,6 @@ import { ProductShowcase } from "@/components/home/product-showcase";
 import { SubscriptionTeaser } from "@/components/home/subscription-teaser";
 import { B2BTeaser } from "@/components/home/b2b-teaser";
 import { Testimonials } from "@/components/sections/testimonials";
-import { Marquee } from "@/components/sections/marquee";
 import { Faq } from "@/components/sections/faq";
 import { CtaBand } from "@/components/sections/cta-band";
 
@@ -20,7 +19,6 @@ export default function HomePage() {
       <ProductShowcase />
       <SubscriptionTeaser />
       <B2BTeaser />
-      <Marquee />
       <Testimonials />
       <Faq />
       <CtaBand />

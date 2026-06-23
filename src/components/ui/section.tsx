@@ -11,11 +11,11 @@ export function Eyebrow({
   return (
     <span
       className={cn(
-        "text-eyebrow inline-flex items-center gap-2 text-green",
+        "text-eyebrow inline-flex items-center gap-2 text-sage",
         className,
       )}
     >
-      <span className="h-px w-6 bg-green/60" />
+      <span className="h-px w-6 bg-sage/60" />
       {children}
     </span>
   );

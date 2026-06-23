@@ -6,6 +6,7 @@ import { getPhoto } from "@/lib/photo";
 import { CtaBand } from "@/components/sections/cta-band";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
 import { MaskReveal } from "@/components/motion/mask-reveal";
+import { Parallax } from "@/components/motion/parallax";
 
 export const metadata: Metadata = {
   title: "About",
@@ -24,7 +25,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        fieldSeed={23}
+        milk="gold"
         mediaLabel="Pure food, honest source."
         eyebrow="About GOOWALI"
         title={
@@ -92,6 +93,7 @@ export default function AboutPage() {
       {/* Founder */}
       <section className="bg-cream py-24 md:py-28">
         <div className="container-x grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+          <Parallax amount={40}>
           <MaskReveal className="aspect-[4/5]">
             <Photo
               src={getPhoto("founder")?.src}
@@ -107,6 +109,7 @@ export default function AboutPage() {
               </div>
             </Photo>
           </MaskReveal>
+          </Parallax>
           <div>
             <Reveal>
               <Eyebrow>Founder&rsquo;s note</Eyebrow>

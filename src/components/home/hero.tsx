@@ -56,24 +56,30 @@ export function Hero() {
       ref={root}
       className="relative isolate overflow-hidden pt-28 md:pt-32"
     >
-      {/* the whole hero floats on flowing milk */}
+      {/* the whole hero floats on flowing milk — bold, visible swirl */}
       <ShaderField
-        colors={["#ffffff", "#fdf4e3", "#f3e7d2", "#e7dcc6", "#cdd9ec"]}
-        speed={0.3}
-        distortion={1}
-        swirl={0.95}
-        fallback="linear-gradient(180deg, #fffdf9 0%, #fbf1df 45%, #ecdcc1 100%)"
+        colors={["#ffffff", "#fdf6ea", "#f7eede", "#efe4cf", "#e4ecdb"]}
+        speed={0.42}
+        distortion={1.3}
+        swirl={1.05}
+        fallback="linear-gradient(180deg, #fffdf9 0%, #fbf3e6 45%, #eef3e4 100%)"
       />
-      {/* gentle scrim — only enough to keep the copy legible, milk stays visible */}
+      {/* whisper-thin scrim — just under the headline, milk stays the star */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-r from-bg/65 via-bg/15 to-transparent"
+        className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-r from-bg/28 via-transparent to-transparent"
+      />
+      {/* bottom fade into the green wave — guarantees a soft light-green seam,
+          never a dark shader edge, where the hero meets the next section */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-2/5 bg-gradient-to-b from-transparent via-sage-soft/40 to-sage-soft"
       />
 
       <div className="container-x grid items-center gap-12 pb-14 lg:grid-cols-12 lg:gap-8 lg:pb-24">
         <div className="lg:col-span-6">
-          <span className="hero-eyebrow text-eyebrow inline-flex items-center gap-2 text-green">
-            <span className="h-px w-7 bg-green/60" />
+          <span className="hero-eyebrow text-eyebrow inline-flex items-center gap-2 text-sage">
+            <span className="h-px w-7 bg-sage/60" />
             Farm to family · Bangladesh
           </span>
 
@@ -149,14 +155,14 @@ export function Hero() {
 
             {/* floating proof chip */}
             <div className="absolute bottom-6 left-6 rounded-2xl bg-bg/85 px-5 py-3 shadow-[var(--shadow-soft)] backdrop-blur">
-              <p className="text-eyebrow text-green">Tested today</p>
+              <p className="text-eyebrow text-sage">Tested today</p>
               <p className="font-serif text-xl text-ink">100% pure</p>
             </div>
           </div>
         </div>
       </div>
 
-      <MilkWave fill="var(--color-cream)" className="-mb-px" />
+      <MilkWave fill="var(--color-sage-soft)" className="-mb-px" />
     </section>
   );
 }

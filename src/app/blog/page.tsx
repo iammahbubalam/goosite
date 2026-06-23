@@ -63,7 +63,7 @@ export default function BlogPage() {
   return (
     <>
       <PageHero
-        fieldSeed={5}
+        milk="cream"
         mediaTone="cream"
         eyebrow="The journal"
         title={

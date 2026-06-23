@@ -13,6 +13,11 @@
   --color-milk: #fafaf7;
   --color-green: #6b9d38;
   --color-green-soft: #8bb85f;
+  /* Sage / eucalyptus — the organic accent. Muted, premium, never grassy. */
+  --color-sage: #6e8c57;
+  --color-sage-soft: #dde8cd; /* light-green surface band — clearly green */
+  --color-sage-tint: #eef3e4; /* faintest green wash */
+  --color-sage-deep: #41552f; /* text/edges on light */
   --color-gold: #d4af37;
   --color-bg: #fdfbf8;
 
@@ -48,7 +53,7 @@
   }
 
   ::selection {
-    background: color-mix(in srgb, var(--color-green) 22%, transparent);
+    background: color-mix(in srgb, var(--color-sage) 24%, transparent);
     color: var(--color-night);
   }
 
@@ -114,16 +119,36 @@
   .hairline {
     border-color: color-mix(in srgb, var(--color-ink) 12%, transparent);
   }
-}
 
-/* Editorial marquee */
-@keyframes marquee {
-  to {
-    transform: translateX(-50%);
+  /* Sage hairline — organic divider variant */
+  .hairline-sage {
+    border-color: color-mix(in srgb, var(--color-sage) 22%, transparent);
   }
-}
-.animate-marquee {
-  animation: marquee 38s linear infinite;
+
+  /* Sitewide milk underlay — a soft, fixed pool of milk the whole site
+     floats on. GPU-cheap (CSS only), always painted, intentionally faint. */
+  .milk-underlay {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(
+        120% 80% at 78% 8%,
+        color-mix(in srgb, var(--color-cream) 70%, transparent) 0%,
+        transparent 46%
+      ),
+      radial-gradient(
+        100% 70% at 12% 92%,
+        color-mix(in srgb, #cdd9ec 26%, transparent) 0%,
+        transparent 52%
+      ),
+      radial-gradient(
+        90% 60% at 50% 50%,
+        color-mix(in srgb, var(--color-sage-soft) 30%, transparent) 0%,
+        transparent 60%
+      );
+  }
 }
 
 /* Milk surface drift */
