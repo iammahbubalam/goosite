@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Fraunces, Inter, Tiro_Bangla, Hind_Siliguri } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -21,6 +21,22 @@ const fraunces = Fraunces({
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
+});
+
+// Bangla type — Tiro Bangla (serif) pairs with Fraunces for headlines/accents;
+// Hind Siliguri (sans) is the clean Bangla body/label face. ~30% of copy is Bn.
+const tiroBangla = Tiro_Bangla({
+  variable: "--font-tiro-bangla",
+  subsets: ["bengali"],
+  weight: "400",
+  display: "swap",
+});
+
+const hindSiliguri = Hind_Siliguri({
+  variable: "--font-hind-siliguri",
+  subsets: ["bengali"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -55,9 +71,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${inter.variable} h-full`}
+      className={`${fraunces.variable} ${inter.variable} ${tiroBangla.variable} ${hindSiliguri.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col bg-bg text-night antialiased">
+      <body
+        className="min-h-full flex flex-col bg-bg text-night antialiased"
+        suppressHydrationWarning
+      >
         {/* the whole site rests on a faint, fixed pool of milk */}
         <div aria-hidden className="milk-underlay" />
         <ScrollProgress />

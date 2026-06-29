@@ -50,7 +50,10 @@ export function Footer() {
           <p className="mt-6 max-w-sm font-serif text-2xl leading-snug text-cream/90">
             From our farms to your family. Fresh, pure, honest — every morning.
           </p>
-          <p className="mt-4 text-sm text-cream/60">{SITE.taglineBn}</p>
+          <p className="font-bn-serif mt-3 max-w-sm text-xl leading-snug text-cream/75">
+            আমাদের খামার থেকে আপনার পরিবারে — তাজা, খাঁটি, সৎ।
+          </p>
+          <p className="font-bn mt-4 text-sm text-cream/60">{SITE.taglineBn}</p>
           <p className="mt-6 text-sm text-cream/55">
             A sister concern of{" "}
             <a
@@ -63,12 +66,15 @@ export function Footer() {
               <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-sage transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/agnos:w-full" />
             </a>
           </p>
+          <p className="font-bn mt-1 text-sm text-cream/45">
+            অ্যাগনস ডেইরি অ্যান্ড লাইভস্টক-এর একটি সহযোগী প্রতিষ্ঠান
+          </p>
         </div>
 
         <div className="md:col-span-3 md:col-start-7">
           <h4 className="text-eyebrow inline-flex items-center gap-2 text-sage-soft/70">
             <span className="h-px w-5 bg-sage/60" />
-            Explore
+            Explore <span className="font-bn ml-1 normal-case tracking-normal text-cream/45">· ঘুরে দেখুন</span>
           </h4>
           <ul className="mt-5 space-y-3">
             {NAV_LINKS.map((link) => (
@@ -82,7 +88,7 @@ export function Footer() {
         <div className="md:col-span-3">
           <h4 className="text-eyebrow inline-flex items-center gap-2 text-sage-soft/70">
             <span className="h-px w-5 bg-sage/60" />
-            Get in touch
+            Get in touch <span className="font-bn ml-1 normal-case tracking-normal text-cream/45">· যোগাযোগ</span>
           </h4>
           <ul className="mt-5 space-y-3 text-cream/80">
             <li>

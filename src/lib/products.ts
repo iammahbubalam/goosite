@@ -3,6 +3,7 @@ export type ProductCategory = "milk" | "dairy" | "organic";
 export type Product = {
   slug: string;
   name: string;
+  nameBn: string;
   category: ProductCategory;
   tagline: string;
   story: string;
@@ -19,21 +20,25 @@ export type Product = {
 export const CATEGORIES: {
   id: ProductCategory;
   label: string;
+  labelBn: string;
   blurb: string;
 }[] = [
   {
     id: "milk",
     label: "Milk",
+    labelBn: "দুধ",
     blurb: "The hero. Collected at dawn, with you by breakfast.",
   },
   {
     id: "dairy",
     label: "Dairy",
+    labelBn: "দুগ্ধজাত",
     blurb: "Slow-made the traditional way, from the same pure milk.",
   },
   {
     id: "organic",
     label: "Organic Pantry",
+    labelBn: "অর্গানিক প্যান্ট্রি",
     blurb: "Honest staples, sourced from farmers we know by name.",
   },
 ];
@@ -42,6 +47,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "raw-milk",
     name: "Raw Milk",
+    nameBn: "কাঁচা দুধ",
     category: "milk",
     tagline: "Milk as nature made it.",
     story:
@@ -69,6 +75,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "pasteurized-milk",
     name: "Pasteurized Milk",
+    nameBn: "পাস্তুরিত দুধ",
     category: "milk",
     tagline: "Pure, gently protected.",
     story:
@@ -96,6 +103,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "uht-milk",
     name: "UHT Milk",
+    nameBn: "ইউএইচটি দুধ",
     category: "milk",
     tagline: "Purity that travels.",
     story:
@@ -123,6 +131,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "doi",
     name: "Doi",
+    nameBn: "দই",
     category: "dairy",
     tagline: "Set slow, the old way.",
     story:
@@ -144,6 +153,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "matha",
     name: "Matha",
+    nameBn: "মাঠা",
     category: "dairy",
     tagline: "Cool, light, refreshing.",
     story: "A spiced buttermilk that has soothed Bengali afternoons forever.",
@@ -164,6 +174,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "cheese",
     name: "Cheese",
+    nameBn: "পনির",
     category: "dairy",
     tagline: "Crafted, not manufactured.",
     story: "Small-batch cheese, aged with patience instead of shortcuts.",
@@ -184,6 +195,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "ghee",
     name: "Ghee",
+    nameBn: "ঘি",
     category: "dairy",
     tagline: "Golden, honest, pure.",
     story:
@@ -205,6 +217,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "mustard-oil",
     name: "Mustard Oil",
+    nameBn: "সরিষার তেল",
     category: "organic",
     tagline: "Cold-pressed, full-strength.",
     story: "The sharp, golden oil at the heart of every Bengali kitchen.",
@@ -225,6 +238,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "chia-seeds",
     name: "Chia Seeds",
+    nameBn: "চিয়া সিড",
     category: "organic",
     tagline: "Tiny seeds, honest source.",
     story: "Clean, sun-dried chia for the families building better mornings.",
@@ -245,6 +259,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "turmeric-powder",
     name: "Turmeric Powder",
+    nameBn: "হলুদ গুঁড়া",
     category: "organic",
     tagline: "Earth-bright, additive-free.",
     story: "Stone-ground turmeric with the deep colour of real roots.",
@@ -265,6 +280,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "chili-powder",
     name: "Chili Powder",
+    nameBn: "মরিচ গুঁড়া",
     category: "organic",
     tagline: "Pure heat, nothing else.",
     story: "Sun-dried chillies, ground fresh — bright, clean, and honest.",
@@ -285,6 +301,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "organic-spices",
     name: "Organic Spices",
+    nameBn: "অর্গানিক মসলা",
     category: "organic",
     tagline: "A pantry you can trust.",
     story:

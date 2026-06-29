@@ -22,6 +22,11 @@ export function ProductShowcase() {
               className="text-headline mt-6"
               text="Milk is the hero. Everything else supports it."
             />
+            <Reveal delay={0.08}>
+              <p className="font-bn-serif mt-3 text-2xl text-ink/85">
+                দুধই নায়ক। বাকি সবকিছু তাকে ঘিরে।
+              </p>
+            </Reveal>
           </div>
           <Reveal delay={0.1}>
             <Button href="/products" variant="outline">

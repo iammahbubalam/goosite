@@ -13,10 +13,10 @@ export const SITE = {
 } as const;
 
 export const NAV_LINKS = [
-  { label: "Products", href: "/products" },
-  { label: "Subscription", href: "/subscription" },
-  { label: "Our Farms", href: "/farms" },
-  { label: "Bulk Supply", href: "/bulk-supply" },
-  { label: "About", href: "/about" },
-  { label: "Journal", href: "/blog" },
+  { label: "Products", labelBn: "পণ্য", href: "/products" },
+  { label: "Subscription", labelBn: "সাবস্ক্রিপশন", href: "/subscription" },
+  { label: "Our Farms", labelBn: "আমাদের খামার", href: "/farms" },
+  { label: "Bulk Supply", labelBn: "বাল্ক সরবরাহ", href: "/bulk-supply" },
+  { label: "About", labelBn: "আমাদের কথা", href: "/about" },
+  { label: "Journal", labelBn: "জার্নাল", href: "/blog" },
 ] as const;

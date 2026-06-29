@@ -29,6 +29,9 @@
   /* Fonts (wired from next/font in layout) */
   --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  /* Bangla faces — serif accent + clean sans body */
+  --font-bn-serif: var(--font-tiro-bangla), var(--font-fraunces), serif;
+  --font-bn: var(--font-hind-siliguri), var(--font-inter), sans-serif;
 
   /* Editorial rhythm */
   --shadow-soft: 0 1px 2px rgba(17, 32, 58, 0.04),
@@ -85,6 +88,22 @@
     letter-spacing: 0.28em;
     text-transform: uppercase;
     font-weight: 600;
+  }
+
+  /* Bangla type. Letter-spacing & uppercase break Bengali conjuncts, so the
+     Bangla eyebrow is its own quieter, normal-case treatment. */
+  .font-bn {
+    font-family: var(--font-bn);
+  }
+  .font-bn-serif {
+    font-family: var(--font-bn-serif);
+  }
+  .bn-eyebrow {
+    font-family: var(--font-bn);
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-weight: 500;
   }
 
   .container-x {

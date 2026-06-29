@@ -34,7 +34,9 @@ export default function ContactPage() {
             <span className="italic text-ink">to your door.</span>
           </>
         }
+        titleBn="চলুন দুধ পৌঁছে দিই আপনার দরজায়।"
         intro="Whether it's a single litre for your family or a daily supply for your kitchen, we'd love to help."
+        introBn="পরিবারের জন্য এক লিটার হোক বা রান্নাঘরের জন্য প্রতিদিনের সরবরাহ — আমরা সাহায্য করতে সবসময় প্রস্তুত।"
       />
 
       <section className="bg-cream py-20 md:py-28">

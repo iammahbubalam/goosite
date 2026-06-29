@@ -30,7 +30,10 @@ export function Story() {
               >
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-night/55 to-transparent p-8">
                   <p className="font-serif text-3xl text-cream">4am</p>
-                  <p className="text-sm text-cream/75">the day begins</p>
+                  <p className="text-sm text-cream/75">
+                    the day begins
+                    <span className="font-bn ml-2 text-cream/60">দিন শুরু</span>
+                  </p>
                 </div>
               </Photo>
             </MaskReveal>
@@ -46,6 +49,11 @@ export function Story() {
             className="text-headline mt-6"
             text="Healthy families begin with pure food."
           />
+          <Reveal delay={0.08}>
+            <p className="font-bn-serif mt-3 text-2xl text-ink/85">
+              সুস্থ পরিবার শুরু হয় খাঁটি খাবারে।
+            </p>
+          </Reveal>
           <Reveal delay={0.1}>
             <div className="mt-7 space-y-5 text-lg leading-relaxed text-stone">
               <p>
@@ -58,6 +66,11 @@ export function Story() {
                 family&rsquo;s milk. So we built GOOWALI around a single idea —
                 an honest line from the farm to your table, with nothing hidden
                 in between.
+              </p>
+              <p className="font-bn text-base">
+                আপনার পরিবারের দুধে কী আছে, তা নিয়ে কখনো ভাবতে হবে না — আমরা এই
+                বিশ্বাসেই GOOWALI গড়েছি। খামার থেকে আপনার টেবিল পর্যন্ত এক সৎ পথ,
+                মাঝে কিছুই লুকানো নেই।
               </p>
             </div>
           </Reveal>

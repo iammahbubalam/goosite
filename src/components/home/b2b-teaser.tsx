@@ -20,6 +20,11 @@ export function B2BTeaser() {
               The same purity, at the scale your kitchen needs.
             </h2>
           </Reveal>
+          <Reveal delay={0.08}>
+            <p className="font-bn-serif mt-3 text-2xl text-ink/85">
+              একই বিশুদ্ধতা, আপনার রান্নাঘরের প্রয়োজন মতো।
+            </p>
+          </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-6 max-w-md text-lg leading-relaxed text-stone">
               Reliable bulk supply for the businesses that care what they serve.

@@ -53,7 +53,9 @@ export default function FarmsPage() {
             <span className="italic text-ink">morning begins.</span>
           </>
         }
+        titleBn="যেখানে আপনার সকাল শুরু।"
         intro="We don't hide our supply chain — we celebrate it. These are the farms, the families and the standards behind every bottle."
+        introBn="আমরা আমাদের সরবরাহ শৃঙ্খল লুকাই না — গর্ব করি। এই সেই খামার, পরিবার আর মান, প্রতিটি বোতলের পেছনে।"
       />
 
       {/* Immersive panel */}

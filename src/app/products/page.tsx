@@ -27,7 +27,9 @@ export default function ProductsPage() {
             <span className="italic text-ink">simply made.</span>
           </>
         }
+        titleBn="সৎ খাবার, সহজভাবে তৈরি।"
         intro="Milk is our hero. Around it, a small, considered range of dairy and organic staples — each one sourced with the same care."
+        introBn="দুধই আমাদের নায়ক। তাকে ঘিরে দুগ্ধ ও অর্গানিক পণ্যের ছোট্ট, যত্নে সাজানো এক সম্ভার — প্রতিটিই একই যত্নে উৎস থেকে আনা।"
       />
 
       <div className="bg-cream">
@@ -39,7 +41,12 @@ export default function ProductsPage() {
             <div className="mb-12 flex flex-wrap items-end justify-between gap-4">
               <div>
                 <Reveal>
-                  <Eyebrow>{`0${i + 1} · ${cat.label}`}</Eyebrow>
+                  <Eyebrow>
+                    {`0${i + 1} · ${cat.label}`}
+                    <span className="font-bn ml-1 normal-case tracking-normal text-sage-deep/70">
+                      · {cat.labelBn}
+                    </span>
+                  </Eyebrow>
                 </Reveal>
                 <Reveal delay={0.05}>
                   <h2 className="text-headline mt-5 max-w-xl">{cat.blurb}</h2>

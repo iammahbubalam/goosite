@@ -5,19 +5,19 @@ import { Minus, Plus, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
-type Milk = { id: string; name: string; note: string; rate: number };
+type Milk = { id: string; name: string; nameBn: string; note: string; rate: number };
 
 const MILKS: Milk[] = [
-  { id: "raw", name: "Raw milk", note: "Farm-fresh, unprocessed", rate: 130 },
-  { id: "pasteurised", name: "Pasteurised", note: "Gently heat-treated", rate: 110 },
-  { id: "uht", name: "UHT", note: "Long-life, ambient", rate: 95 },
+  { id: "raw", name: "Raw milk", nameBn: "কাঁচা দুধ", note: "Farm-fresh, unprocessed", rate: 130 },
+  { id: "pasteurised", name: "Pasteurised", nameBn: "পাস্তুরিত", note: "Gently heat-treated", rate: 110 },
+  { id: "uht", name: "UHT", nameBn: "ইউএইচটি", note: "Long-life, ambient", rate: 95 },
 ];
 
 const FREQS = [
-  { id: "daily", label: "Daily", per: 30 },
-  { id: "weekdays", label: "Weekdays", per: 22 },
-  { id: "alternate", label: "Alternate days", per: 15 },
-  { id: "custom", label: "Custom days", per: null },
+  { id: "daily", label: "Daily", labelBn: "প্রতিদিন", per: 30 },
+  { id: "weekdays", label: "Weekdays", labelBn: "কর্মদিবস", per: 22 },
+  { id: "alternate", label: "Alternate days", labelBn: "একদিন পর পর", per: 15 },
+  { id: "custom", label: "Custom days", labelBn: "নিজের পছন্দে", per: null },
 ] as const;
 
 const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
@@ -52,7 +52,12 @@ export function CustomPlanBuilder() {
       <div className="space-y-9 lg:col-span-3">
         {/* Milk type */}
         <div>
-          <p className="text-eyebrow text-sage-deep/80">Choose your milk</p>
+          <p className="text-eyebrow text-sage-deep/80">
+            Choose your milk{" "}
+            <span className="font-bn ml-1 normal-case tracking-normal text-sage-deep/60">
+              · দুধ বাছুন
+            </span>
+          </p>
           <div className="mt-4 grid gap-3 sm:grid-cols-3">
             {MILKS.map((m) => {
               const on = m.id === milkId;
@@ -68,7 +73,12 @@ export function CustomPlanBuilder() {
                       : "hairline bg-cream/40 text-night hover:border-sage/40 hover:bg-cream",
                   )}
                 >
-                  <span className="font-serif text-lg">{m.name}</span>
+                  <span className="font-serif text-lg">
+                    {m.name}
+                    <span className="font-bn-serif ml-1.5 text-base opacity-70">
+                      {m.nameBn}
+                    </span>
+                  </span>
                   <span
                     className={cn(
                       "mt-1 block text-xs",
@@ -93,7 +103,12 @@ export function CustomPlanBuilder() {
 
         {/* Litres per delivery */}
         <div>
-          <p className="text-eyebrow text-sage-deep/80">Litres per delivery</p>
+          <p className="text-eyebrow text-sage-deep/80">
+            Litres per delivery{" "}
+            <span className="font-bn ml-1 normal-case tracking-normal text-sage-deep/60">
+              · প্রতি ডেলিভারিতে লিটার
+            </span>
+          </p>
           <div className="mt-4 flex items-center gap-5">
             <div className="inline-flex items-center gap-1 rounded-full border hairline bg-cream/50 p-1.5">
               <button
@@ -120,13 +135,19 @@ export function CustomPlanBuilder() {
             </div>
             <p className="text-sm text-stone">
               {taka(perDelivery)} per delivery
+              <span className="font-bn ml-1 text-stone/70">· প্রতি ডেলিভারি</span>
             </p>
           </div>
         </div>
 
         {/* Frequency */}
         <div>
-          <p className="text-eyebrow text-sage-deep/80">How often</p>
+          <p className="text-eyebrow text-sage-deep/80">
+            How often{" "}
+            <span className="font-bn ml-1 normal-case tracking-normal text-sage-deep/60">
+              · কত ঘন ঘন
+            </span>
+          </p>
           <div className="mt-4 flex flex-wrap gap-2.5">
             {FREQS.map((f) => {
               const on = f.id === freq;
@@ -143,6 +164,7 @@ export function CustomPlanBuilder() {
                   )}
                 >
                   {f.label}
+                  <span className="font-bn ml-1.5 opacity-70">{f.labelBn}</span>
                 </button>
               );
             })}
@@ -179,26 +201,28 @@ export function CustomPlanBuilder() {
       {/* Live summary */}
       <div className="lg:col-span-2">
         <div className="flex h-full flex-col rounded-[2rem] bg-ink p-8 text-cream">
-          <p className="text-eyebrow text-sage-soft/70">Your plan</p>
+          <p className="bn-eyebrow text-sage-soft/70">আপনার প্ল্যান · Your plan</p>
           <div className="mt-5 space-y-3 text-sm">
-            <Row label="Milk" value={milk.name} />
-            <Row label="Per delivery" value={`${litres}L`} />
+            <Row label="Milk · দুধ" value={`${milk.name} · ${milk.nameBn}`} />
+            <Row label="Per delivery · প্রতি ডেলিভারি" value={`${litres}L`} />
             <Row
-              label="Schedule"
+              label="Schedule · সময়সূচি"
               value={
                 freq === "custom"
                   ? `${days.length} day${days.length === 1 ? "" : "s"} / week`
-                  : FREQS.find((f) => f.id === freq)!.label
+                  : FREQS.find((f) => f.id === freq)!.labelBn
               }
             />
             <Row
-              label="Deliveries"
+              label="Deliveries · ডেলিভারি"
               value={`~${Math.round(perMonth)} / month`}
             />
           </div>
 
           <div className="mt-7 border-t border-cream/15 pt-6">
-            <p className="text-sm text-cream/60">Estimated monthly</p>
+            <p className="font-bn text-sm text-cream/60">
+              আনুমানিক মাসিক খরচ · Estimated monthly
+            </p>
             <p className="mt-1 font-serif text-5xl">
               {monthly > 0 ? taka(monthly) : "—"}
             </p>
@@ -208,19 +232,21 @@ export function CustomPlanBuilder() {
           </div>
 
           <ul className="mt-6 space-y-2.5">
-            {["Pause or skip anytime", "Delivered before breakfast", "Cancel whenever"].map(
-              (p) => (
-                <li key={p} className="flex items-center gap-2.5 text-sm">
-                  <Check size={15} className="shrink-0 text-sage-soft" />
-                  <span className="text-cream/85">{p}</span>
-                </li>
-              ),
-            )}
+            {[
+              "যেকোনো সময় বিরতি বা বাদ দিন",
+              "নাস্তার আগেই পৌঁছে দেওয়া",
+              "যখন খুশি বাতিল করুন",
+            ].map((p) => (
+              <li key={p} className="flex items-center gap-2.5 text-sm">
+                <Check size={15} className="shrink-0 text-sage-soft" />
+                <span className="font-bn text-cream/85">{p}</span>
+              </li>
+            ))}
           </ul>
 
           <div className="mt-8">
             <Button href="/contact" variant="light" size="lg" className="w-full">
-              Start this plan
+              Start this plan · <span className="font-bn">শুরু করুন</span>
             </Button>
           </div>
         </div>
@@ -232,8 +258,8 @@ export function CustomPlanBuilder() {
 function Row({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex items-center justify-between gap-4">
-      <span className="text-cream/55">{label}</span>
-      <span className="font-medium text-cream">{value}</span>
+      <span className="font-bn text-cream/55">{label}</span>
+      <span className="font-bn font-medium text-cream">{value}</span>
     </div>
   );
 }

@@ -54,10 +54,15 @@ export function ProductCard({
       </div>
 
       <div className="flex flex-1 flex-col p-7">
-        <h3 className="font-serif text-2xl text-night">{product.name}</h3>
+        <h3 className="font-serif text-2xl text-night">
+          {product.name}
+          <span className="font-bn-serif ml-2 text-lg text-sage-deep/70">
+            {product.nameBn}
+          </span>
+        </h3>
         <p className="mt-2 flex-1 text-stone">{product.tagline}</p>
         <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-ink transition-colors duration-500 group-hover:text-sage-deep">
-          Discover
+          Discover · <span className="font-bn">দেখুন</span>
           <ArrowUpRight
             size={16}
             className="transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"

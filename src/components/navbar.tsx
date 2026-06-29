@@ -117,9 +117,12 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-2xl px-4 py-3.5 font-serif text-2xl text-night transition-colors hover:bg-bg"
+                  className="flex items-baseline gap-3 rounded-2xl px-4 py-3.5 font-serif text-2xl text-night transition-colors hover:bg-bg"
                 >
                   {link.label}
+                  <span className="font-bn text-base text-stone">
+                    {link.labelBn}
+                  </span>
                 </Link>
               ))}
               <Link
@@ -127,7 +130,7 @@ export function Navbar() {
                 onClick={() => setOpen(false)}
                 className="mt-3 rounded-full bg-ink px-6 py-3.5 text-center font-medium text-cream"
               >
-                Order now
+                Order now · <span className="font-bn">অর্ডার করুন</span>
               </Link>
               <p className="mt-4 px-4 text-sm text-stone">{SITE.phone}</p>
             </div>

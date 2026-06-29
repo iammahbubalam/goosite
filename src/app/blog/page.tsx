@@ -74,7 +74,9 @@ export default function BlogPage() {
             <span className="italic text-ink">slowing down for.</span>
           </>
         }
+        titleBn="একটু থেমে পড়ার মতো গল্প।"
         intro="On pure food, healthy families, and the farms that make it all possible."
+        introBn="খাঁটি খাবার, সুস্থ পরিবার, আর যেসব খামার সব সম্ভব করে — তাদের নিয়ে।"
       />
 
       <section className="bg-cream py-20 md:py-24">

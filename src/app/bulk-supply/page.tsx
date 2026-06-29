@@ -78,7 +78,9 @@ export default function BulkSupplyPage() {
             <span className="italic text-ink">at scale.</span>
           </>
         }
+        titleBn="বিশুদ্ধতা, বড় পরিসরে।"
         intro="Dependable bulk supply for the businesses that care what they serve. The same milk we send to families — delivered to your kitchen door."
+        introBn="যেসব ব্যবসা যত্ন করে কী পরিবেশন করছে, তাদের জন্য নির্ভরযোগ্য বাল্ক সরবরাহ। পরিবারে পাঠানো সেই একই দুধ — পৌঁছে যাবে আপনার রান্নাঘরের দরজায়।"
       >
         <Button href="/contact" size="lg">
           Request a quote

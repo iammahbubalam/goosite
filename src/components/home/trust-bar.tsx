@@ -2,11 +2,11 @@ import { ShieldCheck, Sprout, FlaskConical, Leaf, Truck } from "lucide-react";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
 
 const TRUST = [
-  { Icon: ShieldCheck, label: "100% Pure" },
-  { Icon: Sprout, label: "Farm Fresh" },
-  { Icon: FlaskConical, label: "Quality Tested" },
-  { Icon: Leaf, label: "No Preservatives" },
-  { Icon: Truck, label: "Daily Delivery" },
+  { Icon: ShieldCheck, label: "100% Pure", bn: "১০০% খাঁটি" },
+  { Icon: Sprout, label: "Farm Fresh", bn: "খামার-তাজা" },
+  { Icon: FlaskConical, label: "Quality Tested", bn: "মান পরীক্ষিত" },
+  { Icon: Leaf, label: "No Preservatives", bn: "প্রিজারভেটিভ মুক্ত" },
+  { Icon: Truck, label: "Daily Delivery", bn: "প্রতিদিন ডেলিভারি" },
 ];
 
 export function TrustBar() {
@@ -17,9 +17,12 @@ export function TrustBar() {
           <p className="text-center text-eyebrow text-sage-deep/80">
             A promise in every drop
           </p>
+          <p className="font-bn-serif mt-2 text-center text-lg text-sage-deep/70">
+            প্রতিটি ফোঁটায় একটি প্রতিশ্রুতি
+          </p>
         </Reveal>
         <Stagger className="mt-9 grid grid-cols-2 gap-y-10 sm:grid-cols-3 lg:grid-cols-5">
-          {TRUST.map(({ Icon, label }) => (
+          {TRUST.map(({ Icon, label, bn }) => (
             <StaggerItem
               key={label}
               className="group flex cursor-default flex-col items-center gap-3 text-center"
@@ -33,6 +36,9 @@ export function TrustBar() {
               </span>
               <span className="text-sm font-medium tracking-tight text-night transition-colors duration-500 group-hover:text-sage-deep">
                 {label}
+              </span>
+              <span className="font-bn -mt-1.5 text-xs text-sage-deep/70">
+                {bn}
               </span>
             </StaggerItem>
           ))}

@@ -99,7 +99,12 @@ export default async function ProductPage({
                 <Eyebrow>{product.category}</Eyebrow>
               </Reveal>
               <Reveal delay={0.05}>
-                <h1 className="text-headline mt-5">{product.name}</h1>
+                <h1 className="text-headline mt-5">
+                  {product.name}
+                  <span className="font-bn-serif ml-3 text-3xl text-ink/70">
+                    {product.nameBn}
+                  </span>
+                </h1>
               </Reveal>
               <Reveal delay={0.1}>
                 <p className="mt-4 font-serif text-2xl italic text-ink">

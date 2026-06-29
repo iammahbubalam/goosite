@@ -10,6 +10,7 @@ const PLANS = [
   {
     id: "daily",
     name: "Daily Fresh",
+    nameBn: "প্রতিদিন তাজা",
     price: "৳3,300",
     cadence: "/ month",
     desc: "1 litre, delivered every single morning.",
@@ -19,6 +20,7 @@ const PLANS = [
   {
     id: "family",
     name: "Family Morning",
+    nameBn: "পরিবারের সকাল",
     price: "৳5,900",
     cadence: "/ month",
     desc: "2 litres daily — for households that run on milk.",
@@ -33,6 +35,7 @@ const PLANS = [
   {
     id: "alternate",
     name: "Alternate Days",
+    nameBn: "একদিন পর পর",
     price: "৳1,800",
     cadence: "/ month",
     desc: "1 litre, every other morning. Lighter routines.",
@@ -69,7 +72,7 @@ export function PlanSelector() {
                   active ? "bg-green text-cream" : "bg-green/15 text-green",
                 )}
               >
-                Most loved
+                Most loved · সবচেয়ে প্রিয়
               </span>
             )}
             <h3
@@ -79,6 +82,9 @@ export function PlanSelector() {
               )}
             >
               {plan.name}
+              <span className="font-bn-serif ml-2 text-lg opacity-70">
+                {plan.nameBn}
+              </span>
             </h3>
             <p
               className={cn(
@@ -120,17 +126,17 @@ export function PlanSelector() {
                   : "border hairline text-ink",
               )}
             >
-              {active ? "Selected" : "Choose plan"}
+              {active ? "Selected · নির্বাচিত" : "Choose plan · বেছে নিন"}
             </span>
           </motion.button>
         );
       })}
       <div className="md:col-span-3 mt-2 flex flex-col items-center gap-3 text-center">
         <Button href="/contact" size="lg">
-          Continue with this plan
+          Continue with this plan · <span className="font-bn">এগিয়ে যান</span>
         </Button>
-        <p className="text-sm text-stone">
-          No lock-in. Pause, skip or cancel anytime.
+        <p className="font-bn text-sm text-stone">
+          কোনো লক-ইন নেই। যেকোনো সময় বিরতি, বাদ বা বাতিল করুন।
         </p>
       </div>
     </div>

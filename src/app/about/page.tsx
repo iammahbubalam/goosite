@@ -36,7 +36,9 @@ export default function AboutPage() {
             <span className="italic text-ink">for every family.</span>
           </>
         }
+        titleBn="খাঁটি খাবার, প্রতিটি পরিবারের জন্য।"
         intro="We started GOOWALI with a simple frustration: families could no longer trust the milk they bought. So we built an honest alternative — farm to family, with nothing hidden in between."
+        introBn="একটি সহজ হতাশা থেকে GOOWALI-র শুরু: পরিবারগুলো আর কেনা দুধে ভরসা রাখতে পারছিল না। তাই আমরা গড়লাম এক সৎ বিকল্প — খামার থেকে পরিবারে, মাঝে কিছুই লুকানো নেই।"
       />
 
       {/* Mission / Vision */}

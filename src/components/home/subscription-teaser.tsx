@@ -6,9 +6,9 @@ import { SplitReveal } from "@/components/motion/split-reveal";
 import { ShaderField } from "@/components/shader/shader-field";
 
 const POINTS = [
-  { Icon: Sunrise, title: "Before breakfast", text: "Delivered to your door every morning, rain or shine." },
-  { Icon: CalendarCheck, title: "Your schedule", text: "Daily, alternate days, or weekdays only — you decide." },
-  { Icon: RefreshCw, title: "Pause anytime", text: "Skip, pause or change your plan whenever life shifts." },
+  { Icon: Sunrise, title: "Before breakfast", bn: "নাস্তার আগে", text: "Delivered to your door every morning, rain or shine." },
+  { Icon: CalendarCheck, title: "Your schedule", bn: "আপনার সময়সূচি", text: "Daily, alternate days, or weekdays only — you decide." },
+  { Icon: RefreshCw, title: "Pause anytime", bn: "যেকোনো সময় বিরতি", text: "Skip, pause or change your plan whenever life shifts." },
 ];
 
 export function SubscriptionTeaser() {
@@ -36,6 +36,11 @@ export function SubscriptionTeaser() {
             className="text-headline mt-6 text-cream"
             text="Wake up to fresh milk. Every single day."
           />
+          <Reveal delay={0.08}>
+            <p className="font-bn-serif mt-3 text-2xl text-cream/85">
+              প্রতিদিন ঘুম ভাঙুক তাজা দুধে।
+            </p>
+          </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-6 max-w-md text-lg leading-relaxed text-cream/75">
               Join the GOOWALI family and let mornings take care of themselves.
@@ -52,14 +57,19 @@ export function SubscriptionTeaser() {
         </div>
 
         <div className="space-y-4">
-          {POINTS.map(({ Icon, title, text }, i) => (
+          {POINTS.map(({ Icon, title, bn, text }, i) => (
             <Reveal key={title} delay={i * 0.08}>
               <div className="flex items-start gap-5 rounded-3xl border border-cream/15 bg-cream/5 p-6 backdrop-blur">
                 <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-cream/10 text-green-soft">
                   <Icon size={22} strokeWidth={1.6} />
                 </span>
                 <div>
-                  <h3 className="font-serif text-2xl text-cream">{title}</h3>
+                  <h3 className="font-serif text-2xl text-cream">
+                    {title}
+                    <span className="font-bn-serif ml-2 text-lg text-green-soft">
+                      {bn}
+                    </span>
+                  </h3>
                   <p className="mt-1.5 text-cream/70">{text}</p>
                 </div>
               </div>

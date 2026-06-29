@@ -80,16 +80,25 @@ export function Hero() {
         <div className="lg:col-span-6">
           <span className="hero-eyebrow text-eyebrow inline-flex items-center gap-2 text-sage">
             <span className="h-px w-7 bg-sage/60" />
-            Farm to family · Bangladesh
+            Farm to family · <span className="font-bn normal-case tracking-normal">খামার থেকে পরিবার</span>
           </span>
 
           <h1 className="hero-h1 text-display mt-6">
             Pure milk. <span className="italic text-ink">Every morning.</span>
           </h1>
 
+          <p className="hero-h1 font-bn-serif mt-3 text-2xl text-ink/90 md:text-3xl">
+            গরুর ১০০% খাঁটি দুধ, প্রতিদিন সকালে।
+          </p>
+
           <p className="hero-copy mt-7 max-w-md text-lg leading-relaxed text-stone">
             Directly from trusted farms to your family — collected at dawn,
             tested with care, delivered before breakfast.
+          </p>
+
+          <p className="hero-copy font-bn mt-3 max-w-md text-base leading-relaxed text-stone">
+            বিশ্বস্ত খামার থেকে সরাসরি আপনার পরিবারে — ভোরে সংগ্রহ, যত্নে পরীক্ষিত,
+            নাস্তার আগেই পৌঁছে দেওয়া।
           </p>
 
           <div className="hero-cta mt-9 flex flex-wrap items-center gap-4">
@@ -115,19 +124,34 @@ export function Hero() {
               <dt className="font-serif text-3xl text-ink">
                 <Counter to={2400} suffix="+" />
               </dt>
-              <dd className="mt-1 text-sm text-stone">families served</dd>
+              <dd className="mt-1 text-sm text-stone">
+                families served
+                <span className="font-bn mt-0.5 block text-xs text-stone/80">
+                  পরিবার পরিবেশিত
+                </span>
+              </dd>
             </div>
             <div className="hero-stat">
               <dt className="font-serif text-3xl text-ink">
                 <Counter to={40} suffix="+" />
               </dt>
-              <dd className="mt-1 text-sm text-stone">partner farms</dd>
+              <dd className="mt-1 text-sm text-stone">
+                partner farms
+                <span className="font-bn mt-0.5 block text-xs text-stone/80">
+                  অংশীদার খামার
+                </span>
+              </dd>
             </div>
             <div className="hero-stat">
               <dt className="font-serif text-3xl text-ink">
                 <Counter to={100} suffix="%" />
               </dt>
-              <dd className="mt-1 text-sm text-stone">purity, tested daily</dd>
+              <dd className="mt-1 text-sm text-stone">
+                purity, tested daily
+                <span className="font-bn mt-0.5 block text-xs text-stone/80">
+                  বিশুদ্ধতা, প্রতিদিন পরীক্ষিত
+                </span>
+              </dd>
             </div>
           </dl>
         </div>
@@ -155,8 +179,8 @@ export function Hero() {
 
             {/* floating proof chip */}
             <div className="absolute bottom-6 left-6 rounded-2xl bg-bg/85 px-5 py-3 shadow-[var(--shadow-soft)] backdrop-blur">
-              <p className="text-eyebrow text-sage">Tested today</p>
-              <p className="font-serif text-xl text-ink">100% pure</p>
+              <p className="bn-eyebrow text-sage">আজ পরীক্ষিত</p>
+              <p className="font-bn-serif text-xl text-ink">১০০% খাঁটি</p>
             </div>
           </div>
         </div>

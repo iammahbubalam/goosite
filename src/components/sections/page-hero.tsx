@@ -64,7 +64,9 @@ const MILK: Record<
 export function PageHero({
   eyebrow,
   title,
+  titleBn,
   intro,
+  introBn,
   children,
   media,
   mediaTone = "milk",
@@ -74,7 +76,11 @@ export function PageHero({
 }: {
   eyebrow: string;
   title: ReactNode;
+  /** Bangla echo of the headline (serif Bangla). */
+  titleBn?: ReactNode;
   intro?: string;
+  /** Bangla echo of the intro paragraph. */
+  introBn?: string;
   children?: ReactNode;
   /** Custom visual for the right column. Falls back to a themed shader panel. */
   media?: ReactNode;
@@ -114,10 +120,24 @@ export function PageHero({
           <Reveal delay={0.05}>
             <h1 className="text-display mt-6">{title}</h1>
           </Reveal>
+          {titleBn && (
+            <Reveal delay={0.08}>
+              <p className="font-bn-serif mt-3 text-2xl text-ink/90 md:text-3xl">
+                {titleBn}
+              </p>
+            </Reveal>
+          )}
           {intro && (
             <Reveal delay={0.1}>
               <p className="mt-7 max-w-xl text-lg leading-relaxed text-stone">
                 {intro}
+              </p>
+            </Reveal>
+          )}
+          {introBn && (
+            <Reveal delay={0.13}>
+              <p className="font-bn mt-3 max-w-xl text-base leading-relaxed text-stone">
+                {introBn}
               </p>
             </Reveal>
           )}

@@ -48,7 +48,9 @@ export default function SubscriptionPage() {
             <span className="italic text-ink">handled.</span>
           </>
         }
+        titleBn="সকাল, আমাদের হাতে।"
         intro="Join the GOOWALI family and wake up to fresh milk at your door — every morning, exactly as you like it."
+        introBn="GOOWALI পরিবারে যোগ দিন আর ঘুম থেকে উঠুন দরজায় তাজা দুধ নিয়ে — প্রতিদিন সকালে, ঠিক আপনার পছন্দমতো।"
       />
 
       {/* How it works */}
