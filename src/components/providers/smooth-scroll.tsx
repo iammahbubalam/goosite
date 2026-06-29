@@ -16,11 +16,13 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
     ).matches;
     if (reduce) return;
 
+    // lerp-based smoothing is frame-rate independent and gives a consistent,
+    // buttery glide that Framer's useScroll tracks precisely (no spring lag).
     const lenis = new Lenis({
-      duration: 1.15,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      lerp: 0.1,
       smoothWheel: true,
-      touchMultiplier: 1.6,
+      wheelMultiplier: 1,
+      touchMultiplier: 1.5,
     });
 
     lenis.on(
