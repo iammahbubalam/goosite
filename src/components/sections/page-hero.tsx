@@ -103,12 +103,13 @@ export function PageHero({
         distortion={m.distortion}
         swirl={m.swirl}
         fallback={m.fallback}
-        className="opacity-[0.55]"
+        className="opacity-[0.82]"
       />
-      {/* legibility wash — keeps the milk present but the copy crisp */}
+      {/* legibility wash — lighter now so the milk flow reads clearly, while the
+          left edge stays calm enough for the headline */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-r from-bg/75 via-bg/35 to-bg/10"
+        className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-r from-bg/62 via-bg/20 to-transparent"
       />
 
       <div className="container-x grid items-center gap-12 pb-20 lg:grid-cols-12 lg:gap-10 lg:pb-28">
