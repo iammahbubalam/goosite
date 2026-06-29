@@ -1,80 +1,88 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import {
-  Sun,
-  Tractor,
-  Drop,
-  TestTube,
-  Snowflake,
-  Truck,
-  House,
-} from "@phosphor-icons/react";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { Sun, Cow, Drop, Flask, JarLabel, Jar, ForkKnife } from "@phosphor-icons/react";
+import type { Icon as PhosphorIcon } from "@phosphor-icons/react";
 import { Eyebrow } from "@/components/ui/section";
 import { Reveal } from "@/components/motion/reveal";
 import { SplitReveal } from "@/components/motion/split-reveal";
-import { FlowField } from "@/components/generative/flow-field";
-import { gsap } from "@/lib/gsap";
+import { Photo } from "@/components/ui/photo";
+import { getPhoto } from "@/lib/photo";
 
-const STEPS = [
-  { Icon: Sun, title: "Dawn", bn: "ভোর", text: "Cows wake and are milked by hand at first light." },
-  { Icon: Tractor, title: "Farm", bn: "খামার", text: "Single-source from herds we know and trust." },
-  { Icon: Drop, title: "Collection", bn: "সংগ্রহ", text: "Filtered and gathered within the hour." },
-  { Icon: TestTube, title: "Testing", bn: "পরীক্ষা", text: "Every batch lab-checked for purity." },
-  { Icon: Snowflake, title: "Cooling", bn: "শীতলীকরণ", text: "Flash-chilled to lock in freshness." },
-  { Icon: Truck, title: "Delivery", bn: "ডেলিভারি", text: "Carried cold across the city overnight." },
-  { Icon: House, title: "Family", bn: "পরিবার", text: "On your table, before breakfast." },
+type Chapter = {
+  no: string;
+  Icon: PhosphorIcon;
+  photo: string;
+  title: string;
+  line: string;
+  bn: string;
+};
+
+const CHAPTERS: Chapter[] = [
+  {
+    no: "01",
+    Icon: Sun,
+    photo: "journey-dawn",
+    title: "First light",
+    line: "A farmer's day starts before sunrise.",
+    bn: "সূর্য ওঠার আগেই শুরু হয় কৃষকের দিন।",
+  },
+  {
+    no: "02",
+    Icon: Cow,
+    photo: "journey-herd",
+    title: "Our desi cows",
+    line: "Native cows, raised free on open pasture.",
+    bn: "খোলা মাঠে বেড়ে ওঠা দেশি গরু।",
+  },
+  {
+    no: "03",
+    Icon: Drop,
+    photo: "journey-milking",
+    title: "Hand-milked",
+    line: "Milked by hand, fresh into clean steel.",
+    bn: "হাতে দোয়ানো, সরাসরি পরিষ্কার পাত্রে।",
+  },
+  {
+    no: "04",
+    Icon: Flask,
+    photo: "journey-testing",
+    title: "Tested for purity",
+    line: "Every batch checked before anything is made.",
+    bn: "কিছু তৈরির আগে প্রতিটি দুধ পরীক্ষিত।",
+  },
+  {
+    no: "05",
+    Icon: JarLabel,
+    photo: "journey-rawmilk",
+    title: "Pure raw milk",
+    line: "Bottled pure, the same morning.",
+    bn: "খাঁটি কাঁচা দুধ, সেই সকালেই বোতলজাত।",
+  },
+  {
+    no: "06",
+    Icon: Jar,
+    photo: "journey-products",
+    title: "Made by hand",
+    line: "Doi, ghee & chhana, made slowly the organic way.",
+    bn: "দই, ঘি আর ছানা — হাতে, ধীরে তৈরি।",
+  },
+  {
+    no: "07",
+    Icon: ForkKnife,
+    photo: "journey-family",
+    title: "Your family",
+    line: "On your family's table, before breakfast.",
+    bn: "নাস্তার আগেই, আপনার পরিবারের টেবিলে।",
+  },
 ];
 
 export function MilkJourney() {
-  const root = useRef<HTMLDivElement>(null);
-  const track = useRef<HTMLDivElement>(null);
-  const fill = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const trackEl = track.current;
-    const fillEl = fill.current;
-    if (!trackEl || !root.current) return;
-
-    const mm = gsap.matchMedia();
-
-    // Desktop: pin the section and scrub the track sideways.
-    mm.add("(min-width: 1024px) and (prefers-reduced-motion: no-preference)", () => {
-      const distance = () => trackEl.scrollWidth - window.innerWidth;
-
-      const tween = gsap.to(trackEl, {
-        x: () => -distance(),
-        ease: "none",
-        scrollTrigger: {
-          trigger: root.current,
-          start: "top top",
-          end: () => `+=${distance()}`,
-          pin: true,
-          scrub: 0.8,
-          invalidateOnRefresh: true,
-          onUpdate: (self) => {
-            if (fillEl) fillEl.style.transform = `scaleX(${self.progress})`;
-          },
-        },
-      });
-
-      return () => tween.kill();
-    });
-
-    return () => mm.revert();
-  }, []);
-
   return (
-    <section ref={root} className="relative isolate overflow-hidden bg-dawn">
-      <FlowField
-        seed={42}
-        palette={["#153b7a", "#6e8c57", "#d4af37"]}
-        fade="#fdfbf8"
-        density={0.6}
-        className="opacity-[0.3]"
-      />
+    <section className="relative isolate overflow-hidden bg-dawn py-24 md:py-28">
       {/* Heading */}
-      <div className="container-x pt-24 lg:pt-28">
+      <div className="container-x">
         <div className="max-w-2xl">
           <Reveal>
             <Eyebrow>Farm to family</Eyebrow>
@@ -91,56 +99,97 @@ export function MilkJourney() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-6 text-lg leading-relaxed text-stone">
-              Seven careful steps stand between our farms and your morning. Not
-              one of them is rushed.
-            </p>
-          </Reveal>
-          <Reveal delay={0.12}>
-            <p className="font-bn mt-3 text-base leading-relaxed text-stone">
-              আমাদের খামার থেকে আপনার সকাল পর্যন্ত সাতটি যত্নশীল ধাপ — একটিও তাড়াহুড়ো নয়।
+              Seven unhurried steps stand between our farms and your morning.
             </p>
           </Reveal>
         </div>
       </div>
 
-      {/* Track: horizontal on desktop, stacked on mobile */}
-      <div
-        ref={track}
-        className="mt-14 flex flex-col gap-6 px-6 pb-24 lg:mt-20 lg:h-[58vh] lg:flex-row lg:gap-0 lg:px-0 lg:pb-0"
-      >
-        {STEPS.map(({ Icon, title, bn, text }, i) => (
-          <article
-            key={title}
-            className="group flex shrink-0 flex-col justify-end rounded-[2rem] border hairline bg-bg/70 p-8 backdrop-blur-sm transition-colors hover:bg-bg lg:mx-4 lg:h-full lg:w-[26rem] lg:rounded-[2.5rem] lg:p-12 lg:first:ml-[max(1.5rem,calc((100vw-80rem)/2+2.5rem))]"
-          >
-            <span className="font-serif text-6xl text-ink/15 lg:text-7xl">
-              {String(i + 1).padStart(2, "0")}
-            </span>
-            <span className="mt-8 inline-flex h-14 w-14 items-center justify-center rounded-full bg-sage/12 text-sage">
-              <Icon size={26} weight="light" />
-            </span>
-            <h3 className="mt-6 font-serif text-3xl text-night">
-              {title}
-              <span className="font-bn-serif ml-2.5 text-2xl text-sage-deep/70">
-                {bn}
-              </span>
-            </h3>
-            <p className="mt-2 max-w-xs text-stone">{text}</p>
-          </article>
+      {/* Chapters */}
+      <div className="mt-8 md:mt-12">
+        {CHAPTERS.map((c, i) => (
+          <ChapterRow key={c.no} chapter={c} flip={i % 2 === 1} />
         ))}
       </div>
-
-      {/* Progress rail (desktop scrub) */}
-      <div className="hidden lg:block">
-        <div className="container-x pb-16">
-          <div className="h-px w-full bg-ink/10">
-            <div
-              ref={fill}
-              className="h-px w-full origin-left scale-x-0 bg-sage"
-            />
-          </div>
-        </div>
-      </div>
     </section>
+  );
+}
+
+function ChapterRow({ chapter, flip }: { chapter: Chapter; flip: boolean }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { Icon } = chapter;
+  const photo = getPhoto(chapter.photo);
+
+  // Scroll progress across this row's full pass through the viewport.
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  // Image: slides in from its side as the row enters, then drifts gently
+  // (parallax) — all tied to scroll so it "follows" the page.
+  const x = useTransform(scrollYProgress, [0, 0.4], [flip ? 80 : -80, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], [48, -48]);
+  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.9, 1], [0, 1, 1, 0.8]);
+  const scale = useTransform(scrollYProgress, [0, 0.4], [1.08, 1]);
+
+  return (
+    <div
+      ref={ref}
+      className="container-x grid items-center gap-10 py-12 md:min-h-[78vh] md:gap-16 lg:grid-cols-2"
+    >
+      {/* Media */}
+      <motion.div
+        style={{ x, y, opacity }}
+        className={flip ? "lg:order-2" : "lg:order-1"}
+      >
+        <motion.div
+          style={{ scale }}
+          className="relative aspect-[4/3] overflow-hidden rounded-[2.5rem] shadow-[var(--shadow-lift)] ring-1 ring-inset ring-ink/5"
+        >
+          <Photo
+            src={photo?.src}
+            blurDataURL={photo?.lqip}
+            alt={photo?.alt ?? chapter.title}
+            tone="field"
+            shader
+            rounded="rounded-none"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="h-full w-full"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-night/35 via-transparent to-transparent"
+          />
+          <span className="absolute left-6 top-6 inline-flex h-12 w-12 items-center justify-center rounded-full bg-bg/85 text-sage-deep shadow-[var(--shadow-soft)] backdrop-blur">
+            <Icon size={24} weight="light" />
+          </span>
+        </motion.div>
+      </motion.div>
+
+      {/* Text */}
+      <div className={flip ? "lg:order-1" : "lg:order-2"}>
+        <Reveal>
+          <span className="font-serif text-6xl text-ink/15 md:text-7xl">
+            {chapter.no}
+          </span>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <h3 className="mt-3 font-serif text-4xl text-night md:text-5xl">
+            {chapter.title}
+          </h3>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <p className="mt-4 max-w-md text-lg leading-relaxed text-stone">
+            {chapter.line}
+          </p>
+        </Reveal>
+        <Reveal delay={0.14}>
+          <p className="font-bn mt-2 max-w-md text-base leading-relaxed text-stone/90">
+            {chapter.bn}
+          </p>
+        </Reveal>
+      </div>
+    </div>
   );
 }

@@ -187,5 +187,54 @@
     "width": 2400,
     "height": 1792,
     "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAADwBACdASoYABIAPu1ur1IppiQiqAgBMB2JQAAFVHM5gUJ0tAzoEMQf6L51T8lGeMAA/ufW3V4dwYiP6smO5xNeK0n49O3h16ax23wkqfVUJuqgBukRf3J+sgF5tQaf2d27L4Gx08B3asEYTe2QDX27kYnBmdeV8AN7aYgsCuJceZrPtA94DxFvy/gJz2CqtQAAAA=="
+  },
+  "journey-dawn": {
+    "src": "/brand/photos/journey-dawn.webp",
+    "alt": "A Bangladeshi farmer at first light",
+    "width": 2400,
+    "height": 1792,
+    "lqip": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAAAwBQCdASoYABIAPu1srVEppaQiqAqpMB2JYwC7M2jBqUFCqxc2h6KGsCU3BrbMuUKOAAD+78K/04Z4GudkOJns7HHma3IY63PQi3hzeGztT+JRsXCVxXDGa/FG6i6n9GdnvtFBjFAxD0EA01eiYhpviGE3Fmpk50dF2P1hy+jeh8qNYIz9se6gJobgpReKZBiBt12W95hFxn7P3DW0u7ANIViWwkjAAAA="
+  },
+  "journey-herd": {
+    "src": "/brand/photos/journey-herd.webp",
+    "alt": "Indigenous desi cows on open pasture",
+    "width": 2400,
+    "height": 1792,
+    "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAAAQBQCdASoYABIAPu1srFEppaQiqAqpMB2JQBOmbIA0sWOhexQAPV3wc6okjzUNBi64AP7trQxQzx5izwqtqIujqGZXqelOjakqBcGGziR1oCVLc9ayjoaq4Zxtv4/IWqZmLBmL8YZR/fezWIqBk26yRoqda8GCEB5jmRE7DHxF+ZEAp4nHPpAa8xJC3fAuDKTeMpgiAAA="
+  },
+  "journey-milking": {
+    "src": "/brand/photos/journey-milking.webp",
+    "alt": "A farmer hand-milking a desi cow",
+    "width": 2400,
+    "height": 1792,
+    "lqip": "data:image/webp;base64,UklGRtoAAABXRUJQVlA4IM4AAABwBQCdASoYABIAPu1srFEppaQiqAqpMB2JZACdAywTnwSCA1pEDM7I6iTXtkhLIB31UCqAAP7CSD9VUXh4eCd2BumneTWVxTP6TQ14PA5GFTGLhGxWPPvFV20UZMGO8GqkMKqy4/ObO4kA6wqCRA5HbFXrKPyAvPjCaRxwTs5ibPCEe3nhKRiBVq+61aDZaPxEFz+cC7sIqvZJuytOoRGELoqGmZfU9fbOcsTcj2i5eSOHmsrJOO3+PDhjKwg4e7I1QPi1+aZROUNvzQAAAA=="
+  },
+  "journey-testing": {
+    "src": "/brand/photos/journey-testing.webp",
+    "alt": "Fresh milk quality being tested",
+    "width": 2400,
+    "height": 1792,
+    "lqip": "data:image/webp;base64,UklGRtwAAABXRUJQVlA4INAAAACwBQCdASoYABIAPu1sq1EppaOiqAqpMB2JZQCBjp8JAUMtKMiKz8f5ifQ6rxs7rEWXSw87FgAA/vHzvjjzkaq1fv1NwrrCF7exqDLmpZ1q47MhIfqUMUzA7Xb+fxCWMfGzVugx4lW1NK1Qs9IjrGWYeHh+tDicxm7Vd2VMOpwQMzqhAA0czVtiwkCx/W1zCBrhGRV4tsQq8/WrhWx8hO3Lgi7EA9y+y2/8293AL6lySwDTZPwUzNi9AfzvdqyyQGY0LQeXYfgNvgMoBDNeAAAA"
+  },
+  "journey-rawmilk": {
+    "src": "/brand/photos/journey-rawmilk.webp",
+    "alt": "Pure raw GOOWALI milk bottled the same morning",
+    "width": 2400,
+    "height": 1792,
+    "lqip": "data:image/webp;base64,UklGRtoAAABXRUJQVlA4IM4AAAAwBQCdASoYABIAPu1ur1IppiQiqAgBMB2JYgCdABBXzazAIuWxUyyM66WkII5DkHJWAAD+5QjvPkdFUmtL1iqjTViVVRKMdRLEsgmzTUWiuVNeX4YK/VgW5bwHmNPnbFLo/CoT+75hJ/FO3qj/XzmRUi5zX5MtEuVOcgKagRUuefIzjaZafvtUAxJiaZDFRWHdHEMbDo46LowVCaYVsbYKoEnIAeFrgavdluir+XbP6gJUjVg8a2bcViXSoGEo0/h+PaLX9TZFBwtZ3S8AAA=="
+  },
+  "journey-products": {
+    "src": "/brand/photos/journey-products.webp",
+    "alt": "Traditional Bengali dairy products made by hand",
+    "width": 2400,
+    "height": 1792,
+    "lqip": "data:image/webp;base64,UklGRtgAAABXRUJQVlA4IMwAAABwBQCdASoYABIAPu1ur1IppiQiqAgBMB2JQBfnO6RwWFvtHqWpl0JJ/BmZ/2NPE0J/1pOkAP7ZXRQqLHBezi6hr5DULFObKAd/9zrshL0qq4632vvJvhXvh98UJbL+u+luJFFWNagFlsGs1KzsdnbGtW1UVAMuuBpNFmPQ26A4QrbnmznZXD5uVkp6xMwCfpOg0kAX5Usxodn7Rz5TKv5F68VW+Xj9RRvIBIyDDhz4w7QnSl9b+L1qRKzjOo3hR15vwfCeExR0nVHAAAA="
+  },
+  "journey-family": {
+    "src": "/brand/photos/journey-family.webp",
+    "alt": "A Bangladeshi family breakfast with GOOWALI milk",
+    "width": 2400,
+    "height": 1792,
+    "lqip": "data:image/webp;base64,UklGRvYAAABXRUJQVlA4IOoAAACwBQCdASoYABIAPu1ur1KppiQiqAgBMB2JQBOiP/yMAlV8qMe1FebbG7rjOIMCyNgTZe4TiEAA/tBCj+HtUyAH8UTMpXvoWq9Pao7M2qGBiuTOTfxd6Tb/JfU8IWWjLl9KfJ4X/HaHCumu3VA6fvYNHqJh41nIcTVtWBj3A/qnqLfO1CXeI4uDx5m1WkDIUMt0iLkt+fSd7g16YpXRydwWiWHZYBFoB+svQ2xmyhqnJ7OcKf34pQzpeSdWdA+7LB2ljleCokuEl45QqDjgkpw1MdGAMKmK7F6X6PQ43+FGo5pFk4L04UUAAAA="
   }
 }

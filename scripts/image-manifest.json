@@ -1,12 +1,54 @@
 {
   "references": {
-    "logo": "assets/logo/goowali_logo_with_bg.png",
+    "logo": "public/brand/goowali_logo_with_tagline.png",
     "pkg": "assets/pkging/ChatGPT Image Jun 7, 2026, 12_01_03 AM.png",
     "banner": "assets/banner/Milk_brand_banner_design_idea_202606060218.jpeg"
   },
   "brandMark": "Reproduce the GOOWALI brand mark EXACTLY as in the first reference image — do NOT redesign, recolour, or invent a different logo. The emblem is a circular badge: a cream-and-tan cow's head with curved horns facing forward, resting in a swirl of pouring white milk with small green leaves, ringed by a deep-blue milk splash. The wordmark 'GOOWALI' is a bold deep-blue rounded serif where one letter is a glossy milk-drop, with the small Bengali tagline 'গরুর ১০০% খাঁটি দুধ' beneath. The product packaging label must carry this exact emblem and wordmark, undistorted, centred and legible — same cow, same blue, same shapes. Match the label style of the round-label reference too. No other logos, no garbled or invented text.",
   "style": "ART DIRECTION — premium editorial photography for GOOWALI (Bangladesh), shot like a national flagship campaign: 50mm prime look, shallow depth of field, soft directional dawn light, creamy bokeh, gentle condensation/steam, a whisper of film grain, restrained natural colour grade. Palette anchored to cream/ivory (#FFF9F2), deep brand blue (#153B7A) and natural green (#6B9D38). Mood: calm, honest, nourishing, unmistakably fresh — Aesop-meets-Oatly restraint, never an advert, never busy. Hard nos: no harsh studio flash, no plastic CGI sheen, no oversaturation, no watermark, no extra fingers, no invented text beyond the GOOWALI label.",
   "slots": [
+    {
+      "id": "journey-dawn", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
+      "refs": ["banner"],
+      "alt": "A Bangladeshi farmer at first light",
+      "prompt": "AUTHENTIC RURAL BANGLADESH. ONE single wide documentary photograph — a SCENE ONLY, with absolutely NO products, NO milk bottles, NO jars, NO bowls, NO food and NO logo anywhere in the frame. A Bangladeshi farmer (brown skin, local features, wearing a lungi and a checked gamcha over the shoulder) walking along a dirt path toward a simple bamboo-and-tin homestead cowshed at sunrise, soft mist over green paddy fields, a humped reddish-brown indigenous desi cow (Bos indicus, clear shoulder hump and dewlap) resting near the shed, dew on the grass, golden low documentary light. Indigenous South Asian zebu cattle ONLY. ABSOLUTELY NO black-and-white Holstein-Friesian or European/American cows, NO foreigners, NO Western farm look, no products, no text."
+    },
+    {
+      "id": "journey-herd", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
+      "refs": ["banner"],
+      "alt": "Indigenous desi cows on open pasture",
+      "prompt": "AUTHENTIC RURAL BANGLADESH. A small herd of indigenous Bangladeshi desi cows (reddish-brown and grey, slender, each with a clear shoulder HUMP and dewlap — Pabna / Red Chittagong / desi zebu breed) grazing peacefully on lush green pasture beside a village pond, banana and coconut trees around, a Bangladeshi farmer in lungi and gamcha tending them, soft morning haze and golden light. ABSOLUTELY NO black-and-white Holstein-Friesian or European cattle, NO foreigners, NO Western farm aesthetic, no text, no products."
+    },
+    {
+      "id": "journey-milking", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
+      "refs": ["banner"],
+      "alt": "A farmer hand-milking a desi cow",
+      "prompt": "AUTHENTIC RURAL BANGLADESH. A Bangladeshi farmer (lungi, gamcha, brown skin) crouched hand-milking a calm humped reddish-brown indigenous desi cow into a clean stainless-steel pail inside a tidy rural cowshed at morning, a small calf standing nearby, gentle and hygienic, warm directional light. Indigenous zebu cattle with shoulder hump ONLY. ABSOLUTELY NO Holstein-Friesian black-and-white or foreign cows, NO foreigners, no text."
+    },
+    {
+      "id": "journey-testing", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
+      "refs": ["banner"],
+      "alt": "Fresh milk quality being tested",
+      "prompt": "AUTHENTIC RURAL BANGLADESH. A clean, simple local village dairy collection point: a Bangladeshi worker in a plain apron checking fresh milk quality — dipping a glass lactometer into a steel pot and holding a small sample of creamy milk up to the daylight, gleaming stainless-steel milk cans around, bright and hygienic but modest and authentic (NOT a high-tech foreign laboratory). Bangladeshi people only, brown skin, local features. Calm cream-and-steel tones, no text."
+    },
+    {
+      "id": "journey-rawmilk", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
+      "refs": ["logo", "banner"],
+      "alt": "Pure raw GOOWALI milk bottled the same morning",
+      "prompt": "AUTHENTIC RURAL BANGLADESH. A single clear GOOWALI glass milk bottle (label fully facing camera, large and legible) being filled with pure cream-rich raw milk at a clean local bottling table, a Bangladeshi worker's brown hands steadying it, soft condensation, a visible creamy top layer, warm morning light. Reproduce the bottle label EXACTLY as the FIRST reference image — the same forward-facing cream-and-tan cow head inside the blue milk-swirl ring with green leaves, the same 'GOOWALI' wordmark, and the same Bengali tagline 'গরুর ১০০% খাঁটি দুধ' beneath — faithful, undistorted, identical colours, do NOT restyle or invent. Any cattle in the background are humped reddish-brown indigenous desi zebu — ABSOLUTELY NO black-and-white Holstein-Friesian cows, no foreigners, no other text."
+    },
+    {
+      "id": "journey-products", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
+      "refs": ["logo", "banner"],
+      "alt": "Traditional Bengali dairy products made by hand",
+      "prompt": "AUTHENTIC RURAL BANGLADESH. ONE single continuous documentary photograph — NOT a collage, NOT a grid or triptych, NOT a poster, and with NO large floating logo or brand lockup anywhere in the frame. Inside a simple village dairy kitchen: a Bangladeshi artisan (brown skin, lungi) slowly stirring thickening milk in a heavy iron pan over a clay-oven (chula) wood fire, soft steam and warm firelight; in the foreground, rows of creamy mishti doi setting in small earthen clay pots (matir hari), a glass jar of golden ghee, and fresh white chhana on a banana leaf. Each clay pot and the ghee jar carries a small round GOOWALI label. Authentic, organic, handmade, calm. Bangladeshi people only, no foreigners. Reproduce only the small GOOWALI label legibly on the pots and jar — no separate logo, no other invented text."
+    },
+    {
+      "id": "journey-family", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
+      "refs": ["logo", "banner"],
+      "alt": "A Bangladeshi family breakfast with GOOWALI milk",
+      "prompt": "AUTHENTIC BANGLADESH. A warm Bangladeshi home breakfast seen slightly from above: a single GOOWALI glass milk bottle (label fully facing camera, legible) and two filled glasses of fresh milk among paratha/ruti, fruit and simple ceramic plates on a home table, two Bangladeshi adults' brown hands sharing the moment, soft morning light. Lived-in, gently joyful, authentic Bangladeshi household. Reproduce the bottle label EXACTLY as the FIRST reference image — the same forward-facing cream-and-tan cow head inside the blue milk-swirl ring with green leaves, the same 'GOOWALI' wordmark and the same Bengali tagline 'গরুর ১০০% খাঁটি দুধ' beneath — faithful, undistorted, identical colours, do NOT restyle or invent. Adults only, no foreigners, no other text."
+    },
     {
       "id": "hero-glass", "aspectRatio": "4:5", "imageSize": "2K", "maxWidth": 1200,
       "refs": ["logo", "pkg", "banner"],
