@@ -123,7 +123,7 @@ export function MilkJourney() {
         {/* spine track + scroll-bound fill */}
         <div
           aria-hidden
-          className="absolute left-[1.875rem] top-2 bottom-2 w-px -translate-x-1/2 bg-ink/10 md:left-1/2"
+          className="absolute left-[1.875rem] top-0 bottom-0 w-px -translate-x-1/2 bg-ink/10 [mask-image:linear-gradient(to_bottom,transparent,#000_5%,#000_95%,transparent)] md:left-1/2"
         >
           <motion.div
             style={{ scaleY: fill }}
@@ -163,26 +163,41 @@ function ChapterRow({ chapter, index }: { chapter: Chapter; index: number }) {
   const scale = useTransform(scrollYProgress, [0.1, 0.42], [0.93, 1]);
   // Slow parallax drift on the image for depth across the whole pass.
   const imgY = useTransform(scrollYProgress, [0, 1], [26, -26]);
-  // Node grows + brightens as the card settles by the spine.
+  // Node fills + the connector draws + a soft halo blooms as the card settles
+  // by the spine — all on the same precise window so they move as one.
   const nodeScale = useTransform(scrollYProgress, [0.42, 0.58], [0, 1]);
+  const nodeGlow = useTransform(scrollYProgress, [0.42, 0.58], [0, 0.55]);
 
   const cardStyle = reduce ? undefined : { x, opacity, scale };
   const imgStyle = reduce ? undefined : { y: imgY };
-  const nodeStyle = reduce ? undefined : { scale: nodeScale };
+  // Reduced motion → render the "active" end-state, static.
+  const dotStyle = reduce ? { scale: 1, opacity: 1 } : { scale: nodeScale, opacity: nodeScale };
+  const glowStyle = reduce ? { opacity: 0.4 } : { opacity: nodeGlow };
+  const connStyle = reduce ? { scaleX: 1 } : { scaleX: nodeScale };
 
   return (
     <div ref={ref} className="relative py-8 pl-16 md:py-12 md:pl-0">
-      {/* node on the spine */}
-      <motion.span
-        aria-hidden
-        style={nodeStyle as { scale: MotionValue<number> } | undefined}
-        className="absolute left-[1.875rem] top-12 z-10 h-3.5 w-3.5 -translate-x-1/2 rounded-full border-2 border-sage bg-bg shadow-[0_0_0_4px_var(--color-bg)] md:left-1/2"
-      />
-      {/* connector tick from spine to card (desktop) */}
+      {/* node on the spine: always-present hollow ring, an inner sage dot that
+          fills, and a soft halo that blooms as the card lands */}
       <span
         aria-hidden
-        className={`absolute top-[3.25rem] hidden h-px w-8 bg-sage/35 md:block ${
-          onRight ? "left-1/2" : "right-1/2"
+        className="absolute left-[1.875rem] top-12 z-10 grid h-4 w-4 -translate-x-1/2 place-items-center rounded-full border border-sage/40 bg-bg shadow-[0_0_0_4px_var(--color-bg)] md:left-1/2"
+      >
+        <motion.span
+          style={glowStyle as { opacity: MotionValue<number> } | { opacity: number }}
+          className="absolute -inset-1.5 -z-10 rounded-full bg-sage/40 blur-md"
+        />
+        <motion.span
+          style={dotStyle as { scale: MotionValue<number>; opacity: MotionValue<number> } | { scale: number; opacity: number }}
+          className="h-2 w-2 rounded-full bg-sage"
+        />
+      </span>
+      {/* connector tick — draws from the spine outward toward the card */}
+      <motion.span
+        aria-hidden
+        style={connStyle as { scaleX: MotionValue<number> } | { scaleX: number }}
+        className={`absolute top-14 hidden h-px w-8 bg-sage/50 md:block ${
+          onRight ? "left-1/2 origin-left" : "right-1/2 origin-right"
         }`}
       />
 
@@ -193,7 +208,7 @@ function ChapterRow({ chapter, index }: { chapter: Chapter; index: number }) {
             onRight ? "md:order-2 md:pl-8" : "md:order-1 md:pr-8"
           }`}
         >
-          <div className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] shadow-[var(--shadow-lift)] ring-1 ring-inset ring-ink/5">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] shadow-[var(--shadow-soft)] ring-1 ring-inset ring-ink/5 transition-shadow duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:shadow-[var(--shadow-lift)]">
             <motion.div style={imgStyle} className="absolute inset-[-8%]">
               <Photo
                 src={photo?.src}
@@ -210,17 +225,23 @@ function ChapterRow({ chapter, index }: { chapter: Chapter; index: number }) {
               aria-hidden
               className="pointer-events-none absolute inset-0 bg-gradient-to-t from-night/30 via-transparent to-transparent"
             />
+            {/* faint glassy top edge */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-x-0 top-0 h-px bg-white/15"
+            />
             {/* number + icon chip */}
-            <div className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full bg-bg/85 py-1.5 pl-2.5 pr-3.5 shadow-[var(--shadow-soft)] backdrop-blur">
-              <Icon size={16} weight="light" className="text-sage-deep" />
-              <span className="font-serif text-sm leading-none text-ink">
+            <div className="absolute left-5 top-5 inline-flex items-center gap-2.5 rounded-full bg-bg/85 py-1.5 pl-3 pr-3.5 shadow-[var(--shadow-soft)] ring-1 ring-inset ring-white/40 backdrop-blur">
+              <Icon size={15} weight="light" className="text-sage-deep" />
+              <span aria-hidden className="h-3 w-px bg-ink/15" />
+              <span className="font-serif text-sm leading-none text-ink [font-feature-settings:'tnum']">
                 {chapter.no}
               </span>
             </div>
           </div>
 
           <div className={`mt-5 ${onRight ? "" : "md:text-right"}`}>
-            <h3 className="font-serif text-2xl text-night md:text-3xl">
+            <h3 className="font-serif text-2xl text-night transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:text-sage-deep md:text-3xl">
               {chapter.title}
             </h3>
             <p
