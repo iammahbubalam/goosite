@@ -45,7 +45,8 @@ export function Footer() {
             alt="GOOWALI"
             width={150}
             height={56}
-            className="h-14 w-auto brightness-0 invert"
+            style={{ width: "auto", height: "auto" }}
+            className="h-14 brightness-0 invert"
           />
           <p className="mt-6 max-w-sm font-serif text-2xl leading-snug text-cream/90">
             From our farms to your family. Fresh, pure, honest — every morning.

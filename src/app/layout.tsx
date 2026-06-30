@@ -73,6 +73,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${fraunces.variable} ${inter.variable} ${tiroBangla.variable} ${hindSiliguri.variable} h-full`}
     >
       <body
