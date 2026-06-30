@@ -41,7 +41,7 @@ export function Footer() {
       <div className="container-x relative grid gap-14 pb-12 pt-8 md:grid-cols-12">
         <div className="md:col-span-5">
           <Image
-            src="/brand/goowali_bgremoved.png"
+            src="/brand/goowali_bgremoved.webp"
             alt="GOOWALI"
             width={150}
             height={56}

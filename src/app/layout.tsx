@@ -5,10 +5,9 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { SmoothScroll } from "@/components/providers/smooth-scroll";
 import { CartProvider } from "@/lib/cart";
-import { CartDrawer } from "@/components/cart/cart-drawer";
+import { LazyCartDrawer, LazyToaster } from "@/components/providers/lazy-overlays";
 import { Grain } from "@/components/ui/grain";
 import { ScrollProgress } from "@/components/motion/scroll-progress";
-import { Toaster } from "sonner";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -31,13 +30,16 @@ const tiroBangla = Tiro_Bangla({
   subsets: ["bengali"],
   weight: "400",
   display: "swap",
+  // Let the Latin LCP fonts win the preload race; swap keeps Bangla painting.
+  preload: false,
 });
 
 const hindSiliguri = Hind_Siliguri({
   variable: "--font-hind-siliguri",
   subsets: ["bengali"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500"],
   display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -86,10 +88,10 @@ export default function RootLayout({
             <main className="flex-1">{children}</main>
             <Footer />
           </SmoothScroll>
-          <CartDrawer />
+          <LazyCartDrawer />
         </CartProvider>
         <Grain />
-        <Toaster
+        <LazyToaster
           position="bottom-right"
           toastOptions={{
             style: {

@@ -1,8 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { MeshGradient } from "@paper-design/shaders-react";
+import dynamic from "next/dynamic";
 import { cn } from "@/lib/utils";
+
+// WebGL lib is heavy and only ever renders client-side (post-mount + IO-gated),
+// so code-split it out of the shared bundle. Never SSRs anyway → ssr:false.
+const MeshGradient = dynamic(
+  () => import("@paper-design/shaders-react").then((m) => m.MeshGradient),
+  { ssr: false },
+);
 
 type ShaderFieldProps = {
   colors: string[];

@@ -43,7 +43,7 @@ export function Navbar() {
           onClick={() => setOpen(false)}
         >
           <Image
-            src="/brand/goowali_full_logo_bgremoved.png"
+            src="/brand/goowali_full_logo_bgremoved.webp"
             alt="GOOWALI"
             width={160}
             height={48}
