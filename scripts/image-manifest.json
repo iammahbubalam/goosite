@@ -1,209 +1,437 @@
 {
   "references": {
     "logo": "assets/brand-src/goowali_logo_with_tagline.png",
-    "pkg": "assets/pkging/ChatGPT Image Jun 7, 2026, 12_01_03 AM.png",
-    "banner": "assets/banner/Milk_brand_banner_design_idea_202606060218.jpeg"
+    "pkg": "assets/pkging/Goowali_milk_pkt.png",
+    "stker": "assets/pkging/goowali_milk_sticker.png",
+    "banner": "assets/banner/goowali_banner_v2.png"
   },
   "brandMark": "Reproduce the GOOWALI brand mark EXACTLY as in the first reference image — do NOT redesign, recolour, or invent a different logo. The emblem is a circular badge: a cream-and-tan cow's head with curved horns facing forward, resting in a swirl of pouring white milk with small green leaves, ringed by a deep-blue milk splash. The wordmark 'GOOWALI' is a bold deep-blue rounded serif where one letter is a glossy milk-drop, with the small Bengali tagline 'গরুর ১০০% খাঁটি দুধ' beneath. The product packaging label must carry this exact emblem and wordmark, undistorted, centred and legible — same cow, same blue, same shapes. Match the label style of the round-label reference too. No other logos, no garbled or invented text.",
   "style": "ART DIRECTION — premium editorial photography for GOOWALI (Bangladesh), shot like a national flagship campaign: 50mm prime look, shallow depth of field, soft directional dawn light, creamy bokeh, gentle condensation/steam, a whisper of film grain, restrained natural colour grade. Palette anchored to cream/ivory (#FFF9F2), deep brand blue (#153B7A) and natural green (#6B9D38). Mood: calm, honest, nourishing, unmistakably fresh — Aesop-meets-Oatly restraint, never an advert, never busy. Hard nos: no harsh studio flash, no plastic CGI sheen, no oversaturation, no watermark, no extra fingers, no invented text beyond the GOOWALI label.",
   "slots": [
     {
-      "id": "journey-dawn", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
-      "refs": ["banner"],
+      "id": "journey-dawn",
+      "aspectRatio": "4:3",
+      "imageSize": "2K",
+      "maxWidth": 1280,
+      "refs": [
+        "banner"
+      ],
       "alt": "A Bangladeshi farmer at first light",
       "prompt": "AUTHENTIC RURAL BANGLADESH. ONE single wide documentary photograph — a SCENE ONLY, with absolutely NO products, NO milk bottles, NO jars, NO bowls, NO food and NO logo anywhere in the frame. A Bangladeshi farmer (brown skin, local features, wearing a lungi and a checked gamcha over the shoulder) walking along a dirt path toward a simple bamboo-and-tin homestead cowshed at sunrise, soft mist over green paddy fields, a humped reddish-brown indigenous desi cow (Bos indicus, clear shoulder hump and dewlap) resting near the shed, dew on the grass, golden low documentary light. Indigenous South Asian zebu cattle ONLY. ABSOLUTELY NO black-and-white Holstein-Friesian or European/American cows, NO foreigners, NO Western farm look, no products, no text."
     },
     {
-      "id": "journey-herd", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
-      "refs": ["banner"],
+      "id": "journey-herd",
+      "aspectRatio": "4:3",
+      "imageSize": "2K",
+      "maxWidth": 1280,
+      "refs": [
+        "banner"
+      ],
       "alt": "Indigenous desi cows on open pasture",
       "prompt": "AUTHENTIC RURAL BANGLADESH. A small herd of indigenous Bangladeshi desi cows (reddish-brown and grey, slender, each with a clear shoulder HUMP and dewlap — Pabna / Red Chittagong / desi zebu breed) grazing peacefully on lush green pasture beside a village pond, banana and coconut trees around, a Bangladeshi farmer in lungi and gamcha tending them, soft morning haze and golden light. ABSOLUTELY NO black-and-white Holstein-Friesian or European cattle, NO foreigners, NO Western farm aesthetic, no text, no products."
     },
     {
-      "id": "journey-milking", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
-      "refs": ["banner"],
+      "id": "journey-milking",
+      "aspectRatio": "4:3",
+      "imageSize": "2K",
+      "maxWidth": 1280,
+      "refs": [
+        "banner"
+      ],
       "alt": "A farmer hand-milking a desi cow",
       "prompt": "AUTHENTIC RURAL BANGLADESH. A Bangladeshi farmer (lungi, gamcha, brown skin) crouched hand-milking a calm humped reddish-brown indigenous desi cow into a clean stainless-steel pail inside a tidy rural cowshed at morning, a small calf standing nearby, gentle and hygienic, warm directional light. Indigenous zebu cattle with shoulder hump ONLY. ABSOLUTELY NO Holstein-Friesian black-and-white or foreign cows, NO foreigners, no text."
     },
     {
-      "id": "journey-testing", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
-      "refs": ["banner"],
+      "id": "journey-testing",
+      "aspectRatio": "4:3",
+      "imageSize": "2K",
+      "maxWidth": 1280,
+      "refs": [
+        "banner"
+      ],
       "alt": "Fresh milk quality being tested",
       "prompt": "AUTHENTIC RURAL BANGLADESH. A clean, simple local village dairy collection point: a Bangladeshi worker in a plain apron checking fresh milk quality — dipping a glass lactometer into a steel pot and holding a small sample of creamy milk up to the daylight, gleaming stainless-steel milk cans around, bright and hygienic but modest and authentic (NOT a high-tech foreign laboratory). Bangladeshi people only, brown skin, local features. Calm cream-and-steel tones, no text."
     },
     {
-      "id": "journey-rawmilk", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
-      "refs": ["logo", "banner"],
+      "id": "journey-rawmilk",
+      "aspectRatio": "4:3",
+      "imageSize": "2K",
+      "maxWidth": 1280,
+      "refs": [
+        "logo",
+        "banner"
+      ],
       "alt": "Pure raw GOOWALI milk bottled the same morning",
       "prompt": "AUTHENTIC RURAL BANGLADESH. A single clear GOOWALI glass milk bottle (label fully facing camera, large and legible) being filled with pure cream-rich raw milk at a clean local bottling table, a Bangladeshi worker's brown hands steadying it, soft condensation, a visible creamy top layer, warm morning light. Reproduce the bottle label EXACTLY as the FIRST reference image — the same forward-facing cream-and-tan cow head inside the blue milk-swirl ring with green leaves, the same 'GOOWALI' wordmark, and the same Bengali tagline 'গরুর ১০০% খাঁটি দুধ' beneath — faithful, undistorted, identical colours, do NOT restyle or invent. Any cattle in the background are humped reddish-brown indigenous desi zebu — ABSOLUTELY NO black-and-white Holstein-Friesian cows, no foreigners, no other text."
     },
     {
-      "id": "journey-products", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
-      "refs": ["logo", "banner"],
+      "id": "journey-products",
+      "aspectRatio": "4:3",
+      "imageSize": "2K",
+      "maxWidth": 1280,
+      "refs": [
+        "logo",
+        "banner"
+      ],
       "alt": "Traditional Bengali dairy products made by hand",
       "prompt": "AUTHENTIC RURAL BANGLADESH. ONE single continuous documentary photograph — NOT a collage, NOT a grid or triptych, NOT a poster, and with NO large floating logo or brand lockup anywhere in the frame. Inside a simple village dairy kitchen: a Bangladeshi artisan (brown skin, lungi) slowly stirring thickening milk in a heavy iron pan over a clay-oven (chula) wood fire, soft steam and warm firelight; in the foreground, rows of creamy mishti doi setting in small earthen clay pots (matir hari), a glass jar of golden ghee, and fresh white chhana on a banana leaf. Each clay pot and the ghee jar carries a small round GOOWALI label. Authentic, organic, handmade, calm. Bangladeshi people only, no foreigners. Reproduce only the small GOOWALI label legibly on the pots and jar — no separate logo, no other invented text."
     },
     {
-      "id": "journey-family", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
-      "refs": ["logo", "banner"],
+      "id": "journey-family",
+      "aspectRatio": "4:3",
+      "imageSize": "2K",
+      "maxWidth": 1280,
+      "refs": [
+        "logo",
+        "banner"
+      ],
       "alt": "A Bangladeshi family breakfast with GOOWALI milk",
       "prompt": "AUTHENTIC BANGLADESH. A warm Bangladeshi home breakfast seen slightly from above: a single GOOWALI glass milk bottle (label fully facing camera, legible) and two filled glasses of fresh milk among paratha/ruti, fruit and simple ceramic plates on a home table, two Bangladeshi adults' brown hands sharing the moment, soft morning light. Lived-in, gently joyful, authentic Bangladeshi household. Reproduce the bottle label EXACTLY as the FIRST reference image — the same forward-facing cream-and-tan cow head inside the blue milk-swirl ring with green leaves, the same 'GOOWALI' wordmark and the same Bengali tagline 'গরুর ১০০% খাঁটি দুধ' beneath — faithful, undistorted, identical colours, do NOT restyle or invent. Adults only, no foreigners, no other text."
     },
     {
-      "id": "hero-glass", "aspectRatio": "4:5", "imageSize": "2K", "maxWidth": 1200,
-      "refs": ["logo", "pkg", "banner"],
+      "id": "hero-glass",
+      "aspectRatio": "4:5",
+      "imageSize": "2K",
+      "maxWidth": 1200,
+      "refs": [
+        "logo",
+        "pkg",
+        "banner",
+        "stker"
+      ],
       "alt": "GOOWALI glass milk bottle and a glass of fresh milk",
-      "prompt": "Hero still life: a chilled clear GOOWALI glass milk bottle (white cap, GOOWALI label facing camera, crisp) brimming with fresh milk, condensation beading; to its right a tall glass of milk with one elegant splash frozen mid-air; on pale oak with two fresh green leaves; behind, a dreamy blurred green pasture in golden dawn light from the left. Quiet, luxurious, breakfast-fresh. Generous negative space at top."
+      "prompt": "A premium, breathtaking hero still life photograph. A chilled, clear GOOWALI glass milk bottle (with a white metal cap) brimming with fresh milk, covered in delicate, crisp condensation. The bottle MUST feature a GOOWALI sticker clearly labeled 'Milk' while maintaining the EXACT GOOWALI logo, wordmark, and Bengali tagline 'গরুর ১০০% খাঁটি দুধ'. To its right, a tall glass of milk captures a single, elegant, frozen-in-time splash. Set on a pale oak surface with two fresh green leaves. The background is a dreamy, blurred lush green pasture bathed in golden dawn light. Luxurious, fresh, with generous top negative space."
     },
     {
-      "id": "raw-milk", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
-      "refs": ["logo", "pkg", "banner"],
+      "id": "raw-milk",
+      "aspectRatio": "4:3",
+      "imageSize": "2K",
+      "maxWidth": 1280,
+      "refs": [
+        "logo",
+        "pkg",
+        "banner",
+        "stker"
+      ],
       "alt": "GOOWALI raw milk in a clear glass bottle",
-      "prompt": "A clear GOOWALI glass milk bottle of rich raw milk with a visible creamy top layer, white cap, GOOWALI label facing camera, beside a small pour into a glass, on a rustic cream surface with morning light and a few green leaves, blurred farm background. Wholesome and pure."
+      "prompt": "A premium, extremely photorealistic editorial still life product shot. A single GOOWALI clear glass raw milk bottle brimming with fresh, thick white milk and a visible creamy top layer. The bottle MUST have a white metal cap securely sealed on top. The GOOWALI sticker MUST clearly state 'Raw Milk' while maintaining the EXACT GOOWALI logo, wordmark, and Bengali tagline 'গরুর ১০০% খাঁটি দুধ'. Beside it, a gentle pour into a glass. Set on a rustic cream surface with soft directional morning light and a few green leaves. Blurred, lush farm background."
     },
     {
-      "id": "pasteurized-milk", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
-      "refs": ["logo", "pkg", "banner"],
+      "id": "pasteurized-milk",
+      "aspectRatio": "4:3",
+      "imageSize": "2K",
+      "maxWidth": 1280,
+      "refs": [
+        "logo",
+        "pkg",
+        "banner",
+        "stker"
+      ],
       "alt": "GOOWALI pasteurized milk pouch",
-      "prompt": "A soft white GOOWALI milk pouch (sealed poly sachet) with the GOOWALI label printed on it, resting beside a full glass of milk on a clean cream kitchen counter in soft morning light, fresh and family-friendly, shallow depth of field."
+      "prompt": "A premium, modern dairy product shot. A soft, high-quality white GOOWALI milk pouch (sealed poly sachet). The pouch packaging MUST clearly state 'Pasteurized Milk' and feature the EXACT GOOWALI logo, wordmark, and Bengali tagline 'গরুর ১০০% খাঁটি দুধ' seamlessly printed on it. It rests beside a crystal-clear glass full of fresh milk on a pristine cream kitchen counter. Soft, bright morning light, family-friendly, fresh, and exceptionally photorealistic."
     },
     {
-      "id": "uht-milk", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
-      "refs": ["logo", "pkg", "banner"],
+      "id": "uht-milk",
+      "aspectRatio": "4:3",
+      "imageSize": "2K",
+      "maxWidth": 1280,
+      "refs": [
+        "logo",
+        "pkg",
+        "banner",
+        "stker"
+      ],
       "alt": "GOOWALI UHT long-life milk carton",
-      "prompt": "A GOOWALI UHT milk carton (tetra-style pack) with the GOOWALI label and cow emblem facing camera, standing on a cream surface with soft directional light and a glass of milk beside it, clean premium packaging shot, blurred warm background."
+      "prompt": "A premium, modern packaging product shot. A pristine GOOWALI UHT milk carton (tetra-style pack) standing elegantly on a clean cream surface. The carton packaging MUST clearly state 'UHT Milk' and feature the EXACT GOOWALI logo, cow emblem, wordmark, and Bengali tagline 'গরুর ১০০% খাঁটি দুধ'. Beside it sits a crystal-clear glass of milk. Bathed in soft, directional premium studio light with a warm, beautifully blurred background. Exceptionally photorealistic and premium."
     },
     {
-      "id": "doi", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
-      "refs": ["logo", "pkg", "banner"],
+      "id": "doi",
+      "aspectRatio": "4:3",
+      "imageSize": "2K",
+      "maxWidth": 1280,
+      "refs": [
+        "logo",
+        "pkg",
+        "banner",
+        "stker"
+      ],
       "alt": "GOOWALI doi (set yogurt) in a branded clay pot",
-      "prompt": "Traditional Bengali doi (set sweet yogurt) in a terracotta clay pot with a GOOWALI-branded paper lid/label showing the cow emblem, creamy thick yogurt surface with a mint leaf, on a warm wooden surface in soft morning light, authentic and appetising, shallow depth of field."
+      "prompt": "A premium, authentic Bengali food photography shot. Traditional Bengali sweet doi (set yogurt) served in a rustic, beautifully crafted terracotta clay pot (matir hari). The pot is sealed with a GOOWALI-branded paper lid and sticker. The sticker MUST clearly state 'Doi' or 'Yogurt' while maintaining the EXACT GOOWALI logo, wordmark, and Bengali tagline 'গরুর ১০০% খাঁটি দুধ'. The creamy, thick yogurt surface is visible, garnished with a single fresh mint leaf. Warm, inviting lighting on a wooden table. Highly photorealistic, shallow depth of field."
     },
     {
-      "id": "matha", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
-      "refs": ["logo", "pkg", "banner"],
+      "id": "matha",
+      "aspectRatio": "4:3",
+      "imageSize": "2K",
+      "maxWidth": 1280,
+      "refs": [
+        "logo",
+        "pkg",
+        "banner",
+        "stker"
+      ],
       "alt": "GOOWALI matha (spiced buttermilk) bottle and glass",
-      "prompt": "A GOOWALI bottle of matha (spiced buttermilk) with the GOOWALI label, beside a tall glass of frothy buttermilk garnished with a hint of herbs, cool and refreshing, cream surface, soft morning light, droplets of condensation, shallow depth of field."
+      "prompt": "A premium, refreshing editorial still life. A sleek GOOWALI glass bottle of matha (spiced buttermilk) covered in cold condensation droplets. The bottle MUST feature a GOOWALI sticker clearly labeled 'Matha' while maintaining the EXACT GOOWALI logo, wordmark, and Bengali tagline 'গরুর ১০০% খাঁটি দুধ'. Beside it is a tall glass of frothy, iced buttermilk garnished with a hint of fresh green herbs and a slice of lemon. Set on a clean cream surface in crisp, bright morning light. Extremely photorealistic, shallow depth of field."
     },
     {
-      "id": "cheese", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
-      "refs": ["logo", "pkg", "banner"],
+      "id": "cheese",
+      "aspectRatio": "4:3",
+      "imageSize": "2K",
+      "maxWidth": 1280,
+      "refs": [
+        "logo",
+        "pkg",
+        "banner",
+        "stker"
+      ],
       "alt": "GOOWALI cheese block and wedge",
-      "prompt": "A GOOWALI-branded cheese block in a paper wrapper bearing the GOOWALI label, with a freshly cut wedge of pale cheese on a wooden board, a knife, a few green leaves, warm soft light, artisan and premium, shallow depth of field."
+      "prompt": "A premium, artisanal food photography still life. A block of GOOWALI branded cheese wrapped in rustic, high-quality parchment paper, featuring a beautifully placed GOOWALI sticker. The sticker MUST clearly state 'Cheese' while maintaining the exact GOOWALI logo, wordmark, and Bengali tagline 'গরুর ১০০% খাঁটি দুধ'. Beside the block lies a freshly cut wedge of pale, rich cheese on a dark walnut wooden board, accompanied by a vintage cheese knife and fresh herbs. Warm, moody, directional light, extremely photorealistic, 50mm prime look."
     },
     {
-      "id": "ghee", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
-      "refs": ["logo", "pkg", "banner"],
+      "id": "ghee",
+      "aspectRatio": "4:3",
+      "imageSize": "2K",
+      "maxWidth": 1280,
+      "refs": [
+        "logo",
+        "pkg",
+        "banner",
+        "stker"
+      ],
       "alt": "GOOWALI pure cow ghee in a glass jar",
-      "prompt": "A clear glass jar of golden GOOWALI pure cow ghee with a GOOWALI label and cow emblem facing camera, lid off, a spoon of glistening ghee beside it, warm honeyed light, rich golden and cream tones, premium and aromatic, shallow depth of field."
+      "prompt": "A premium, luxurious editorial product shot. A clear, elegant glass jar filled with rich, golden GOOWALI pure cow ghee. The jar MUST feature a GOOWALI sticker clearly labeled 'Ghee' while maintaining the EXACT GOOWALI logo, wordmark, and Bengali tagline 'গরুর ১০০% খাঁটি দুধ'. The lid rests beside it, along with a brass spoon holding glistening, aromatic ghee. Bathed in warm, honeyed directional light that highlights the rich golden and cream tones. Masterpiece photorealism, shallow depth of field."
     },
     {
-      "id": "mustard-oil", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
-      "refs": ["logo", "pkg", "banner"],
+      "id": "mustard-oil",
+      "aspectRatio": "4:3",
+      "imageSize": "2K",
+      "maxWidth": 1280,
+      "refs": [
+        "logo",
+        "pkg",
+        "banner",
+        "stker"
+      ],
       "alt": "GOOWALI cold-pressed mustard oil bottle",
-      "prompt": "A glass bottle of golden GOOWALI cold-pressed mustard oil with the GOOWALI label facing camera, a small heap of mustard seeds beside it, on a warm wooden kitchen surface, soft natural light, rich golden tones, premium organic, shallow depth of field."
+      "prompt": "A premium, organic editorial product shot. A tall, elegant glass bottle of golden GOOWALI cold-pressed mustard oil. The bottle MUST feature a GOOWALI sticker clearly labeled 'Mustard Oil' while maintaining the EXACT GOOWALI cow emblem and wordmark from the references. DO NOT include the Bengali milk tagline on this bottle. Next to the bottle is a small, rustic wooden bowl heaped with dark mustard seeds. Set on a warm, textured kitchen surface with soft, natural window light highlighting the rich amber tones of the oil. Highly photorealistic."
     },
     {
-      "id": "chia-seeds", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
-      "refs": ["logo", "pkg", "banner"],
+      "id": "chia-seeds",
+      "aspectRatio": "4:3",
+      "imageSize": "2K",
+      "maxWidth": 1280,
+      "refs": [
+        "logo",
+        "pkg",
+        "banner",
+        "stker"
+      ],
       "alt": "GOOWALI organic chia seeds pouch",
-      "prompt": "A GOOWALI stand-up kraft pouch of organic chia seeds with the GOOWALI label, open at the top, a small ceramic bowl of chia seeds and a wooden spoon beside it, clean cream surface, soft morning light, healthy and natural, shallow depth of field."
+      "prompt": "A premium editorial still life product shot. A GOOWALI stand-up kraft paper pouch filled with organic chia seeds, slightly open at the top. The pouch MUST feature a GOOWALI sticker clearly labeled 'Chia Seeds' while maintaining the EXACT GOOWALI cow emblem and wordmark from the references. DO NOT include the Bengali milk tagline on this packaging. Next to the pouch is a small artisanal ceramic bowl overflowing with chia seeds and a wooden spoon. Set on a pristine cream surface with soft, diffused morning light. Healthy, natural, and highly photorealistic."
     },
     {
-      "id": "turmeric-powder", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
-      "refs": ["logo", "pkg", "banner"],
+      "id": "turmeric-powder",
+      "aspectRatio": "4:3",
+      "imageSize": "2K",
+      "maxWidth": 1280,
+      "refs": [
+        "logo",
+        "pkg",
+        "banner",
+        "stker"
+      ],
       "alt": "GOOWALI turmeric powder pack with roots",
-      "prompt": "A GOOWALI pack/jar of vivid golden turmeric powder with the GOOWALI label, a small mound of turmeric powder and a few fresh turmeric roots beside it, on a warm wooden surface, soft natural light, earthy and pure, shallow depth of field."
+      "prompt": "A premium editorial spice photography shot. A sleek GOOWALI glass jar filled with vivid, vibrant golden turmeric powder. The jar MUST feature a GOOWALI sticker clearly labeled 'Turmeric Powder' while maintaining the EXACT GOOWALI cow emblem and wordmark. DO NOT include the Bengali milk tagline. Beside the jar is a small, artful mound of the fine golden powder and a few fresh, earthy turmeric roots. Set on a warm, textured wooden surface bathed in soft natural daylight. Rich yellow and cream tones, exceptional photorealism."
     },
     {
-      "id": "chili-powder", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
-      "refs": ["logo", "pkg", "banner"],
+      "id": "chili-powder",
+      "aspectRatio": "4:3",
+      "imageSize": "2K",
+      "maxWidth": 1280,
+      "refs": [
+        "logo",
+        "pkg",
+        "banner",
+        "stker"
+      ],
       "alt": "GOOWALI red chili powder pack with chilies",
-      "prompt": "A GOOWALI pack/jar of vivid red chili powder with the GOOWALI label, a small mound of fine red chili powder and a few dried red chilies beside it, on a warm wooden surface, soft natural light, rich red and cream tones, shallow depth of field."
+      "prompt": "A premium editorial spice photography shot. A sleek GOOWALI glass jar filled with vivid, vibrant red chili powder. The jar MUST feature a GOOWALI sticker clearly labeled 'Chili Powder' while maintaining the EXACT GOOWALI cow emblem and wordmark from the references. DO NOT include the Bengali milk tagline. Beside the jar is a small, artful mound of the fine red powder and a few scattered dried red chilies. Set on a warm, textured wooden surface bathed in soft natural daylight. Rich red and cream tones, exceptional photorealism."
     },
     {
-      "id": "organic-spices", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
-      "refs": ["logo", "pkg", "banner"],
+      "id": "organic-spices",
+      "aspectRatio": "4:3",
+      "imageSize": "2K",
+      "maxWidth": 1280,
+      "refs": [
+        "logo",
+        "pkg",
+        "banner",
+        "stker"
+      ],
       "alt": "GOOWALI organic spice set",
-      "prompt": "A small set of GOOWALI-branded spice packets/jars with the GOOWALI label, arranged with little bowls of whole and ground spices (cumin, coriander, garam masala) on a warm wooden surface, soft natural light, curated pantry feel, shallow depth of field."
+      "prompt": "A premium, curated pantry editorial shot. A beautiful arrangement of small GOOWALI-branded glass spice jars. The jars MUST feature GOOWALI stickers clearly indicating various 'Organic Spices', while maintaining the EXACT GOOWALI cow emblem and wordmark. DO NOT include the Bengali milk tagline. Accompanied by small ceramic tasting bowls filled with whole and ground spices (cumin, coriander). Set on a warm wooden surface in soft, diffused natural light. Clean, sophisticated, and highly photorealistic."
     },
     {
-      "id": "farm-hero", "aspectRatio": "16:9", "imageSize": "2K", "maxWidth": 1920,
-      "refs": ["banner"],
+      "id": "farm-hero",
+      "aspectRatio": "16:9",
+      "imageSize": "2K",
+      "maxWidth": 1920,
+      "refs": [
+        "banner"
+      ],
       "alt": "GOOWALI dairy farm at dawn",
       "prompt": "A serene Bangladeshi dairy farm at dawn: lush green pasture with soft morning mist, a few healthy cows grazing, gentle golden light, a simple farmhouse in the distance, calm and pure. Wide editorial landscape, no products, no text."
     },
     {
-      "id": "story-cows", "aspectRatio": "4:5", "imageSize": "2K", "maxWidth": 1200,
-      "refs": ["banner"],
+      "id": "story-cows",
+      "aspectRatio": "4:5",
+      "imageSize": "2K",
+      "maxWidth": 1200,
+      "refs": [
+        "banner"
+      ],
       "alt": "Healthy cows grazing at morning",
       "prompt": "Healthy brown-and-white cows grazing peacefully in a lush green Bangladeshi field at soft morning light with dew, shallow depth of field, warm natural editorial farm photography. Vertical portrait, no products, no text."
     },
     {
-      "id": "story-milking", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
-      "refs": ["banner"],
+      "id": "story-milking",
+      "aspectRatio": "4:3",
+      "imageSize": "2K",
+      "maxWidth": 1280,
+      "refs": [
+        "banner",
+        "stker"
+      ],
       "alt": "Fresh milk collected at the farm",
-      "prompt": "Close-up of fresh creamy milk being poured into a clean steel pail at a farm in soft morning light, a farmer's hands, authentic and hygienic, warm cream tones, shallow depth of field. No text."
+      "prompt": "A premium, intimate documentary-style photograph. An extreme close-up of fresh, thick, creamy milk being poured into a pristine, gleaming stainless-steel pail. Captured in a clean, hygienic farm environment during soft, golden morning light. The weathered, authentic hands of a Bangladeshi farmer are visible. Warm cream and silver tones, exceptional photorealism, shallow depth of field. No text, no logos."
     },
     {
-      "id": "family-breakfast", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
-      "refs": ["logo", "banner"],
+      "id": "family-breakfast",
+      "aspectRatio": "4:3",
+      "imageSize": "2K",
+      "maxWidth": 1280,
+      "refs": [
+        "logo",
+        "banner"
+      ],
       "alt": "A warm family breakfast with GOOWALI milk",
       "prompt": "A bright warm Bangladeshi breakfast table seen slightly from above: a GOOWALI glass milk bottle (label facing camera, legible) and two filled glasses of milk among warm bread, fruit and simple ceramic plates; two adults' hands sharing the moment, warmth implied; morning light across cream linen. Honest, lived-in, gently joyful."
     },
     {
-      "id": "glass-pour", "aspectRatio": "3:4", "imageSize": "2K", "maxWidth": 1080,
-      "refs": ["banner"],
+      "id": "glass-pour",
+      "aspectRatio": "3:4",
+      "imageSize": "2K",
+      "maxWidth": 1080,
+      "refs": [
+        "banner"
+      ],
       "alt": "Fresh milk poured into a glass",
       "prompt": "Pure white milk being poured into a clear glass with a gentle natural splash and droplets, clean warm cream background, soft directional morning light, premium fresh dairy product photography. No text."
     },
     {
-      "id": "founder", "aspectRatio": "4:5", "imageSize": "2K", "maxWidth": 1080,
-      "refs": ["banner"],
+      "id": "founder",
+      "aspectRatio": "4:5",
+      "imageSize": "2K",
+      "maxWidth": 1080,
+      "refs": [
+        "banner"
+      ],
       "alt": "Portrait of the GOOWALI founder",
       "prompt": "A warm dignified portrait of a middle-aged Bangladeshi dairy farmer-entrepreneur standing in a green field at morning, gentle confident smile, soft natural light, honest and trustworthy, editorial portrait, shallow depth of field. No text."
     },
     {
-      "id": "testimonial-mother", "aspectRatio": "1:1", "imageSize": "1K", "maxWidth": 640,
-      "refs": ["banner"],
+      "id": "testimonial-mother",
+      "aspectRatio": "1:1",
+      "imageSize": "1K",
+      "maxWidth": 640,
+      "refs": [
+        "banner",
+        "stker"
+      ],
       "alt": "Portrait of a happy mother",
-      "prompt": "A soft natural portrait of a happy young Bangladeshi mother in a bright kitchen, warm candid smile, gentle window light, cream tones, editorial lifestyle, shallow depth of field. No text."
+      "prompt": "A premium, authentic editorial lifestyle portrait. A happy, young Bangladeshi mother standing in a bright, modern yet warm kitchen. She wears a soft, natural smile, exuding care and warmth. Gentle window light illuminates her face, highlighting soft cream tones. Highly photorealistic, candid aesthetic, shallow depth of field. No text, no logos."
     },
     {
-      "id": "testimonial-subscriber", "aspectRatio": "1:1", "imageSize": "1K", "maxWidth": 640,
-      "refs": ["banner"],
+      "id": "testimonial-subscriber",
+      "aspectRatio": "1:1",
+      "imageSize": "1K",
+      "maxWidth": 640,
+      "refs": [
+        "banner",
+        "stker"
+      ],
       "alt": "Portrait of a satisfied customer",
-      "prompt": "A relaxed natural portrait of a Bangladeshi man in his thirties at home in the morning holding a glass of milk, warm gentle smile, soft light, cream tones, editorial lifestyle. No text."
+      "prompt": "A premium, relaxed editorial lifestyle portrait. A Bangladeshi man in his thirties relaxing at home in the soft morning light, casually holding a glass of fresh milk. He has a warm, gentle smile and a trustworthy demeanor. The environment is cozy and lived-in, with warm cream and earth tones. Highly photorealistic, shallow depth of field. No text, no logos."
     },
     {
-      "id": "testimonial-chef", "aspectRatio": "1:1", "imageSize": "1K", "maxWidth": 640,
-      "refs": ["banner"],
+      "id": "testimonial-chef",
+      "aspectRatio": "1:1",
+      "imageSize": "1K",
+      "maxWidth": 640,
+      "refs": [
+        "banner",
+        "stker"
+      ],
       "alt": "Portrait of a pastry chef",
-      "prompt": "A natural portrait of a Bangladeshi female pastry chef in a clean bright kitchen, warm professional smile, soft daylight, cream and white tones, editorial lifestyle, shallow depth of field. No text."
+      "prompt": "A premium, natural editorial lifestyle portrait. A Bangladeshi female pastry chef in a spotless, bright professional kitchen. She wears a clean white apron and smiles warmly and professionally at the camera. Soft, flattering daylight washes over the scene, emphasizing clean cream and white tones. Highly photorealistic, shallow depth of field, conveying trust and quality. No text, no logos."
     },
     {
-      "id": "blog-children", "aspectRatio": "16:9", "imageSize": "2K", "maxWidth": 1600,
-      "refs": ["logo", "banner"],
+      "id": "blog-children",
+      "aspectRatio": "16:9",
+      "imageSize": "2K",
+      "maxWidth": 1600,
+      "refs": [
+        "logo",
+        "banner",
+        "stker"
+      ],
       "alt": "A glass of fresh GOOWALI milk in morning light",
-      "prompt": "An intimate wide editorial frame: a tall glass of fresh milk and a GOOWALI bottle (label facing camera, legible) on a bright breakfast table, a hand reaching gently for the glass, soft morning light and creamy bokeh, warm cream tones, pure and inviting. Airy negative space for a headline."
+      "prompt": "A premium, cinematic editorial photograph. An intimate wide frame: a tall glass of fresh milk and a GOOWALI clear glass raw milk bottle resting on a bright, rustic wooden breakfast table. A child's small hand reaches gently for the glass. Soft, golden morning light filters through a window, creating creamy bokeh and a warm, inviting atmosphere. The GOOWALI bottle must have a white metal cap. The label must face the camera squarely and legibly. Reproduce the label EXACTLY as the provided logo and sticker references — the exact GOOWALI wordmark, the Bengali tagline 'গরুর ১০০% খাঁটি দুধ', and the cow emblem. Airy negative space for a headline. No text other than the label."
     },
     {
-      "id": "blog-raw-vs-past", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
-      "refs": ["banner"],
+      "id": "blog-raw-vs-past",
+      "aspectRatio": "4:3",
+      "imageSize": "2K",
+      "maxWidth": 1280,
+      "refs": [
+        "banner",
+        "stker"
+      ],
       "alt": "Two glasses of milk side by side",
-      "prompt": "Two clear glasses of milk side by side on a cream surface in soft morning light, minimal clean premium editorial still life, gentle shadows, a few green leaves. No text."
+      "prompt": "A premium editorial still life photograph. Two elegant, clear glasses of milk placed side by side on a smooth cream surface. Soft, directional morning light casts gentle, long shadows. A minimalist, clean, and luxurious aesthetic with a few fresh green leaves subtly placed in the frame. Exceptional photorealism, shallow depth of field. No text, no bottles."
     },
     {
-      "id": "blog-farm-morning", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
-      "refs": ["banner"],
+      "id": "blog-farm-morning",
+      "aspectRatio": "4:3",
+      "imageSize": "2K",
+      "maxWidth": 1280,
+      "refs": [
+        "banner"
+      ],
       "alt": "Early morning at the dairy farm",
       "prompt": "Early misty morning at a Bangladeshi dairy farm, golden light through trees, a cow and a farmer in the distance, peaceful atmospheric editorial documentary photography. No text."
     },
     {
-      "id": "blog-living", "aspectRatio": "4:3", "imageSize": "2K", "maxWidth": 1280,
-      "refs": ["banner"],
+      "id": "blog-living",
+      "aspectRatio": "4:3",
+      "imageSize": "2K",
+      "maxWidth": 1280,
+      "refs": [
+        "banner",
+        "stker"
+      ],
       "alt": "A calm morning ritual with milk",
-      "prompt": "A serene flat-lay-ish morning moment: a glass of milk, a linen napkin, a sprig of greenery and soft light on a cream table, calm and meditative editorial lifestyle, warm tones. No text."
+      "prompt": "A premium, cinematic editorial flat-lay. A serene, meditative morning ritual: a sleek glass of pure milk, a textured linen napkin, and a delicate sprig of greenery resting on a clean cream-colored table. Soft, diffused daylight creates gentle shadows and a calming, warm-toned lifestyle aesthetic. Minimalist, luxurious, and wholesome. No text, no products."
+    },
+    {
+      "id": "bottle-product",
+      "aspectRatio": "4:5",
+      "imageSize": "2K",
+      "maxWidth": 1200,
+      "refs": [
+        "logo"
+      ],
+      "alt": "GOOWALI glass milk bottle product shot",
+      "prompt": "A premium, extremely photorealistic editorial still life product shot of a single GOOWALI clear glass raw milk bottle brimming with fresh white milk. The bottle MUST have a white metal cap securely sealed on top. The GOOWALI label MUST face the camera squarely and legibly. Reproduce the label EXACTLY as the provided logo reference — the same forward-facing cream-and-tan cow head inside the blue milk-swirl ring with green leaves, the exact 'GOOWALI' wordmark, and the Bengali tagline 'গরুর ১০০% খাঁটি দুধ' beneath. The background should feature lush, soft, out-of-focus greenery and plants (creamy bokeh) with soft directional morning light. 50mm prime look, premium and restrained. No background clutter, no other text, no foreign elements."
     }
   ]
 }
