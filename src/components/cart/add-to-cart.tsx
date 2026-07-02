@@ -8,11 +8,13 @@ export function AddToCart({
   slug,
   name,
   price,
+  priceValue,
   unit,
 }: {
   slug: string;
   name: string;
   price: string;
+  priceValue: number;
   unit: string;
 }) {
   const { add, setOpen } = useCart();
@@ -20,7 +22,7 @@ export function AddToCart({
   return (
     <button
       onClick={() => {
-        add({ slug, name, price, unit });
+        add({ slug, name, price, priceValue, unit });
         toast.success(`${name} added`, {
           description: "Added to your morning order.",
           action: { label: "View", onClick: () => setOpen(true) },

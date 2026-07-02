@@ -2,8 +2,11 @@ export const SITE = {
   name: "GOOWALI",
   tagline: "Pure milk. Every morning.",
   taglineBn: "গরুর ১০০% খাঁটি দুধ",
-  email: "hello@goowali.com",
+  email: "milk@goowali.com",
+  // PLACEHOLDER — replace with the real business number before launch.
   phone: "+880 1700-000000",
+  /** Digits-only form of `phone` for wa.me / tel links. */
+  whatsapp: "8801700000000",
   address: "Gulshan, Dhaka, Bangladesh",
   social: {
     instagram: "https://instagram.com/goowali",

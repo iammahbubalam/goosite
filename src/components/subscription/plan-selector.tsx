@@ -5,51 +5,14 @@ import { motion } from "motion/react";
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-
-const PLANS = [
-  {
-    id: "daily",
-    name: "Daily Fresh",
-    nameBn: "প্রতিদিন তাজা",
-    price: "৳3,300",
-    cadence: "/ month",
-    desc: "1 litre, delivered every single morning.",
-    perks: ["Fresh daily delivery", "Pause or skip anytime", "Priority support"],
-    featured: false,
-  },
-  {
-    id: "family",
-    name: "Family Morning",
-    nameBn: "পরিবারের সকাল",
-    price: "৳5,900",
-    cadence: "/ month",
-    desc: "2 litres daily — for households that run on milk.",
-    perks: [
-      "2L every morning",
-      "Free doi every week",
-      "Pause or skip anytime",
-      "Dedicated delivery slot",
-    ],
-    featured: true,
-  },
-  {
-    id: "alternate",
-    name: "Alternate Days",
-    nameBn: "একদিন পর পর",
-    price: "৳1,800",
-    cadence: "/ month",
-    desc: "1 litre, every other morning. Lighter routines.",
-    perks: ["Delivery every 2nd day", "Flexible schedule", "Pause anytime"],
-    featured: false,
-  },
-];
+import { SUB_PLANS } from "@/lib/subscription";
 
 export function PlanSelector() {
   const [selected, setSelected] = useState("family");
 
   return (
     <div className="grid gap-6 md:grid-cols-3">
-      {PLANS.map((plan) => {
+      {SUB_PLANS.map((plan) => {
         const active = selected === plan.id;
         return (
           <motion.button
@@ -132,7 +95,7 @@ export function PlanSelector() {
         );
       })}
       <div className="md:col-span-3 mt-2 flex flex-col items-center gap-3 text-center">
-        <Button href="/contact" size="lg">
+        <Button href={`/checkout?type=sub&plan=${selected}`} size="lg">
           Continue with this plan · <span className="font-bn">এগিয়ে যান</span>
         </Button>
         <p className="font-bn text-sm text-stone">

@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
-import { Building2, Truck, BadgeCheck, Receipt } from "lucide-react";
+import { Building2, Truck, BadgeCheck, Receipt, Phone, MapPin, Snowflake, Percent } from "lucide-react";
 import { PageHero } from "@/components/sections/page-hero";
 import { Eyebrow } from "@/components/ui/section";
 import { ArtPanel } from "@/components/ui/art-panel";
 import { Button } from "@/components/ui/button";
 import { Faq, type FaqItem } from "@/components/sections/faq";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
+import { DealershipForm } from "@/components/b2b/dealership-form";
+import { SITE } from "@/lib/site";
+
+const TEL = `tel:${SITE.phone.replace(/[^+\d]/g, "")}`;
 
 export const metadata: Metadata = {
   title: "Bulk Supply",
@@ -44,6 +48,24 @@ const CASES = [
   },
 ];
 
+const DEALERSHIP = [
+  {
+    Icon: MapPin,
+    title: "Your territory",
+    text: "Exclusive coverage of your area — we don't stack dealers on top of each other.",
+  },
+  {
+    Icon: Snowflake,
+    title: "Cold storage",
+    text: "A working fridge or freezer setup is all you need to start. We advise on the rest.",
+  },
+  {
+    Icon: Percent,
+    title: "Honest margins",
+    text: "Transparent dealer pricing with a margin structure that grows with your volume.",
+  },
+];
+
 const B2B_FAQ: FaqItem[] = [
   {
     q: "What's the minimum order for bulk supply?",
@@ -60,6 +82,10 @@ const B2B_FAQ: FaqItem[] = [
   {
     q: "How do deliveries work?",
     a: "We run a dedicated cold-chain route. You'll get a fixed daily slot and a named point of contact.",
+  },
+  {
+    q: "How do I become a GOOWALI dealer or distributor?",
+    a: "Apply with the dealership form on this page — tell us your area and setup. Our partnerships team calls within two business days to discuss territory, volumes and margins.",
   },
 ];
 
@@ -82,9 +108,15 @@ export default function BulkSupplyPage() {
         intro="Dependable bulk supply for the businesses that care what they serve. The same milk we send to families — delivered to your kitchen door."
         introBn="যেসব ব্যবসা যত্ন করে কী পরিবেশন করছে, তাদের জন্য নির্ভরযোগ্য বাল্ক সরবরাহ। পরিবারে পাঠানো সেই একই দুধ — পৌঁছে যাবে আপনার রান্নাঘরের দরজায়।"
       >
-        <Button href="/contact" size="lg">
-          Request a quote
-        </Button>
+        <div className="flex flex-wrap items-center gap-4">
+          <Button href="/contact" size="lg">
+            Request a quote
+          </Button>
+          <Button href={TEL} variant="outline" size="lg">
+            <Phone size={17} strokeWidth={1.8} />
+            {SITE.phone}
+          </Button>
+        </div>
       </PageHero>
 
       {/* Segments */}
@@ -167,6 +199,58 @@ export default function BulkSupplyPage() {
         </div>
       </section>
 
+      {/* Dealership */}
+      <section className="bg-bg py-24 md:py-28">
+        <div className="container-x grid gap-12 lg:grid-cols-12 lg:gap-14">
+          <div className="lg:col-span-5">
+            <Reveal>
+              <Eyebrow>
+                Dealership <span className="font-bn ml-1 normal-case tracking-normal">· ডিলারশিপ</span>
+              </Eyebrow>
+            </Reveal>
+            <Reveal delay={0.05}>
+              <h2 className="text-headline mt-5">
+                Bring GOOWALI to your neighbourhood.
+              </h2>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <p className="font-bn mt-3 text-lg text-stone">
+                আপনার এলাকায় গুয়ালী পৌঁছে দিন।
+              </p>
+            </Reveal>
+            <Reveal delay={0.12}>
+              <p className="mt-6 max-w-md leading-relaxed text-stone">
+                We&rsquo;re building a network of dealers and distributors
+                across Bangladesh — people who believe their neighbours deserve
+                honest milk. If that&rsquo;s you, let&rsquo;s talk.
+              </p>
+            </Reveal>
+            <Stagger className="mt-10 space-y-4">
+              {DEALERSHIP.map(({ Icon, title, text }) => (
+                <StaggerItem key={title}>
+                  <div className="flex items-start gap-4 rounded-[1.5rem] border hairline bg-cream p-5">
+                    <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green/15 text-green">
+                      <Icon size={18} strokeWidth={1.7} />
+                    </span>
+                    <div>
+                      <h3 className="font-serif text-xl text-night">{title}</h3>
+                      <p className="mt-1 text-sm leading-relaxed text-stone">
+                        {text}
+                      </p>
+                    </div>
+                  </div>
+                </StaggerItem>
+              ))}
+            </Stagger>
+          </div>
+          <div className="lg:col-span-7">
+            <Reveal delay={0.1}>
+              <DealershipForm />
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       <Faq
         items={B2B_FAQ}
         eyebrow="Bulk supply FAQ"
@@ -184,9 +268,13 @@ export default function BulkSupplyPage() {
                 Tell us about your business and we&rsquo;ll build a supply plan
                 around it.
               </p>
-              <div className="mt-8 flex justify-center">
+              <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <Button href="/contact" variant="light" size="lg">
                   Request a quote
+                </Button>
+                <Button href={TEL} variant="ghost" size="lg" className="text-cream hover:text-cream">
+                  <Phone size={17} strokeWidth={1.8} />
+                  {SITE.phone}
                 </Button>
               </div>
             </div>

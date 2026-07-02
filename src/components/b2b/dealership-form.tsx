@@ -10,20 +10,20 @@ import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 import { Field, inputClass, submitClass } from "@/components/ui/field";
 
-const TOPICS = ["Order milk", "Subscription", "Bulk supply", "Something else"] as const;
+const TYPES = ["Dealer", "Distributor"] as const;
 
 const schema = z.object({
-  topic: z.string(),
+  type: z.string(),
   name: z.string().min(2, "Please tell us your name"),
   phone: z.string().min(6, "A valid phone number, please"),
-  email: z.union([z.string().email("Check this email"), z.literal("")]),
-  area: z.string().optional(),
-  message: z.string().min(5, "A little more detail helps us help you"),
+  business: z.string().min(2, "Your business or proposed setup"),
+  area: z.string().min(2, "Which area would you cover?"),
+  message: z.string().optional(),
 });
 
 type FormValues = z.infer<typeof schema>;
 
-export function ContactForm() {
+export function DealershipForm() {
   const [sent, setSent] = useState(false);
 
   const {
@@ -34,18 +34,18 @@ export function ContactForm() {
     formState: { errors, isSubmitting },
   } = useForm<FormValues>({
     resolver: zodResolver(schema),
-    defaultValues: { topic: TOPICS[0], email: "" },
+    defaultValues: { type: TYPES[0] },
   });
 
-  const topic = watch("topic");
+  const type = watch("type");
 
   const onSubmit = async (data: FormValues) => {
     // Simulate a network round-trip; wire to a real endpoint later.
     await new Promise((r) => setTimeout(r, 700));
-    console.info("contact submission", data);
+    console.info("dealership inquiry", data);
     setSent(true);
-    toast.success("Message sent", {
-      description: "We'll be in touch within one business day.",
+    toast.success("Inquiry received", {
+      description: "Our partnerships team will call you within two business days.",
     });
   };
 
@@ -62,10 +62,13 @@ export function ContactForm() {
             <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-green/15 text-green">
               <Check size={28} />
             </span>
-            <h3 className="mt-6 font-serif text-3xl text-night">Thank you.</h3>
+            <h3 className="mt-6 font-serif text-3xl text-night">
+              Inquiry received.
+            </h3>
+            <p className="font-bn mt-2 text-stone">আবেদন গৃহীত হয়েছে।</p>
             <p className="mt-3 max-w-xs text-stone">
-              We&rsquo;ve received your message and will be in touch within one
-              business day.
+              Our partnerships team will call you within two business days to
+              talk territory and terms.
             </p>
           </motion.div>
         ) : (
@@ -79,17 +82,17 @@ export function ContactForm() {
           >
             <div>
               <span className="text-eyebrow text-stone/70">
-                What can we help with?
+                I want to become a…
               </span>
               <div className="mt-3 flex flex-wrap gap-2.5">
-                {TOPICS.map((t) => (
+                {TYPES.map((t) => (
                   <button
                     key={t}
                     type="button"
-                    onClick={() => setValue("topic", t)}
+                    onClick={() => setValue("type", t)}
                     className={cn(
                       "rounded-full px-4 py-2 text-sm transition-colors",
-                      topic === t
+                      type === t
                         ? "bg-ink text-cream"
                         : "border hairline text-night hover:bg-bg",
                     )}
@@ -120,40 +123,37 @@ export function ContactForm() {
               </Field>
             </div>
 
-            <Field error={errors.email?.message}>
-              <input
-                type="email"
-                placeholder="Email (optional)"
-                className={inputClass}
-                autoComplete="email"
-                {...register("email")}
-              />
-            </Field>
-
-            <input
-              placeholder="Your area in Dhaka"
-              className={inputClass}
-              {...register("area")}
-            />
+            <div className="grid gap-4 sm:grid-cols-2">
+              <Field error={errors.business?.message}>
+                <input
+                  placeholder="Business name / setup"
+                  className={inputClass}
+                  {...register("business")}
+                />
+              </Field>
+              <Field error={errors.area?.message}>
+                <input
+                  placeholder="Coverage area (e.g. Mirpur, Uttara)"
+                  className={inputClass}
+                  {...register("area")}
+                />
+              </Field>
+            </div>
 
             <Field error={errors.message?.message}>
               <textarea
-                rows={4}
-                placeholder="Tell us a little about what you need…"
+                rows={3}
+                placeholder="Anything else we should know? (optional)"
                 className={cn(inputClass, "resize-none")}
                 {...register("message")}
               />
             </Field>
 
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className={submitClass}
-            >
-              {isSubmitting ? "Sending…" : "Send message"}
+            <button type="submit" disabled={isSubmitting} className={submitClass}>
+              {isSubmitting ? "Sending…" : "Apply for dealership · আবেদন করুন"}
             </button>
             <p className="text-center text-sm text-stone">
-              We reply within one business day.
+              We reply within two business days.
             </p>
           </motion.form>
         )}

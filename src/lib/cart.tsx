@@ -12,6 +12,8 @@ export type CartItem = {
   slug: string;
   name: string;
   price: string;
+  /** Numeric taka value backing `price` — powers subtotals. */
+  priceValue: number;
   unit: string;
   qty: number;
 };
@@ -19,6 +21,8 @@ export type CartItem = {
 type CartContextValue = {
   items: CartItem[];
   count: number;
+  /** Sum of priceValue × qty across the basket, in taka. */
+  subtotal: number;
   open: boolean;
   setOpen: (v: boolean) => void;
   add: (item: Omit<CartItem, "qty">, qty?: number) => void;
@@ -26,6 +30,12 @@ type CartContextValue = {
   setQty: (slug: string, qty: number) => void;
   clear: () => void;
 };
+
+/** Carts saved before priceValue existed lack it — recover from the ৳ string. */
+const withPriceValue = (i: CartItem): CartItem =>
+  typeof i.priceValue === "number"
+    ? i
+    : { ...i, priceValue: Number(String(i.price).replace(/[^\d]/g, "")) || 0 };
 
 const CartContext = createContext<CartContextValue | null>(null);
 const KEY = "goowali-cart";
@@ -40,7 +50,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     try {
       const raw = localStorage.getItem(KEY);
       // eslint-disable-next-line react-hooks/set-state-in-effect
-      if (raw) setItems(JSON.parse(raw));
+      if (raw) setItems((JSON.parse(raw) as CartItem[]).map(withPriceValue));
     } catch {}
     setReady(true);
   }, []);
@@ -76,9 +86,15 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     [items],
   );
 
+  const subtotal = useMemo(
+    () => items.reduce((n, i) => n + i.priceValue * i.qty, 0),
+    [items],
+  );
+
   const value: CartContextValue = {
     items,
     count,
+    subtotal,
     open,
     setOpen,
     add,

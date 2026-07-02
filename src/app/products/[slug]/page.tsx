@@ -130,6 +130,7 @@ export default async function ProductPage({
                     slug={product.slug}
                     name={product.name}
                     price={product.price}
+                    priceValue={product.priceValue}
                     unit={product.unit}
                   />
                   <Button href="/subscription" variant="outline" size="lg">

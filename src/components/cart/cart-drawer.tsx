@@ -2,12 +2,13 @@
 
 import { Drawer } from "vaul";
 import { Minus, Plus, Trash, ArrowRight } from "@phosphor-icons/react";
-import { toast } from "sonner";
 import Link from "next/link";
 import { useCart } from "@/lib/cart";
+import { taka } from "@/lib/subscription";
 
 export function CartDrawer() {
-  const { items, open, setOpen, setQty, remove, clear, count } = useCart();
+  const { items, open, setOpen, setQty, remove, clear, count, subtotal } =
+    useCart();
 
   return (
     <Drawer.Root
@@ -55,9 +56,14 @@ export function CartDrawer() {
                 {items.map((item) => (
                   <li key={item.slug} className="flex gap-4 py-5">
                     <div className="flex-1">
-                      <p className="font-serif text-lg text-night">
-                        {item.name}
-                      </p>
+                      <div className="flex items-baseline justify-between gap-3">
+                        <p className="font-serif text-lg text-night">
+                          {item.name}
+                        </p>
+                        <p className="font-medium text-ink">
+                          {taka(item.priceValue * item.qty)}
+                        </p>
+                      </div>
                       <p className="text-sm text-stone">
                         {item.price} · {item.unit}
                       </p>
@@ -104,24 +110,25 @@ export function CartDrawer() {
                     Clear basket
                   </button>
                 </div>
+                <div className="mt-3 flex items-center justify-between">
+                  <span className="text-sm text-stone">Subtotal · সাবটোটাল</span>
+                  <span className="font-serif text-2xl text-ink">
+                    {taka(subtotal)}
+                  </span>
+                </div>
                 <Link
-                  href="/contact"
-                  onClick={() => {
-                    setOpen(false);
-                    toast.success("Let's finish your order", {
-                      description: "Tell us your delivery area and we'll confirm.",
-                    });
-                  }}
+                  href="/checkout"
+                  onClick={() => setOpen(false)}
                   className="group mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-ink py-4 font-medium text-cream transition-all duration-500 hover:bg-ink-soft"
                 >
-                  Confirm order
+                  Checkout · চেকআউট
                   <ArrowRight
                     size={18}
                     className="transition-transform duration-500 group-hover:translate-x-1"
                   />
                 </Link>
                 <p className="mt-3 text-center text-xs text-stone">
-                  No payment now — we confirm every order personally.
+                  Cash on delivery — no payment now.
                 </p>
               </div>
             </>

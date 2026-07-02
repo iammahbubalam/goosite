@@ -4,41 +4,39 @@ import { useMemo, useState } from "react";
 import { Minus, Plus, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-
-type Milk = { id: string; name: string; nameBn: string; note: string; rate: number };
-
-const MILKS: Milk[] = [
-  { id: "raw", name: "Raw milk", nameBn: "কাঁচা দুধ", note: "Farm-fresh, unprocessed", rate: 130 },
-  { id: "pasteurised", name: "Pasteurised", nameBn: "পাস্তুরিত", note: "Gently heat-treated", rate: 110 },
-  { id: "uht", name: "UHT", nameBn: "ইউএইচটি", note: "Long-life, ambient", rate: 95 },
-];
-
-const FREQS = [
-  { id: "daily", label: "Daily", labelBn: "প্রতিদিন", per: 30 },
-  { id: "weekdays", label: "Weekdays", labelBn: "কর্মদিবস", per: 22 },
-  { id: "alternate", label: "Alternate days", labelBn: "একদিন পর পর", per: 15 },
-  { id: "custom", label: "Custom days", labelBn: "নিজের পছন্দে", per: null },
-] as const;
-
-const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-
-const taka = (n: number) => `৳${Math.round(n).toLocaleString("en-US")}`;
+import { MILK_RATE_PER_L } from "@/lib/products";
+import {
+  FREQS,
+  DAYS,
+  deliveriesPerMonth,
+  estimateMonthly,
+  taka,
+  type FreqId,
+} from "@/lib/subscription";
 
 export function CustomPlanBuilder() {
-  const [milkId, setMilkId] = useState("pasteurised");
+  // Subscriptions are raw milk only — the one product worth waking up for.
   const [litres, setLitres] = useState(1);
-  const [freq, setFreq] = useState<(typeof FREQS)[number]["id"]>("daily");
+  const [freq, setFreq] = useState<FreqId>("daily");
   const [days, setDays] = useState<number[]>([0, 1, 2, 3, 4, 5]); // Mon–Sat
 
-  const milk = MILKS.find((m) => m.id === milkId)!;
+  const perMonth = useMemo(
+    () => deliveriesPerMonth(freq, days.length),
+    [freq, days],
+  );
 
-  const perMonth = useMemo(() => {
-    if (freq === "custom") return days.length * 4.33;
-    return FREQS.find((f) => f.id === freq)!.per ?? 0;
-  }, [freq, days]);
+  const perDelivery = litres * MILK_RATE_PER_L;
+  const monthly = estimateMonthly(litres, freq, days.length);
 
-  const perDelivery = litres * milk.rate;
-  const monthly = Math.round((perDelivery * perMonth) / 10) * 10;
+  const checkoutHref = useMemo(() => {
+    const q = new URLSearchParams({
+      type: "sub",
+      litres: String(litres),
+      freq,
+    });
+    if (freq === "custom") q.set("days", days.join(","));
+    return `/checkout?${q.toString()}`;
+  }, [litres, freq, days]);
 
   const toggleDay = (i: number) =>
     setDays((d) => (d.includes(i) ? d.filter((x) => x !== i) : [...d, i].sort()));
@@ -50,54 +48,30 @@ export function CustomPlanBuilder() {
     <div className="grid gap-6 rounded-[2.5rem] border hairline bg-bg p-6 md:p-10 lg:grid-cols-5 lg:gap-10">
       {/* Controls */}
       <div className="space-y-9 lg:col-span-3">
-        {/* Milk type */}
+        {/* The milk — one choice, the right one */}
         <div>
           <p className="text-eyebrow text-sage-deep/80">
-            Choose your milk{" "}
+            Your milk{" "}
             <span className="font-bn ml-1 normal-case tracking-normal text-sage-deep/60">
-              · দুধ বাছুন
+              · আপনার দুধ
             </span>
           </p>
-          <div className="mt-4 grid gap-3 sm:grid-cols-3">
-            {MILKS.map((m) => {
-              const on = m.id === milkId;
-              return (
-                <button
-                  key={m.id}
-                  type="button"
-                  onClick={() => setMilkId(m.id)}
-                  className={cn(
-                    "rounded-2xl border p-4 text-left transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
-                    on
-                      ? "border-ink bg-ink text-cream shadow-[var(--shadow-soft)]"
-                      : "hairline bg-cream/40 text-night hover:border-sage/40 hover:bg-cream",
-                  )}
-                >
-                  <span className="font-serif text-lg">
-                    {m.name}
-                    <span className="font-bn-serif ml-1.5 text-base opacity-70">
-                      {m.nameBn}
-                    </span>
-                  </span>
-                  <span
-                    className={cn(
-                      "mt-1 block text-xs",
-                      on ? "text-cream/65" : "text-stone",
-                    )}
-                  >
-                    {m.note}
-                  </span>
-                  <span
-                    className={cn(
-                      "mt-2 block text-sm font-medium",
-                      on ? "text-cream" : "text-sage-deep",
-                    )}
-                  >
-                    {taka(m.rate)}/L
-                  </span>
-                </button>
-              );
-            })}
+          <div className="mt-4 flex items-center justify-between gap-4 rounded-2xl border border-ink bg-ink p-5 text-cream shadow-[var(--shadow-soft)]">
+            <div>
+              <span className="font-serif text-lg">
+                Raw milk
+                <span className="font-bn-serif ml-1.5 text-base opacity-70">
+                  কাঁচা দুধ
+                </span>
+              </span>
+              <span className="mt-1 block text-xs text-cream/65">
+                Farm-fresh, unprocessed — the only milk we subscribe.
+              </span>
+            </div>
+            <span className="shrink-0 font-serif text-2xl">
+              {taka(MILK_RATE_PER_L)}
+              <span className="text-sm text-cream/65">/L</span>
+            </span>
           </div>
         </div>
 
@@ -203,7 +177,7 @@ export function CustomPlanBuilder() {
         <div className="flex h-full flex-col rounded-[2rem] bg-ink p-8 text-cream">
           <p className="bn-eyebrow text-sage-soft/70">আপনার প্ল্যান · Your plan</p>
           <div className="mt-5 space-y-3 text-sm">
-            <Row label="Milk · দুধ" value={`${milk.name} · ${milk.nameBn}`} />
+            <Row label="Milk · দুধ" value="Raw milk · কাঁচা দুধ" />
             <Row label="Per delivery · প্রতি ডেলিভারি" value={`${litres}L`} />
             <Row
               label="Schedule · সময়সূচি"
@@ -245,7 +219,7 @@ export function CustomPlanBuilder() {
           </ul>
 
           <div className="mt-8">
-            <Button href="/contact" variant="light" size="lg" className="w-full">
+            <Button href={checkoutHref} variant="light" size="lg" className="w-full">
               Start this plan · <span className="font-bn">শুরু করুন</span>
             </Button>
           </div>

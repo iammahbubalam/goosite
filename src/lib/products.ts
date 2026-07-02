@@ -9,6 +9,8 @@ export type Product = {
   story: string;
   description: string;
   price: string;
+  /** Numeric taka value backing `price` — used for cart totals. */
+  priceValue: number;
   unit: string;
   benefits: string[];
   nutrition?: { label: string; value: string }[];
@@ -55,6 +57,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Whole, single-source raw milk from grass-fed cows. Naturally rich, with the cream rising to the top the way real milk should.",
     price: "৳120",
+    priceValue: 120,
     unit: "per litre",
     benefits: [
       "Single-source, never blended",
@@ -83,6 +86,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Carefully heat-treated to remove risk while preserving taste and nutrition. The everyday choice for young families.",
     price: "৳110",
+    priceValue: 110,
     unit: "per litre",
     benefits: [
       "Gentle low-temperature pasteurisation",
@@ -111,6 +115,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Ultra-heat-treated and aseptically packed for a long shelf life without preservatives. Convenience without compromise.",
     price: "৳130",
+    priceValue: 130,
     unit: "per litre",
     benefits: [
       "Stays fresh unopened for months",
@@ -139,6 +144,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Creamy, lightly sweet doi made from our whole milk and live cultures. A morning ritual passed down generations.",
     price: "৳180",
+    priceValue: 180,
     unit: "500 g",
     benefits: [
       "Live, gut-friendly cultures",
@@ -160,6 +166,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Gently churned buttermilk, lightly salted and spiced. Refreshing, probiotic, and easy on the stomach.",
     price: "৳90",
+    priceValue: 90,
     unit: "per litre",
     benefits: [
       "Natural probiotics",
@@ -181,6 +188,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Hand-crafted cheese from pure GOOWALI milk. Clean, full flavour with no fillers or emulsifiers.",
     price: "৳450",
+    priceValue: 450,
     unit: "250 g",
     benefits: [
       "Small-batch crafted",
@@ -203,6 +211,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Pure cow ghee, hand-churned and slow-cooked to a deep golden clarity. Nothing added, nothing hidden.",
     price: "৳950",
+    priceValue: 950,
     unit: "500 ml",
     benefits: [
       "Hand-churned from pure cream",
@@ -224,6 +233,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Cold-pressed mustard oil from organically grown seed. Pungent, pure, and bottled at full strength.",
     price: "৳320",
+    priceValue: 320,
     unit: "per litre",
     benefits: [
       "Cold-pressed, never refined",
@@ -245,6 +255,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Premium organic chia seeds, cleaned and sun-dried. A simple, nutrient-dense addition to your routine.",
     price: "৳420",
+    priceValue: 420,
     unit: "500 g",
     benefits: [
       "Rich in omega-3 & fibre",
@@ -266,6 +277,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Pure turmeric, sun-dried and stone-ground. No colour, no starch — just root, the way it should be.",
     price: "৳160",
+    priceValue: 160,
     unit: "250 g",
     benefits: [
       "Single-origin roots",
@@ -287,6 +299,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Whole sun-dried chillies ground to a fine, vivid powder. No fillers, no artificial colour.",
     price: "৳150",
+    priceValue: 150,
     unit: "250 g",
     benefits: [
       "Whole-chilli ground",
@@ -309,6 +322,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Cumin, coriander, garam masala and more — sourced clean, ground fresh, packed small.",
     price: "from ৳140",
+    priceValue: 140,
     unit: "assorted",
     benefits: [
       "Sourced from known farmers",
@@ -327,3 +341,7 @@ export const getProduct = (slug: string) =>
 
 export const productsByCategory = (cat: ProductCategory) =>
   PRODUCTS.filter((p) => p.category === cat);
+
+/** Single source of truth for subscription pricing — raw milk only. */
+export const MILK_RATE_PER_L =
+  PRODUCTS.find((p) => p.slug === "raw-milk")!.priceValue;

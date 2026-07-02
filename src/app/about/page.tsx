@@ -7,6 +7,7 @@ import { CtaBand } from "@/components/sections/cta-band";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
 import { MaskReveal } from "@/components/motion/mask-reveal";
 import { Parallax } from "@/components/motion/parallax";
+import { Counter } from "@/components/motion/counter";
 
 export const metadata: Metadata = {
   title: "About",
@@ -15,10 +16,32 @@ export const metadata: Metadata = {
 };
 
 const VALUES = [
-  { title: "Honesty", text: "We tell you exactly where your food comes from. No fine print." },
-  { title: "Purity", text: "Nothing added that doesn't belong. Ever." },
-  { title: "Care", text: "For our animals, our farmers, and your family." },
-  { title: "Roots", text: "Proudly Bangladeshi, built on traditional values." },
+  {
+    title: "Honesty",
+    titleBn: "সততা",
+    text: "We tell you exactly where your food comes from. No fine print.",
+  },
+  {
+    title: "Purity",
+    titleBn: "বিশুদ্ধতা",
+    text: "Nothing added that doesn't belong. Ever.",
+  },
+  {
+    title: "Care",
+    titleBn: "যত্ন",
+    text: "For our animals, our farmers, and your family.",
+  },
+  {
+    title: "Roots",
+    titleBn: "শিকড়",
+    text: "Proudly Bangladeshi, built on traditional values.",
+  },
+];
+
+const NUMBERS = [
+  { to: 2400, suffix: "+", label: "families served", labelBn: "পরিবার পরিবেশিত" },
+  { to: 40, suffix: "+", label: "partner farms", labelBn: "অংশীদার খামার" },
+  { to: 100, suffix: "%", label: "purity, tested daily", labelBn: "বিশুদ্ধতা, প্রতিদিন পরীক্ষিত" },
 ];
 
 export default function AboutPage() {
@@ -41,30 +64,59 @@ export default function AboutPage() {
         introBn="একটি সহজ হতাশা থেকে GOOWALI-র শুরু: পরিবারগুলো আর কেনা দুধে ভরসা রাখতে পারছিল না। তাই আমরা গড়লাম এক সৎ বিকল্প — খামার থেকে পরিবারে, মাঝে কিছুই লুকানো নেই।"
       />
 
-      {/* Mission / Vision */}
-      <section className="bg-cream py-24 md:py-28">
-        <div className="container-x grid gap-6 md:grid-cols-2">
-          <Reveal className="rounded-[2rem] border hairline bg-bg p-10">
-            <Eyebrow>Our mission</Eyebrow>
-            <p className="mt-6 font-serif text-3xl leading-snug text-night">
-              To make pure, honest food the easy choice for every Bangladeshi
-              family.
-            </p>
+      {/* Numbers — the promise, counted */}
+      <section className="bg-cream py-20 md:py-24">
+        <div className="container-x">
+          <Stagger className="grid gap-10 border-y hairline py-12 sm:grid-cols-3">
+            {NUMBERS.map((n) => (
+              <StaggerItem key={n.label}>
+                <div className="text-center">
+                  <p className="font-serif text-5xl text-ink md:text-6xl">
+                    <Counter to={n.to} suffix={n.suffix} />
+                  </p>
+                  <p className="mt-2 text-sm text-stone">{n.label}</p>
+                  <p className="font-bn mt-0.5 text-xs text-stone/70">
+                    {n.labelBn}
+                  </p>
+                </div>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
+      {/* Mission / Vision — one editorial spread */}
+      <section className="bg-cream pb-24 md:pb-28">
+        <div className="container-x grid gap-12 md:grid-cols-2 md:gap-16">
+          <Reveal>
+            <div className="border-t-2 border-ink pt-7">
+              <Eyebrow>Our mission</Eyebrow>
+              <p className="mt-6 font-serif text-3xl leading-snug text-night md:text-4xl">
+                To make pure, honest food the easy choice for every Bangladeshi
+                family.
+              </p>
+              <p className="font-bn mt-4 text-stone">
+                খাঁটি, সৎ খাবারকে প্রতিটি বাংলাদেশি পরিবারের সহজ পছন্দ করে তোলা।
+              </p>
+            </div>
           </Reveal>
-          <Reveal
-            delay={0.08}
-            className="rounded-[2rem] bg-ink p-10 text-cream"
-          >
-            <Eyebrow className="text-green-soft">Our vision</Eyebrow>
-            <p className="mt-6 font-serif text-3xl leading-snug text-cream">
-              To become the most trusted dairy and food brand in the country —
-              one honest morning at a time.
-            </p>
+          <Reveal delay={0.08}>
+            <div className="border-t-2 border-sage pt-7">
+              <Eyebrow>Our vision</Eyebrow>
+              <p className="mt-6 font-serif text-3xl leading-snug text-night md:text-4xl">
+                To become the most trusted dairy and food brand in the country —
+                one honest morning at a time.
+              </p>
+              <p className="font-bn mt-4 text-stone">
+                দেশের সবচেয়ে বিশ্বস্ত দুগ্ধ ও খাদ্য ব্র্যান্ড হয়ে ওঠা — এক একটি
+                সৎ সকাল ধরে।
+              </p>
+            </div>
           </Reveal>
         </div>
       </section>
 
-      {/* Values */}
+      {/* Values — numbered editorial rows */}
       <section className="bg-bg py-24 md:py-28">
         <div className="container-x">
           <div className="max-w-2xl">
@@ -77,18 +129,26 @@ export default function AboutPage() {
               </h2>
             </Reveal>
           </div>
-          <Stagger className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <Stagger className="mt-14">
             {VALUES.map((v, i) => (
               <StaggerItem key={v.title}>
-                <div className="h-full rounded-[2rem] border hairline bg-cream p-8">
-                  <span className="text-eyebrow text-green/70">0{i + 1}</span>
-                  <h3 className="mt-4 font-serif text-2xl text-night">
+                <div className="group grid items-baseline gap-3 border-t hairline py-8 transition-colors duration-500 hover:bg-cream/60 md:grid-cols-12 md:gap-6 md:px-4">
+                  <span className="font-serif text-lg text-sage-deep/70 md:col-span-1">
+                    0{i + 1}
+                  </span>
+                  <h3 className="font-serif text-3xl text-night md:col-span-4 md:text-4xl">
                     {v.title}
+                    <span className="font-bn-serif ml-3 text-xl text-stone/70">
+                      {v.titleBn}
+                    </span>
                   </h3>
-                  <p className="mt-2 text-stone">{v.text}</p>
+                  <p className="max-w-md leading-relaxed text-stone md:col-span-7">
+                    {v.text}
+                  </p>
                 </div>
               </StaggerItem>
             ))}
+            <div className="border-t hairline" />
           </Stagger>
         </div>
       </section>
@@ -134,10 +194,23 @@ export default function AboutPage() {
                   we know, test everything, and deliver it fresh. No middlemen,
                   no shortcuts, no compromise.
                 </p>
-                <p className="font-serif text-2xl italic text-ink">
-                  &ldquo;Pure food is not a luxury. It&rsquo;s a right.&rdquo;
-                </p>
               </div>
+            </Reveal>
+            <Reveal delay={0.15}>
+              <blockquote className="relative mt-10 border-l-2 border-sage pl-7">
+                <span
+                  aria-hidden
+                  className="absolute -left-3 -top-8 font-serif text-8xl leading-none text-sage/25"
+                >
+                  &ldquo;
+                </span>
+                <p className="font-serif text-3xl italic leading-snug text-ink md:text-4xl">
+                  Pure food is not a luxury. It&rsquo;s a right.
+                </p>
+                <p className="font-bn-serif mt-3 text-lg text-stone">
+                  খাঁটি খাবার বিলাসিতা নয়, অধিকার।
+                </p>
+              </blockquote>
             </Reveal>
           </div>
         </div>
