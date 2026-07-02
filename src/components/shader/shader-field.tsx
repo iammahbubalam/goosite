@@ -16,6 +16,10 @@ type ShaderFieldProps = {
   speed?: number;
   distortion?: number;
   swirl?: number;
+  /** Zoom of the gradient field — below 1 shows more, smaller flow cells. */
+  scale?: number;
+  /** Organic grain on color edges (0–1) — gives currents a milky texture. */
+  grainMixer?: number;
   /** CSS gradient shown before the shader mounts and under reduced motion. */
   fallback?: string;
   className?: string;
@@ -31,6 +35,8 @@ export function ShaderField({
   speed = 0.3,
   distortion = 0.8,
   swirl = 0.6,
+  scale = 1,
+  grainMixer = 0,
   fallback,
   className,
 }: ShaderFieldProps) {
@@ -70,6 +76,8 @@ export function ShaderField({
           speed={active ? speed : 0}
           distortion={distortion}
           swirl={swirl}
+          scale={scale}
+          grainMixer={grainMixer}
           style={{ width: "100%", height: "100%" }}
         />
       )}

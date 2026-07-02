@@ -14,6 +14,14 @@ type Tone = "cream" | "milk" | "ink" | "green" | "field";
 /** Distinct flowing-milk backdrops — one mood per page hero. */
 type MilkVariant = "cream" | "blue" | "sage" | "gold" | "ink";
 
+/**
+ * Milk-flow recipes. Realism comes from marbling: whites alternate with
+ * deeper accent tones so the shader renders thin veins of colour folding
+ * through a white body — like cream stirred into milk. `scale < 1` zooms the
+ * field out so several currents are visible at once instead of one soft blob;
+ * distortion/swirl sit at the shader's documented max (0–1); a touch of
+ * grainMixer roughens the vein edges so they read organic, not vector.
+ */
 const MILK: Record<
   MilkVariant,
   {
@@ -21,42 +29,54 @@ const MILK: Record<
     speed: number;
     distortion: number;
     swirl: number;
+    scale: number;
+    grainMixer: number;
     fallback: string;
   }
 > = {
   cream: {
-    colors: ["#ffffff", "#fbf0dc", "#efe0c6", "#e7dcc6", "#dfe9f4"],
-    speed: 0.3,
+    colors: ["#ffffff", "#eacfa0", "#fffdf8", "#d9bd8a", "#ffffff", "#dfe9f4", "#f6ecd8"],
+    speed: 0.4,
     distortion: 1,
-    swirl: 0.9,
+    swirl: 1,
+    scale: 0.72,
+    grainMixer: 0.1,
     fallback: "linear-gradient(180deg,#fffdf9 0%,#f6ead2 60%,#ece0cb 100%)",
   },
   blue: {
-    colors: ["#ffffff", "#f1e8d6", "#cdd9ec", "#a9bfe4", "#8fb0e0"],
-    speed: 0.34,
-    distortion: 1.1,
+    colors: ["#ffffff", "#a9c3e8", "#fdfaf3", "#8fb0e0", "#ffffff", "#5b86cd", "#e8eef8"],
+    speed: 0.42,
+    distortion: 1,
     swirl: 1,
+    scale: 0.72,
+    grainMixer: 0.1,
     fallback: "linear-gradient(180deg,#fffdf9 0%,#e7eef8 55%,#cdd9ec 100%)",
   },
   sage: {
-    colors: ["#ffffff", "#eef3e4", "#dde8cd", "#c2d6ac", "#a3c186"],
-    speed: 0.3,
-    distortion: 1.05,
-    swirl: 0.95,
+    colors: ["#ffffff", "#c4d8a6", "#fdfcf6", "#9cba77", "#ffffff", "#7ea25a", "#eaf1dd"],
+    speed: 0.4,
+    distortion: 1,
+    swirl: 1,
+    scale: 0.72,
+    grainMixer: 0.1,
     fallback: "linear-gradient(180deg,#fffdf9 0%,#eef3e4 55%,#d6e4c4 100%)",
   },
   gold: {
-    colors: ["#ffffff", "#fbeed0", "#f1dca6", "#e8ca87", "#dab86c"],
-    speed: 0.3,
+    colors: ["#ffffff", "#ecd292", "#fffcf4", "#e3c581", "#ffffff", "#c9a04a", "#f8ecd2"],
+    speed: 0.4,
     distortion: 1,
-    swirl: 0.9,
+    swirl: 1,
+    scale: 0.72,
+    grainMixer: 0.1,
     fallback: "linear-gradient(180deg,#fffdf9 0%,#fbeed1 55%,#eed7a8 100%)",
   },
   ink: {
-    colors: ["#eef3fb", "#cdd9ec", "#9fb6df", "#5d7cbb", "#2a4f8f"],
-    speed: 0.26,
+    colors: ["#f3f6fc", "#9fb6df", "#e2eaf7", "#5d7cbb", "#eef3fb", "#2a4f8f", "#c3d2ea"],
+    speed: 0.34,
     distortion: 1,
-    swirl: 0.85,
+    swirl: 1,
+    scale: 0.72,
+    grainMixer: 0.1,
     fallback: "linear-gradient(180deg,#f3f6fc 0%,#cdd9ec 60%,#9fb6df 100%)",
   },
 };
@@ -102,14 +122,16 @@ export function PageHero({
         speed={m.speed}
         distortion={m.distortion}
         swirl={m.swirl}
+        scale={m.scale}
+        grainMixer={m.grainMixer}
         fallback={m.fallback}
-        className="opacity-[0.82]"
+        className="opacity-[0.95]"
       />
-      {/* legibility wash — lighter now so the milk flow reads clearly, while the
-          left edge stays calm enough for the headline */}
+      {/* legibility wash — kept to the left edge only, so the milk currents
+          stay fully visible while the headline sits on calm ground */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-r from-bg/62 via-bg/20 to-transparent"
+        className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-r from-bg/55 via-bg/10 to-transparent"
       />
 
       <div className="container-x grid items-center gap-12 pb-20 lg:grid-cols-12 lg:gap-10 lg:pb-28">

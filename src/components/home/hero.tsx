@@ -56,12 +56,15 @@ export function Hero() {
       ref={root}
       className="relative isolate overflow-hidden pt-28 md:pt-32"
     >
-      {/* the whole hero floats on flowing milk — bold, visible swirl */}
+      {/* the whole hero floats on flowing milk — whites folded with cream and
+          a skim-blue vein so the currents read like real marbled milk */}
       <ShaderField
-        colors={["#ffffff", "#fbf4e8", "#ece1cc", "#fffdf9", "#eef1ea"]}
+        colors={["#ffffff", "#e7d0a4", "#fffdf8", "#d8bd8c", "#ffffff", "#dfe8f3", "#f5ebd6"]}
         speed={0.5}
-        distortion={1.5}
-        swirl={1.2}
+        distortion={1}
+        swirl={1}
+        scale={0.75}
+        grainMixer={0.1}
         fallback="linear-gradient(180deg, #ffffff 0%, #fbf4e8 45%, #eef3e4 100%)"
       />
       {/* whisper-thin scrim — just under the headline, milk stays the star */}
