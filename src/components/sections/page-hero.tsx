@@ -152,7 +152,7 @@ export function PageHero({
           )}
           {intro && (
             <Reveal delay={0.1}>
-              <p className="mt-7 max-w-xl text-lg leading-relaxed text-stone">
+              <p className="mt-7 max-w-xl text-base md:text-lg leading-relaxed text-stone">
                 {intro}
               </p>
             </Reveal>
@@ -174,7 +174,7 @@ export function PageHero({
         {/* visual */}
         <div className="lg:col-span-5 lg:col-start-8">
           <MaskReveal
-            rounded="rounded-[2.5rem]"
+            rounded="rounded-[1.5rem] md:rounded-[2.5rem]"
             className="relative aspect-[4/5] shadow-[var(--shadow-lift)] ring-1 ring-inset ring-ink/5"
           >
             {media ??

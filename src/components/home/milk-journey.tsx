@@ -94,7 +94,7 @@ export function MilkJourney() {
   const fill = useSpring(scrollYProgress, FILL_SPRING);
 
   return (
-    <section className="relative isolate overflow-hidden bg-dawn py-24 md:py-32">
+    <section className="relative isolate overflow-hidden bg-dawn py-16 lg:py-32">
       {/* Heading */}
       <div className="container-x">
         <div className="mx-auto max-w-2xl text-center">
@@ -107,7 +107,7 @@ export function MilkJourney() {
             text="From first light to your table."
           />
           <Reveal delay={0.1}>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-stone">
+            <p className="mx-auto mt-6 max-w-xl text-base md:text-lg leading-relaxed text-stone">
               No middlemen, no shortcuts — one unhurried path, seven mornings in
               the making.
             </p>

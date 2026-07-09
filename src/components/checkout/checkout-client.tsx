@@ -322,7 +322,7 @@ export function CheckoutClient() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               onSubmit={handleSubmit(onSubmit)}
-              className="space-y-6 rounded-[2.5rem] border hairline bg-bg p-8 md:p-10"
+              className="space-y-6 rounded-[1.5rem] md:rounded-[2.5rem] border hairline bg-bg p-8 md:p-10"
               noValidate
             >
               <p className="text-eyebrow text-stone/70">

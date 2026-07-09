@@ -83,7 +83,7 @@ export default function FarmsPage() {
       </section>
 
       {/* Standards */}
-      <section className="bg-bg py-24 md:py-28">
+      <section className="bg-bg py-16 lg:py-28">
         <div className="container-x">
           <div className="max-w-2xl">
             <Reveal>
@@ -114,7 +114,7 @@ export default function FarmsPage() {
       </section>
 
       {/* Farm list */}
-      <section className="bg-cream py-24 md:py-28">
+      <section className="bg-cream py-16 lg:py-28">
         <div className="container-x">
           <Reveal>
             <Eyebrow>The origin</Eyebrow>

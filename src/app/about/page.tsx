@@ -65,7 +65,7 @@ export default function AboutPage() {
       />
 
       {/* Numbers — the promise, counted */}
-      <section className="bg-cream py-20 md:py-24">
+      <section className="bg-cream py-14 lg:py-24">
         <div className="container-x">
           <Stagger className="grid gap-10 border-y hairline py-12 sm:grid-cols-3">
             {NUMBERS.map((n) => (
@@ -87,7 +87,7 @@ export default function AboutPage() {
 
       {/* Mission / Vision — one editorial spread */}
       <section className="bg-cream pb-24 md:pb-28">
-        <div className="container-x grid gap-12 md:grid-cols-2 md:gap-16">
+        <div className="container-x grid gap-8 lg:grid-cols-2 md:gap-16">
           <Reveal>
             <div className="border-t-2 border-ink pt-7">
               <Eyebrow>Our mission</Eyebrow>
@@ -117,7 +117,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values — numbered editorial rows */}
-      <section className="bg-bg py-24 md:py-28">
+      <section className="bg-bg py-16 lg:py-28">
         <div className="container-x">
           <div className="max-w-2xl">
             <Reveal>
@@ -154,7 +154,7 @@ export default function AboutPage() {
       </section>
 
       {/* Founder */}
-      <section className="bg-cream py-24 md:py-28">
+      <section className="bg-cream py-16 lg:py-28">
         <div className="container-x grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
           <Parallax amount={40}>
           <MaskReveal className="aspect-[4/5]">
@@ -183,7 +183,7 @@ export default function AboutPage() {
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
-              <div className="mt-7 space-y-5 text-lg leading-relaxed text-stone">
+              <div className="mt-7 space-y-5 text-base md:text-lg leading-relaxed text-stone">
                 <p>
                   I wanted to give my family milk I could trust — the kind I
                   remembered from my grandmother&rsquo;s village. When I

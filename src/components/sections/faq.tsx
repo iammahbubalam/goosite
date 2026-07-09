@@ -53,7 +53,7 @@ export function Faq({
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="bg-cream py-24 md:py-32">
+    <section className="bg-cream py-16 lg:py-32">
       <div className="container-x grid gap-12 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <Reveal>
@@ -102,7 +102,7 @@ export function Faq({
                         className="overflow-hidden"
                       >
                         <div className="max-w-xl pb-7">
-                          <p className="text-lg leading-relaxed text-stone">
+                          <p className="text-base md:text-lg leading-relaxed text-stone">
                             {item.a}
                           </p>
                           {item.aBn && (

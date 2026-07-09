@@ -50,7 +50,7 @@ export function DealershipForm() {
   };
 
   return (
-    <div className="rounded-[2.5rem] border hairline bg-cream p-8 md:p-10">
+    <div className="rounded-[1.5rem] md:rounded-[2.5rem] border hairline bg-cream p-8 md:p-10">
       <AnimatePresence mode="wait">
         {sent ? (
           <motion.div

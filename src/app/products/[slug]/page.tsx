@@ -112,7 +112,7 @@ export default async function ProductPage({
                 </p>
               </Reveal>
               <Reveal delay={0.15}>
-                <p className="mt-6 text-lg leading-relaxed text-stone">
+                <p className="mt-6 text-base md:text-lg leading-relaxed text-stone">
                   {product.description}
                 </p>
               </Reveal>
@@ -145,7 +145,7 @@ export default async function ProductPage({
       </section>
 
       {/* Benefits */}
-      <section className="bg-cream py-24 md:py-28">
+      <section className="bg-cream py-16 lg:py-28">
         <div className="container-x grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <Eyebrow>Why it&rsquo;s different</Eyebrow>
@@ -170,11 +170,11 @@ export default async function ProductPage({
       </section>
 
       {/* Source / Process / Nutrition */}
-      <section className="bg-bg py-24 md:py-28">
+      <section className="bg-bg py-16 lg:py-28">
         <div className="container-x grid gap-6 md:grid-cols-3">
           <Reveal className="rounded-[2rem] border hairline bg-cream p-8">
             <Eyebrow>Source</Eyebrow>
-            <p className="mt-5 text-lg leading-relaxed text-night">
+            <p className="mt-5 text-base md:text-lg leading-relaxed text-night">
               {product.source}
             </p>
           </Reveal>
@@ -183,7 +183,7 @@ export default async function ProductPage({
             className="rounded-[2rem] border hairline bg-cream p-8"
           >
             <Eyebrow>Process</Eyebrow>
-            <p className="mt-5 text-lg leading-relaxed text-night">
+            <p className="mt-5 text-base md:text-lg leading-relaxed text-night">
               {product.process}
             </p>
           </Reveal>
@@ -209,7 +209,7 @@ export default async function ProductPage({
                 ))}
               </ul>
             ) : (
-              <p className="mt-5 text-lg leading-relaxed text-cream/85">
+              <p className="mt-5 text-base md:text-lg leading-relaxed text-cream/85">
                 Sourced honestly, made in small batches, and sealed for
                 freshness. Nothing added that doesn&rsquo;t belong.
               </p>
@@ -225,7 +225,7 @@ export default async function ProductPage({
 
       {/* Related */}
       {related.length > 0 && (
-        <section className="bg-bg py-24 md:py-28">
+        <section className="bg-bg py-16 lg:py-28">
           <div className="container-x">
             <Eyebrow>You may also like</Eyebrow>
             <h2 className="text-headline mt-5 mb-12">From the same family.</h2>

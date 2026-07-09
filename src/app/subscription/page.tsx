@@ -54,7 +54,7 @@ export default function SubscriptionPage() {
       />
 
       {/* How it works */}
-      <section className="bg-cream py-24 md:py-28">
+      <section className="bg-cream py-16 lg:py-28">
         <div className="container-x">
           <Reveal>
             <Eyebrow>How it works</Eyebrow>
@@ -83,7 +83,7 @@ export default function SubscriptionPage() {
       </section>
 
       {/* Schedule visual */}
-      <section className="bg-bg py-24 md:py-28">
+      <section className="bg-bg py-16 lg:py-28">
         <div className="container-x grid items-center gap-14 lg:grid-cols-2">
           <div>
             <Reveal>
@@ -95,7 +95,7 @@ export default function SubscriptionPage() {
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
-              <p className="mt-6 max-w-md text-lg leading-relaxed text-stone">
+              <p className="mt-6 max-w-md text-base md:text-lg leading-relaxed text-stone">
                 Set the days that suit you. Going away? Pause with a tap and
                 resume when you&rsquo;re back. Your milk, your schedule.
               </p>
@@ -131,7 +131,7 @@ export default function SubscriptionPage() {
       </section>
 
       {/* Plans */}
-      <section className="bg-cream py-24 md:py-28">
+      <section className="bg-cream py-16 lg:py-28">
         <div className="container-x">
           <div className="mb-12 max-w-2xl">
             <Reveal>
@@ -148,7 +148,7 @@ export default function SubscriptionPage() {
       </section>
 
       {/* Build your own */}
-      <section className="bg-bg py-24 md:py-28">
+      <section className="bg-bg py-16 lg:py-28">
         <div className="container-x">
           <div className="mb-12 max-w-2xl">
             <Reveal>
@@ -160,7 +160,7 @@ export default function SubscriptionPage() {
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-stone">
+              <p className="mt-6 max-w-xl text-base md:text-lg leading-relaxed text-stone">
                 Pick your milk, your quantity and the days that suit you. We&rsquo;ll
                 price it as you go — no surprises.
               </p>

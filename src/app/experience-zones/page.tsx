@@ -29,9 +29,9 @@ export default function ExperienceZonesPage() {
         intro="Taste the purity firsthand. Walk into our Experience Zones to pick up fresh milk, organic staples, and see what honest food really looks like."
       />
 
-      <section className="bg-cream py-24 md:py-28">
-        <div className="container-x grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
-          <MaskReveal className="rounded-[2.5rem] overflow-hidden">
+      <section className="bg-cream py-16 lg:py-28">
+        <div className="container-x grid items-center gap-10 lg:grid-cols-2 lg:gap-20">
+          <MaskReveal className="rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden">
             <img
               src="/brand/exz/mavenue.png"
               alt="Gulshan Experience Zone"
@@ -43,15 +43,15 @@ export default function ExperienceZonesPage() {
               <Eyebrow>Gulshan</Eyebrow>
             </Reveal>
             <Reveal delay={0.05}>
-              <h2 className="text-headline mt-5">Madani Avenue Outlet</h2>
+              <h2 className="text-headline mt-4 md:mt-5">Madani Avenue Outlet</h2>
             </Reveal>
             <Reveal delay={0.1}>
-              <div className="mt-7 space-y-6 text-lg leading-relaxed text-stone">
+              <div className="mt-5 md:mt-7 space-y-5 md:space-y-6 text-base md:text-lg leading-relaxed text-stone">
                 <p>
                   Our flagship experience zone. Come in for a fresh taste, chat with our team about our farm, and pick up your daily staples right off the shelf.
                 </p>
                 
-                <div className="space-y-4 pt-6 border-t hairline">
+                <div className="space-y-4 pt-5 md:pt-6 border-t hairline">
                   <div className="flex items-start gap-4">
                     <span className="mt-1 text-green">
                       <MapPin size={20} />
@@ -77,22 +77,22 @@ export default function ExperienceZonesPage() {
         </div>
       </section>
 
-      <section className="bg-bg py-24 md:py-28">
-        <div className="container-x grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+      <section className="bg-bg py-16 lg:py-28">
+        <div className="container-x grid items-center gap-10 lg:grid-cols-2 lg:gap-20">
           <div className="order-2 lg:order-1">
             <Reveal>
               <Eyebrow>Mirpur</Eyebrow>
             </Reveal>
             <Reveal delay={0.05}>
-              <h2 className="text-headline mt-5">Mirpur 11 Outlet</h2>
+              <h2 className="text-headline mt-4 md:mt-5">Mirpur 11 Outlet</h2>
             </Reveal>
             <Reveal delay={0.1}>
-              <div className="mt-7 space-y-6 text-lg leading-relaxed text-stone">
+              <div className="mt-5 md:mt-7 space-y-5 md:space-y-6 text-base md:text-lg leading-relaxed text-stone">
                 <p>
                   Conveniently located for our customers in the Mirpur area. We bring the exact same farm-fresh standards and daily deliveries straight to your neighborhood.
                 </p>
                 
-                <div className="space-y-4 pt-6 border-t hairline">
+                <div className="space-y-4 pt-5 md:pt-6 border-t hairline">
                   <div className="flex items-start gap-4">
                     <span className="mt-1 text-green">
                       <MapPin size={20} />
@@ -115,7 +115,7 @@ export default function ExperienceZonesPage() {
               </div>
             </Reveal>
           </div>
-          <MaskReveal className="order-1 lg:order-2 rounded-[2.5rem] overflow-hidden">
+          <MaskReveal className="order-1 lg:order-2 rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden">
             <img
               src="/brand/exz/mirpurelev.png"
               alt="Mirpur Experience Zone"

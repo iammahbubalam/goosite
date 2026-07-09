@@ -48,6 +48,7 @@ export function Footer() {
             alt="GOOWALI"
             width={650}
             height={200}
+            priority
             style={{ width: "auto", height: "auto" }}
             className="h-12 brightness-0 invert"
           />

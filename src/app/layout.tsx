@@ -57,6 +57,9 @@ export const metadata: Metadata = {
     "milk subscription Dhaka",
     "GOOWALI",
   ],
+  icons: {
+    icon: "/brand/goowli_logo_ony_bgremoved.png",
+  },
   openGraph: {
     title: "GOOWALI — Pure Milk, Every Morning",
     description: "From our farms to your family. Fresh, pure, honest.",

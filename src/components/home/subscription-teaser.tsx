@@ -42,7 +42,7 @@ export function SubscriptionTeaser() {
             </p>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mt-6 max-w-md text-lg leading-relaxed text-cream/75">
+            <p className="mt-6 max-w-md text-base md:text-lg leading-relaxed text-cream/75">
               Join the GOOWALI family and let mornings take care of themselves.
               One subscription, one less thing to worry about.
             </p>

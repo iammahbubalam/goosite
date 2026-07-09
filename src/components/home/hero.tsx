@@ -94,7 +94,7 @@ export function Hero() {
             গরুর ১০০% খাঁটি দুধ, প্রতিদিন সকালে।
           </p>
 
-          <p className="hero-copy mt-7 max-w-md text-lg leading-relaxed text-stone">
+          <p className="hero-copy mt-7 max-w-md text-base md:text-lg leading-relaxed text-stone">
             Directly from trusted farms to your family — collected at dawn,
             tested with care, delivered before breakfast.
           </p>

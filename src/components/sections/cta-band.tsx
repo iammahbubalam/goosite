@@ -19,7 +19,7 @@ export function CtaBand({
     <section className="bg-bg pb-28 pt-4 md:pb-36">
       <div className="container-x">
         <Reveal>
-          <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-sage-tint via-[#e6efd7] to-sage-soft px-8 py-16 text-center md:px-16 md:py-24">
+          <div className="relative overflow-hidden rounded-[1.5rem] md:rounded-[2.5rem] bg-gradient-to-br from-sage-tint via-[#e6efd7] to-sage-soft px-8 py-16 text-center md:px-16 md:py-24">
             <div className="pointer-events-none absolute -left-20 -top-20 h-72 w-72 rounded-full bg-white/50 blur-3xl" />
             <div className="pointer-events-none absolute -bottom-24 -right-16 h-72 w-72 rounded-full bg-sage/25 blur-3xl" />
             <p className="font-bn relative text-base font-medium text-sage-deep">

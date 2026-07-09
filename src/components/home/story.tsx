@@ -10,12 +10,12 @@ import { ArrowRight } from "lucide-react";
 
 export function Story() {
   return (
-    <section className="bg-cream py-24 md:py-32">
+    <section className="bg-cream py-16 lg:py-32">
       <div className="container-x grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <Reveal className="order-2 lg:order-1">
           <Parallax amount={36}>
             <MaskReveal
-              rounded="rounded-[2.5rem]"
+              rounded="rounded-[1.5rem] md:rounded-[2.5rem]"
               className="relative aspect-[4/5] shadow-[var(--shadow-lift)] ring-1 ring-inset ring-ink/5"
             >
               <Photo
@@ -55,7 +55,7 @@ export function Story() {
             </p>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="mt-7 space-y-5 text-lg leading-relaxed text-stone">
+            <div className="mt-7 space-y-5 text-base md:text-lg leading-relaxed text-stone">
               <p>
                 Long before the city wakes, our farmers are already at work.
                 Cows are milked by hand, the milk is filtered and chilled within

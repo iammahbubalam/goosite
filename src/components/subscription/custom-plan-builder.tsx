@@ -45,7 +45,7 @@ export function CustomPlanBuilder() {
     setLitres((l) => Math.min(4, Math.max(0.5, +(l + delta).toFixed(1))));
 
   return (
-    <div className="grid gap-6 rounded-[2.5rem] border hairline bg-bg p-6 md:p-10 lg:grid-cols-5 lg:gap-10">
+    <div className="grid gap-6 rounded-[1.5rem] md:rounded-[2.5rem] border hairline bg-bg p-6 md:p-10 lg:grid-cols-5 lg:gap-10">
       {/* Controls */}
       <div className="space-y-9 lg:col-span-3">
         {/* The milk — one choice, the right one */}

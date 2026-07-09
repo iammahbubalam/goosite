@@ -10,7 +10,7 @@ export function ProductShowcase() {
   const heroes = PRODUCTS.filter((p) => p.hero);
 
   return (
-    <section className="bg-bg py-24 md:py-32">
+    <section className="bg-bg py-16 lg:py-32">
       <div className="container-x">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-xl">

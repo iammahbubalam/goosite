@@ -79,13 +79,13 @@ export default function BlogPage() {
         introBn="খাঁটি খাবার, সুস্থ পরিবার, আর যেসব খামার সব সম্ভব করে — তাদের নিয়ে।"
       />
 
-      <section className="bg-cream py-20 md:py-24">
+      <section className="bg-cream py-14 lg:py-24">
         <div className="container-x">
           {/* Featured */}
           <Reveal>
             <Link
               href="/blog"
-              className="group grid overflow-hidden rounded-[2.5rem] border hairline bg-bg md:grid-cols-2"
+              className="group grid overflow-hidden rounded-[1.5rem] md:rounded-[2.5rem] border hairline bg-bg md:grid-cols-2"
             >
               <Photo
                 src={getPhoto(featured.cover)?.src}

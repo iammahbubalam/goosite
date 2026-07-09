@@ -37,7 +37,7 @@ const ITEMS = [
 
 export function Testimonials() {
   return (
-    <section className="bg-bg py-24 md:py-32">
+    <section className="bg-bg py-16 lg:py-32">
       <div className="container-x">
         <div className="max-w-2xl">
           <Reveal>

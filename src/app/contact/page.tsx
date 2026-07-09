@@ -41,7 +41,7 @@ export default function ContactPage() {
         introBn="পরিবারের জন্য এক লিটার হোক বা রান্নাঘরের জন্য প্রতিদিনের সরবরাহ — আমরা সাহায্য করতে সবসময় প্রস্তুত।"
       />
 
-      <section className="bg-cream py-20 md:py-28">
+      <section className="bg-cream py-14 lg:py-28">
         <div className="container-x grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <Reveal>

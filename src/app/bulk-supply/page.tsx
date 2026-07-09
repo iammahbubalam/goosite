@@ -120,7 +120,7 @@ export default function BulkSupplyPage() {
       </PageHero>
 
       {/* Segments */}
-      <section className="bg-cream py-20 md:py-24">
+      <section className="bg-cream py-14 lg:py-24">
         <div className="container-x">
           <Reveal>
             <p className="text-eyebrow text-stone/70">Trusted across the trade</p>
@@ -138,7 +138,7 @@ export default function BulkSupplyPage() {
       </section>
 
       {/* Value props */}
-      <section className="bg-bg py-24 md:py-28">
+      <section className="bg-bg py-16 lg:py-28">
         <div className="container-x">
           <div className="max-w-2xl">
             <Reveal>
@@ -169,7 +169,7 @@ export default function BulkSupplyPage() {
       </section>
 
       {/* Case studies */}
-      <section className="bg-cream py-24 md:py-28">
+      <section className="bg-cream py-16 lg:py-28">
         <div className="container-x">
           <Reveal>
             <Eyebrow>In their kitchens</Eyebrow>
@@ -200,7 +200,7 @@ export default function BulkSupplyPage() {
       </section>
 
       {/* Dealership */}
-      <section className="bg-bg py-24 md:py-28">
+      <section className="bg-bg py-16 lg:py-28">
         <div className="container-x grid gap-12 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-5">
             <Reveal>
@@ -260,7 +260,7 @@ export default function BulkSupplyPage() {
       <section className="bg-bg pb-28 pt-4">
         <div className="container-x">
           <Reveal>
-            <div className="rounded-[2.5rem] bg-ink px-8 py-16 text-center text-cream md:px-16 md:py-20">
+            <div className="rounded-[1.5rem] md:rounded-[2.5rem] bg-ink px-8 py-16 text-center text-cream md:px-16 md:py-20">
               <h2 className="text-headline text-cream">
                 Let&rsquo;s talk volume.
               </h2>

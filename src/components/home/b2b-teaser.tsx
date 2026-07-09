@@ -9,7 +9,7 @@ const CLIENTS = ["Restaurants", "Cafés", "Tea shops", "Hotels", "Bakeries"];
 
 export function B2BTeaser() {
   return (
-    <section className="bg-cream py-24 md:py-32">
+    <section className="bg-cream py-16 lg:py-32">
       <div className="container-x grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <div>
           <Reveal>
@@ -26,7 +26,7 @@ export function B2BTeaser() {
             </p>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mt-6 max-w-md text-lg leading-relaxed text-stone">
+            <p className="mt-6 max-w-md text-base md:text-lg leading-relaxed text-stone">
               Reliable bulk supply for the businesses that care what they serve.
               Consistent quality, dependable delivery, honest pricing.
             </p>
