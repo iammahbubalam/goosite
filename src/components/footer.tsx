@@ -29,6 +29,7 @@ const SHOP = [
 
 const COMPANY = [
   { label: "Our Farm", href: "/farms" },
+  { label: "Experience Zones", href: "/experience-zones" },
   { label: "About", href: "/about" },
   { label: "Journal", href: "/blog" },
   { label: "Contact", href: "/contact" },

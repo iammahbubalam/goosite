@@ -28,6 +28,7 @@ export const NAV_LINKS = [
   { label: "Products", labelBn: "পণ্য", href: "/products" },
   { label: "Subscription", labelBn: "সাবস্ক্রিপশন", href: "/subscription" },
   { label: "Our Farm", labelBn: "আমাদের খামার", href: "/farms" },
+  { label: "Experience Zones", href: "/experience-zones" },
   { label: "Bulk Supply", labelBn: "বাল্ক সরবরাহ", href: "/bulk-supply" },
   { label: "About", labelBn: "আমাদের কথা", href: "/about" },
   { label: "Journal", labelBn: "জার্নাল", href: "/blog" },
