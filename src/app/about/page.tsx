@@ -12,7 +12,7 @@ import { Counter } from "@/components/motion/counter";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "GOOWALI exists to put pure, honest food on every Bangladeshi family's table — connecting trusted farms directly to homes.",
+    "GOOWALI exists to put pure, honest food on every Bangladeshi family's table — connecting the farm directly to your home.",
 };
 
 const VALUES = [
@@ -40,7 +40,7 @@ const VALUES = [
 
 const NUMBERS = [
   { to: 2400, suffix: "+", label: "families served", labelBn: "পরিবার পরিবেশিত" },
-  { to: 40, suffix: "+", label: "partner farms", labelBn: "অংশীদার খামার" },
+  { to: 100, suffix: "%", label: "single origin", labelBn: "একক উৎস" },
   { to: 100, suffix: "%", label: "purity, tested daily", labelBn: "বিশুদ্ধতা, প্রতিদিন পরীক্ষিত" },
 ];
 
@@ -190,8 +190,8 @@ export default function AboutPage() {
                   couldn&rsquo;t find it, I decided to build it.
                 </p>
                 <p>
-                  GOOWALI is that promise, scaled. We work directly with farmers
-                  we know, test everything, and deliver it fresh. No middlemen,
+                  GOOWALI is that promise, realized. We nurture the herd,
+                  test everything, and deliver it fresh. No middlemen,
                   no shortcuts, no compromise.
                 </p>
               </div>

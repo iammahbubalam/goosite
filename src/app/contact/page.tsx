@@ -13,9 +13,11 @@ export const metadata: Metadata = {
 };
 
 const DETAILS = [
-  { Icon: Phone, label: "Call us", value: SITE.phone, href: `tel:${SITE.phone}` },
+  { Icon: Phone, label: "Main line", value: SITE.phone, href: `tel:${SITE.phone}` },
   { Icon: Mail, label: "Email", value: SITE.email, href: `mailto:${SITE.email}` },
-  { Icon: MapPin, label: "Visit", value: SITE.address },
+  { Icon: MapPin, label: "Main Office", value: SITE.address },
+  { Icon: Phone, label: SITE.experienceZones[0].name, value: SITE.experienceZones[0].phone, href: `tel:${SITE.experienceZones[0].phone}` },
+  { Icon: Phone, label: SITE.experienceZones[1].name, value: SITE.experienceZones[1].phone, href: `tel:${SITE.experienceZones[1].phone}` },
   { Icon: Clock, label: "Hours", value: "Every day · 7am – 9pm" },
 ];
 

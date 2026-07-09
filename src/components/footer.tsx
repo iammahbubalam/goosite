@@ -28,7 +28,7 @@ const SHOP = [
 ];
 
 const COMPANY = [
-  { label: "Our Farms", href: "/farms" },
+  { label: "Our Farm", href: "/farms" },
   { label: "About", href: "/about" },
   { label: "Journal", href: "/blog" },
   { label: "Contact", href: "/contact" },
@@ -51,7 +51,7 @@ export function Footer() {
             className="h-12 brightness-0 invert"
           />
           <p className="mt-6 max-w-xs font-serif text-xl leading-snug text-cream/85">
-            From our farms to your family — fresh, pure, honest.
+            From our farm to your family — fresh, pure, honest.
           </p>
           <p className="font-bn mt-2.5 max-w-xs text-sm leading-relaxed text-cream/55">
             আমাদের খামার থেকে আপনার পরিবারে — তাজা, খাঁটি, সৎ।

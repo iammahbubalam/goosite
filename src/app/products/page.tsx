@@ -9,7 +9,7 @@ import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Pure milk, traditional dairy and honest organic staples — sourced directly from trusted Bangladeshi farms.",
+    "Pure milk, traditional dairy and honest organic staples — sourced directly from the farm.",
 };
 
 export default function ProductsPage() {

@@ -9,9 +9,9 @@ import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
 import { MaskReveal } from "@/components/motion/mask-reveal";
 
 export const metadata: Metadata = {
-  title: "Our Farms",
+  title: "The Farm",
   description:
-    "Meet the trusted Bangladeshi farms behind GOOWALI. Open about our sourcing, our standards, and the care our animals receive.",
+    "Meet the farm behind GOOWALI. Open about where your milk comes from, our standards, and the care our animals receive.",
 };
 
 const STANDARDS = [
@@ -33,9 +33,7 @@ const STANDARDS = [
 ];
 
 const FARMS = [
-  { name: "Sirajganj Highlands", detail: "Our founding partner herd since day one." },
-  { name: "Pabna Greens", detail: "Riverside grazing land, famous for rich milk." },
-  { name: "Tangail Meadows", detail: "Small family farms, big on care." },
+  { name: "Main Farm (Gazipur)", detail: "Dewalertek, Kaliganj, Gazipur, Dhaka." }
 ];
 
 export default function FarmsPage() {
@@ -43,7 +41,7 @@ export default function FarmsPage() {
     <>
       <PageHero
         milk="sage"
-        eyebrow="Our farms"
+        eyebrow="The farm"
         mediaPhoto="story-cows"
         mediaLabel="Green fields. Morning light."
         title={
@@ -54,8 +52,8 @@ export default function FarmsPage() {
           </>
         }
         titleBn="যেখানে আপনার সকাল শুরু।"
-        intro="We don't hide our supply chain — we celebrate it. These are the farms, the families and the standards behind every bottle."
-        introBn="আমরা আমাদের সরবরাহ শৃঙ্খল লুকাই না — গর্ব করি। এই সেই খামার, পরিবার আর মান, প্রতিটি বোতলের পেছনে।"
+        intro="We don't rely on complex supply chains. This is the farm and the standards behind every bottle."
+        introBn="আমরা কোনো জটিল সরবরাহ শৃঙ্খলের ওপর নির্ভর করি না। এই হলো সেই খামার এবং মান, যা প্রতিটি বোতলের পেছনে রয়েছে।"
       />
 
       {/* Immersive panel */}
@@ -119,10 +117,10 @@ export default function FarmsPage() {
       <section className="bg-cream py-24 md:py-28">
         <div className="container-x">
           <Reveal>
-            <Eyebrow>The network</Eyebrow>
+            <Eyebrow>The origin</Eyebrow>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="text-headline mt-5 mb-12">Farms we know by name.</h2>
+            <h2 className="text-headline mt-5 mb-12">Every cow known by name.</h2>
           </Reveal>
           <Stagger className="grid gap-6 md:grid-cols-3">
             {FARMS.map((f) => (
@@ -142,7 +140,7 @@ export default function FarmsPage() {
 
       <CtaBand
         title="Purity you can trace."
-        subtitle="Taste the difference an honest supply chain makes."
+        subtitle="Taste the difference a single origin makes."
         primary={{ label: "Shop the milk", href: "/products" }}
         secondary={{ label: "Subscribe", href: "/subscription" }}
       />
